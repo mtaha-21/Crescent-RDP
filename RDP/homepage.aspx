@@ -10,7 +10,7 @@
          <div class="row">
             <div class="col-12">
                <center>
-                  <h2>Our Process</h2>
+                  <h2>Research Application Process</h2>
                   <p><b>We have a Simple 3 Step Process</b></p>
                </center>
             </div>
@@ -18,23 +18,24 @@
          <div class="row">
             <div class="col-md-4">
                <center>
-                  <img width="150px" src="imgs/sign-up.png" />
+                   
+                  <img width="150px" src="imgs/Register.png" />
                   <h4>Sign Up</h4>
-                  <p class="text-justify">Sign yourself up here.</p>
+
+                 
+
                </center>
             </div>
             <div class="col-md-4">
                <center>
-                  <img width="150px" src="imgs/search-online.png"/>
-                  <h4>Search Books</h4>
-                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                  <img width="150px" src="imgs/appform.png"/>
+                  <h4>Fill Application Form</h4>
                </center>
             </div>
             <div class="col-md-4">
                <center>
-                  <img width="150px" src="imgs/library.png"/>
-                  <h4>Visit Us</h4>
-                  <p class="text-justify">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Lorem ipsum dolor. reprehenderit</p>
+                  <img width="150px" src="imgs/approve.png"/>
+                  <h4>Wait For Approval</h4>
                </center>
             </div>
          </div>
