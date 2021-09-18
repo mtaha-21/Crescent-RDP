@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <section>
         <center>      
-            <img src="imgs/Frontpage.png" class="img-fluid"/>
-        </center>
+            <img src="imgs/Frontpage.png" class="responsive" />
+        </center> 
    </section>
    <section>
       <div class="container">

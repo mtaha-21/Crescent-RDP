@@ -14,3 +14,12 @@
 #footer2 {
     background: #1b335c;
 }
+
+#Button2 {
+    width : 200px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
