@@ -23,3 +23,12 @@
     width: 100%;
     height: auto;
 }
+
+svg {
+    width: 70px;
+    height: 70px;
+}
+
+    svg:hover {
+        fill: navy  ;
+    }
