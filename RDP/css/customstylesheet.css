@@ -14,3 +14,21 @@
 #footer2 {
     background: #1b335c;
 }
+
+#Button2 {
+    width : 200px;
+}
+
+.responsive {
+    width: 100%;
+    height: auto;
+}
+
+svg {
+    width: 70px;
+    height: 70px;
+}
+
+    svg:hover {
+        fill: navy  ;
+    }

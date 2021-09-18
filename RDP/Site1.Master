@@ -23,8 +23,6 @@
     <%--custom CSS button--%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
 
-
-
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
