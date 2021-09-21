@@ -3,10 +3,21 @@
     <link href="css/customstylesheet.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="container">
+  <style>
+      .backimg{
+            background-image:url(imgs/loginpage.jpg);
+            width:100%;
+            height:100%;
+            background-repeat:no-repeat;
+            background-color:red;
+            background-size:cover;
+         }
+  </style>
+    <div class="backimg">
+    <div class="container">
       <div class="row">
          <div class="col-md-6 mx-auto">
-            <div class="card">
+            <div id="userloginbox" class="card">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
@@ -18,7 +29,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <h3>Member Login</h3>
+                           <h3>STUDENT LOGIN</h3>
                         </center>
                      </div>
                   </div>
@@ -29,9 +40,9 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <label>Member ID</label>
+                        <label>User Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Member ID"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="User Name"></asp:TextBox>
                         </div>
                         <label>Password</label>
                         <div class="form-group">
@@ -53,4 +64,5 @@
          </div>
       </div>
    </div>
+        </div>
 </asp:Content>

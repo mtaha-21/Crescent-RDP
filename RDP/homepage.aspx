@@ -160,4 +160,20 @@ fill="#00000" stroke="none">
          </div>
       </div>
    </section>
+    <footer>
+                    <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                                     <!-- Footer button code -->                     
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
+                            &nbsp;
+                                     <!-- Footer button ends code -->
+                        </p>
+
+                    </div>
+
+                </div>
+            </div>
+    </footer>
 </asp:Content>

@@ -53,7 +53,7 @@
                     <ul class="navbar-nav">
                                                 <!-- Navigation buttons code -->
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server">User Login</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" href="userlogin.aspx">User Login</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Sign Up</asp:LinkButton>
@@ -84,20 +84,6 @@
 
          <!-- Footer -->
         <footer>
-            <div id="footer1" class="container-fluid">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p>
-                                     <!-- Footer button code -->                     
-                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server">Admin Login</asp:LinkButton>
-                            &nbsp;
-                                     <!-- Footer button ends code -->
-                        </p>
-
-                    </div>
-
-                </div>
-            </div>
             <div id="footer2" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">

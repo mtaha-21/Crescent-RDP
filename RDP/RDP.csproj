@@ -1759,6 +1759,7 @@
     <Content Include="imgs\home-bg.jpg" />
     <Content Include="imgs\in-homepage-banner.jpg" />
     <Content Include="imgs\library.png" />
+    <Content Include="imgs\loginpage.jpg" />
     <Content Include="imgs\logo.png" />
     <Content Include="imgs\Rect.JPG" />
     <Content Include="imgs\Register.png" />
