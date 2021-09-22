@@ -33,16 +33,6 @@ svg {
         fill: navy  ;
     }
 
-body {
-     background-image : url('../imgs/user_png.png');
-     background-repeat : no-repeat;
-     background-size : cover;
-
-}
-#sgbg{
-    background:Transparent;
-
-}
 label {
     color: #FFFFFF;
 }
@@ -51,4 +41,27 @@ h3{
 }
 h4 {
     color: #FEFCFF;
+}
+body {
+    background-image: url('../imgs/c8e0e0.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#userloginbox {
+    background:;
+}
+#userlogin{
+    background:Transparent;
+}
+#adminloginbox {
+    background:;
+}
+#adminlogin {
+    background:Transparent;
+}
+#usersignupbox {
+    background:;
+}
+#usersignup{
+    background:Transparent;
 }

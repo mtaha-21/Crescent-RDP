@@ -3,10 +3,21 @@
     <link href="css/customstylesheet.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .backimg {
+    background-image: url('../imgs/3693a5c94.png');
+    width: auto;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: cover;
+}
+    </style>
+    <div class="backimg">
    <div class="container-fluid">
       <div class="row">
          <div class="col-md-5 mx-auto">
-            <div id="sgbg" class="card">
+            <div id="userlogin" class="card">
                <div class="card-body">
                   <div class="row">
                      <div class="col">
@@ -49,8 +60,9 @@
                   </div>
                </div>
             </div>
-            <a href="homepage.aspx"style="color: yellow"><< Back to Home</a><br><br>
+            <a href="homepage.aspx"style="color: white" asp:Button class="btn btn-secondary" Width="100px"><< Back to Home</a><br><br>
          </div>
       </div>
    </div>
+  </div>
 </asp:Content>
