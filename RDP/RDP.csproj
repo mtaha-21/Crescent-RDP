@@ -1721,6 +1721,8 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\2063715.png" />
+    <Content Include="imgs\535521.png" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b1.jpg" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b2.jpg" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b3.jpg" />
