@@ -42,7 +42,7 @@
                               <a class="nav-link" href="homepage.aspx">Home</a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">About Us</a>
+                            <a class="nav-link" href="https://crescent.education/research/about-us/about-us/">About Us</a>
                         </li>
                         <li class="nav-item active">
                             <a class="nav-link" href="#">Terms</a>

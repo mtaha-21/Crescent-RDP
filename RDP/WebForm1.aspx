@@ -3,4 +3,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+                                <asp:LinkButton class="footerlinks" ID="LinkButton10" runat="server">Admin Login</asp:LinkButton>
+                            &nbsp;
+
 </asp:Content>

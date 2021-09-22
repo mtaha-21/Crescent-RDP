@@ -3,16 +3,16 @@
     <link href="css/customstylesheet.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-  <style>
-      .backimg{
-            background-image:url(imgs/loginpage.jpg);
-            width:100%;
-            height:100%;
-            background-repeat:no-repeat;
-            background-color:red;
-            background-size:cover;
-         }
-  </style>
+    <style>
+        .backimg {
+    background-image: url(imgs/loginpage.jpg);
+    width: auto;
+    height: 600px;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-size: cover;
+}
+    </style>
     <div class="backimg">
     <div class="container">
       <div class="row">
@@ -22,7 +22,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="150px" src="imgs/generaluser.png"/>
+                           <img width="152px" src="imgs/generaluser.png"/>
                         </center>
                      </div>
                   </div>
@@ -50,11 +50,10 @@
                         </div>
                          <center>
                         <div class="form-group">
-                           <asp:Button Border Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" Width="200px" />
                         </div>
-                        <div class="form-group"  >
-                           <a  href="usersignup.aspx"><input Border Style ="margin-top:10px" class="btn btn-info btn-block btn-lg" Id="Button2" type="button" value="Register"/></a>
-                        </div>
+                        <div class="form-group">
+                           &nbsp;<asp:Button Border Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" Width="200px" Height="55px" />
+                           <a  href="usersignup.aspx"><input Border Style ="margin-top:10px; height: 55px;" class="btn btn-info btn-block btn-lg" Id="Button2" type="button" value="Register"/></a></div>
                              </center>
                      </div>
                   </div>
@@ -64,5 +63,5 @@
          </div>
       </div>
    </div>
-        </div>
+ </div>
 </asp:Content>
