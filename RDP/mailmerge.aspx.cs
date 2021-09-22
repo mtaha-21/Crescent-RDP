@@ -13,5 +13,10 @@ namespace RDP
         {
 
         }
+
+        protected void btnSendMail_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
