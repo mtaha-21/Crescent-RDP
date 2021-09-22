@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminlogin.aspx" />
+    <Content Include="App_Data\RDP_Database.mdf" />
+    <Content Include="App_Data\RDP_Database_log.ldf">
+      <DependentUpon>RDP_Database.mdf</DependentUpon>
+    </Content>
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
