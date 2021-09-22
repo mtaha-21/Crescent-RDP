@@ -32,3 +32,9 @@ svg {
     svg:hover {
         fill: navy  ;
     }
+body {
+     background-image : url('../imgs/user_png.png');
+     background-repeat : no-repeat;
+     background-size : cover;
+
+}

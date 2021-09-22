@@ -2,7 +2,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container">
       <div class="row">
          <div class="col-md-8 mx-auto">
@@ -101,8 +100,8 @@
                         </div>
                      </div>
                    <div class="col-md-4">
-                        <label>City</label>
-                        <div class="form-group">
+                       <label>city</label>
+                       <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox6" runat="server" placeholder="City"></asp:TextBox>
                        
                             </div>
@@ -123,7 +122,11 @@
                         </div>
                      </div>
                   </div>
-                   
+                    <div class="row">
+                     <div class="col">
+                        <hr>
+                     </div>
+                  </div>
                     <div class="row">
                         <center>
                      <div class="col">
@@ -161,7 +164,7 @@
                   </div>
                </div>
             </div>
-            <a href="homepage.aspx"><< Back to Home</a><br><br>
+            <a href="homepage.aspx"style="color: red"><< Back to Home</a><br><br>
          </div>
       </div>
    </div>

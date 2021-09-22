@@ -1766,6 +1766,7 @@
     <Content Include="imgs\publisher.png" />
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\sign-up.png" />
+    <Content Include="imgs\user_png.png" />
     <Content Include="imgs\writer.png" />
     <Content Include="userlogin.aspx" />
     <Content Include="userprofile.aspx" />
