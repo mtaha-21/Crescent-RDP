@@ -3,9 +3,9 @@
     <link href="css/customstylesheet.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-   <div class="container">
+   <div class="container-fluid">
       <div class="row">
-         <div class="col-md-6 mx-auto">
+         <div class="col-md-5 mx-auto">
             <div id="sgbg" class="card">
                <div class="card-body">
                   <div class="row">
