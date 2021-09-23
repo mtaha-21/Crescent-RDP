@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="RDP.homepage" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="homepage.aspx.cs" Inherits="RDP.homepage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <style>
         .backimg {
-    background-image: url(imgs/Frontpage.png);
+    background-image: url(imgs/loginpage.jpg);                                 
     width: auto;
-    height: auto;
+    height: 559px;
     background-repeat: no-repeat;
     background-color: white;
     background-size: cover;
@@ -15,16 +15,9 @@
     <div class="backimg">
     <div class="container">
       <div class="row">
-         <div class="col-md-6 mx-auto">
-            <div id="loginbox" class="card">
+         <div  id="check" class="col-md-4 offset-7">
+            <div id="loginbox"  class="card">
                <div class="card-body">
-                  <div class="row">
-                     <div class="col">
-                        <center>
-                           <img width="150px" src="imgs/adminuser.png"/>
-                        </center>
-                     </div>
-                  </div>
                   <div class="row">
                      <div class="col">
                         <center>
@@ -39,7 +32,7 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <label>Admin ID</label>
+                        <label style="color:white">Admin ID</label>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Admin ID"></asp:TextBox>
                         </div>
@@ -49,7 +42,7 @@
                         </div>
                          <center>
                         <div class="form-group">
-                           <asp:Button border Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" Width="200px" />
+                           <asp:Button Style="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" Width="200px" />
                         </div>
                              </center>
                      </div>

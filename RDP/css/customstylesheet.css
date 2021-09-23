@@ -11,7 +11,7 @@
         color: #ffd800;
     }
 
-#footer1 {
+#mainfooter {
     background: #1b335c;
 }
 
@@ -22,4 +22,9 @@
 .responsive {
     width: 100%;
     height: auto;
+}
+
+#check {
+    position: fixed;
+    top: 20%;
 }
