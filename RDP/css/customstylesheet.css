@@ -57,11 +57,17 @@ body {
     background:;
 }
 #adminlogin {
-    background:Transparent;
+    background: Transparent;
 }
 #usersignupbox {
     background:;
 }
-#usersignup{
+#usersignup {
+    background: Transparent;
+}
+#Appbox {
+    background:;
+}
+#App{
     background:Transparent;
 }

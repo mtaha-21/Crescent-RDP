@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminlogin.aspx" />
+    <Content Include="application_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
@@ -1721,6 +1722,7 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\15.png" />
     <Content Include="imgs\1519801481452.png" />
     <Content Include="imgs\1624206692phpBHKAwS.png" />
     <Content Include="imgs\2063715.png" />
@@ -1767,6 +1769,7 @@
     <Content Include="imgs\in-homepage-banner.jpg" />
     <Content Include="imgs\library.png" />
     <Content Include="imgs\logo.png" />
+    <Content Include="imgs\photo-1585314062604-1a357de8b000.png" />
     <Content Include="imgs\Rect.JPG" />
     <Content Include="imgs\Register.png" />
     <Content Include="imgs\researchglass.png" />
@@ -1789,6 +1792,13 @@
     </Compile>
     <Compile Include="adminlogin.aspx.designer.cs">
       <DependentUpon>adminlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="application_form.aspx.cs">
+      <DependentUpon>application_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="application_form.aspx.designer.cs">
+      <DependentUpon>application_form.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
