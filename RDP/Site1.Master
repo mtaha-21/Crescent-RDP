@@ -43,19 +43,13 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="https://crescent.education/research/about-us/about-us/">About Us</a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Terms</a>
-                        </li>
 
                     </ul>
 
                     <ul class="navbar-nav">
                                                 <!-- Navigation buttons code -->
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton1" runat="server" href="userlogin.aspx">User Login</asp:LinkButton>
-                        </li>
-                        <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton2" runat="server">Sign Up</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server">Main Menu</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Logout</asp:LinkButton>
@@ -86,7 +80,7 @@
             <div id="mainfooter" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke">&copy Copyrights 2021-All Rights Reserved | <a class="footerlinks" href="https://crescent.education/" target="_blank"> Crescent University</a></p>
+                        <p style="color:whitesmoke"> 2021 | <a class="footerlinks" href="https://crescent.education/" target="_blank"> Crescent University</a></p>
                     </div>
                 </div>
             </div>

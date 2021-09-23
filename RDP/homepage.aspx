@@ -32,17 +32,17 @@
                   </div>
                   <div class="row">
                      <div class="col">
-                        <label style="color:white">Admin ID</label>
+                        <label>Enter User Name</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Admin ID"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="User Name"></asp:TextBox>
                         </div>
-                        <label>Password</label>
+                        <label>Enter Password</label>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                         </div>
                          <center>
                         <div class="form-group">
-                           <asp:Button Style="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" Width="200px" />
+                           <asp:Button Style="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Btnlogin_click" runat="server" Text="Login" Width="200px" OnClick="Button20" />
                         </div>
                              </center>
                      </div>

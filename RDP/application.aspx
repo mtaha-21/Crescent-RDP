@@ -1,8 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="usersignup.aspx.cs" Inherits="RDP.usersignup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="application.aspx.cs" Inherits="RDP.application" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="container">
       <div class="row">
          <div class="col-md-8 mx-auto">
@@ -11,7 +10,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="100px" src="imgs/generaluser.png"/>
+                           <img width="100" src="imgs/generaluser.png"/>
                         </center>
                      </div>
                   </div>
@@ -42,8 +41,6 @@
                             </div>
                      </div>
                   </div>
-
-
                    <div class="row">
                      <div class="col-md-6">
                          <label>Contact No</label>
@@ -154,7 +151,7 @@
                         
                   <center>     
                         <div class="form-group">
-                           <asp:Button Border Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" OnClick="Button1_Click" />
+                           <asp:Button Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" OnClick="Button1_Click" />
                         </div>
                         </center>
                      </div>

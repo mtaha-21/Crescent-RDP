@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +62,22 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -72,6 +90,7 @@
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
+    <Content Include="deanpage.aspx" />
     <Content Include="fontawesome\attribution.js" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1768,11 +1787,19 @@
     <Content Include="imgs\sign-up.png" />
     <Content Include="imgs\writer.png" />
     <Content Include="userprofile.aspx" />
-    <Content Include="usersignup.aspx" />
+    <Content Include="application.aspx" />
     <Content Include="Web.config" />
     <Content Include="mailmerge.aspx" />
+    <Content Include="adminpage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="deanpage.aspx.cs">
+      <DependentUpon>deanpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deanpage.aspx.designer.cs">
+      <DependentUpon>deanpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1795,12 +1822,12 @@
     <Compile Include="userprofile.aspx.designer.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="usersignup.aspx.cs">
-      <DependentUpon>usersignup.aspx</DependentUpon>
+    <Compile Include="application.aspx.cs">
+      <DependentUpon>application.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="usersignup.aspx.designer.cs">
-      <DependentUpon>usersignup.aspx</DependentUpon>
+    <Compile Include="application.aspx.designer.cs">
+      <DependentUpon>application.aspx</DependentUpon>
     </Compile>
     <Compile Include="mailmerge.aspx.cs">
       <DependentUpon>mailmerge.aspx</DependentUpon>
@@ -1808,6 +1835,13 @@
     </Compile>
     <Compile Include="mailmerge.aspx.designer.cs">
       <DependentUpon>mailmerge.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="adminpage.aspx.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpage.aspx.designer.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

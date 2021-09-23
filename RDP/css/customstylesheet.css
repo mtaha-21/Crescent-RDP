@@ -1,5 +1,5 @@
 ﻿#loginbox {
-    background: Transparent;
+    background: Transparent ;
 }
 
 .footerlinks {
@@ -27,4 +27,16 @@
 #check {
     position: fixed;
     top: 20%;
+}
+
+label {
+    color: #FFFFFF;
+}
+
+h3 {
+    color: #FFFFFF;
+}
+
+h4 {
+    color: #FEFCFF;
 }
