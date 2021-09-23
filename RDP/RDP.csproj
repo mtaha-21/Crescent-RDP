@@ -67,11 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminlogin.aspx" />
-    <Content Include="App_Data\RDP_Database.mdf" />
-    <Content Include="App_Data\RDP_Database_log.ldf">
-      <DependentUpon>RDP_Database.mdf</DependentUpon>
-    </Content>
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
@@ -1772,20 +1767,12 @@
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\sign-up.png" />
     <Content Include="imgs\writer.png" />
-    <Content Include="userlogin.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
     <Content Include="Web.config" />
     <Content Include="mailmerge.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminlogin.aspx.cs">
-      <DependentUpon>adminlogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminlogin.aspx.designer.cs">
-      <DependentUpon>adminlogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1800,13 +1787,6 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
-    </Compile>
-    <Compile Include="userlogin.aspx.cs">
-      <DependentUpon>userlogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="userlogin.aspx.designer.cs">
-      <DependentUpon>userlogin.aspx</DependentUpon>
     </Compile>
     <Compile Include="userprofile.aspx.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>

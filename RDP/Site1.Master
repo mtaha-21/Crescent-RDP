@@ -84,7 +84,7 @@
 
          <!-- Footer -->
         <footer>
-            <div id="footer2" class="container-fluid">
+            <div id="footer1" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                         <p style="color:whitesmoke">&copy Copyrights 2021-All Rights Reserved | <a class="footerlinks" href="https://crescent.education/" target="_blank"> Crescent University</a></p>
