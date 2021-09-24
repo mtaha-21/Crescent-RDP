@@ -1,8 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="application.aspx.cs" Inherits="RDP.application" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="guest.aspx.cs" Inherits="RDP.guest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <div class="container">
+        <div class="container">
       <div class="row">
          <div class="col-md-8 mx-auto">
             <div class="card">
@@ -151,7 +151,7 @@
                         
                   <center>     
                         <div class="form-group">
-                           <asp:Button Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" OnClick="Button1_Click" />
+                           <asp:Button Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" OnClick="app_submit" />
                         </div>
                         </center>
                      </div>

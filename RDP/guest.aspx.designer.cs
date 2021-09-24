@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-
 namespace RDP
 {
 
 
-    public partial class application
+    public partial class guest
     {
 
         /// <summary>
@@ -42,11 +40,6 @@ namespace RDP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
-
-        internal void Show()
-        {
-            throw new NotImplementedException();
-        }
 
         /// <summary>
         /// TextBox4 control.

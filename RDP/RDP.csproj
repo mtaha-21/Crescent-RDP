@@ -85,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminpage.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
@@ -1738,6 +1739,7 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="guest.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b1.jpg" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b2.jpg" />
@@ -1787,18 +1789,30 @@
     <Content Include="imgs\sign-up.png" />
     <Content Include="imgs\writer.png" />
     <Content Include="userprofile.aspx" />
-    <Content Include="application.aspx" />
     <Content Include="Web.config" />
     <Content Include="mailmerge.aspx" />
-    <Content Include="adminpage.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminpage.aspx.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpage.aspx.designer.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="deanpage.aspx.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="deanpage.aspx.designer.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guest.aspx.cs">
+      <DependentUpon>guest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest.aspx.designer.cs">
+      <DependentUpon>guest.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
@@ -1822,26 +1836,12 @@
     <Compile Include="userprofile.aspx.designer.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="application.aspx.cs">
-      <DependentUpon>application.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="application.aspx.designer.cs">
-      <DependentUpon>application.aspx</DependentUpon>
-    </Compile>
     <Compile Include="mailmerge.aspx.cs">
       <DependentUpon>mailmerge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="mailmerge.aspx.designer.cs">
       <DependentUpon>mailmerge.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="adminpage.aspx.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="adminpage.aspx.designer.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

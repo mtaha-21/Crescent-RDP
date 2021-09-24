@@ -42,7 +42,7 @@
                         </div>
                          <center>
                         <div class="form-group">
-                           <asp:Button Style="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Btnlogin_click" runat="server" Text="Login" Width="200px" OnClick="Button20" />
+                           <asp:Button Style="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="btnlogin" runat="server" Text="Login" Width="200px" OnClick="Button20" />
                         </div>
                              </center>
                      </div>
