@@ -58,9 +58,5 @@ namespace RDP
             }
         }
 
-        private void Hide()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
