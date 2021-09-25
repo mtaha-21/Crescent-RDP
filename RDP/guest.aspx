@@ -128,24 +128,7 @@
                      </div>
                             </center>
                   </div>
-                   <div class="row">
-                     <div class="col-md-6">
-                         <label>User Id</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User Id"></asp:TextBox>
-                        </div>
-                     </div>
-                   <div class="col-md-6">
-                        <label>Password</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                       
-                            </div>
-                     </div>
-                  </div>
-
-
-
+                   
                   <div class="row">
                      <div class="col">
                         
@@ -158,7 +141,6 @@
                   </div>
                </div>
             </div>
-            <a href="homepage.aspx"><< Back to Home</a><br><br>
          </div>
       </div>
    </div>
