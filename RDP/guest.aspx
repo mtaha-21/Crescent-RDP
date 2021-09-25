@@ -121,20 +121,12 @@
                      </div>
                   </div>
                    
-                    <div class="row">
-                        <center>
-                     <div class="col">
-                       <span class="badge rounded-pill bg-info text-dark">Login Credentials</span>
-                     </div>
-                            </center>
-                  </div>
-                   
                   <div class="row">
                      <div class="col">
                         
                   <center>     
                         <div class="form-group">
-                           <asp:Button Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" OnClick="app_submit" />
+                           <asp:Button Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="SUBMIT" Width="200px" OnClick="app_submit" />
                         </div>
                         </center>
                      </div>
