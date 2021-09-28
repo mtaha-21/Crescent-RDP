@@ -10,7 +10,7 @@
 
 namespace RDP
 {
-    public partial class WebForm1
+    public partial class deanpage
     {
     }
 }

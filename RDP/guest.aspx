@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="usersignup.aspx.cs" Inherits="RDP.usersignup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="guest.aspx.cs" Inherits="RDP.guest" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
-    <div class="container">
+        <div class="container">
       <div class="row">
          <div class="col-md-8 mx-auto">
             <div class="card">
@@ -11,7 +10,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <img width="100px" src="imgs/generaluser.png"/>
+                           <img width="100" src="imgs/generaluser.png"/>
                         </center>
                      </div>
                   </div>
@@ -42,8 +41,6 @@
                             </div>
                      </div>
                   </div>
-
-
                    <div class="row">
                      <div class="col-md-6">
                          <label>Contact No</label>
@@ -124,44 +121,18 @@
                      </div>
                   </div>
                    
-                    <div class="row">
-                        <center>
-                     <div class="col">
-                       <span class="badge rounded-pill bg-info text-dark">Login Credentials</span>
-                     </div>
-                            </center>
-                  </div>
-                   <div class="row">
-                     <div class="col-md-6">
-                         <label>User Id</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox8" runat="server" placeholder="User Id"></asp:TextBox>
-                        </div>
-                     </div>
-                   <div class="col-md-6">
-                        <label>Password</label>
-                        <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox9" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                       
-                            </div>
-                     </div>
-                  </div>
-
-
-
                   <div class="row">
                      <div class="col">
                         
                   <center>     
                         <div class="form-group">
-                           <asp:Button Border Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" />
+                           <asp:Button Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="SUBMIT" Width="200px" OnClick="app_submit" />
                         </div>
                         </center>
                      </div>
                   </div>
                </div>
             </div>
-            <a href="homepage.aspx"><< Back to Home</a><br><br>
          </div>
       </div>
    </div>

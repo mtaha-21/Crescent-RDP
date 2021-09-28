@@ -7,9 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace RDP
 {
-    public partial class adminlogin : System.Web.UI.Page
+    public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnSendMail_Click(object sender, EventArgs e)
         {
 
         }

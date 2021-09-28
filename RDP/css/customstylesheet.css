@@ -1,17 +1,17 @@
-﻿.footerlinks {
+﻿#loginbox {
+    background: Transparent ;
+}
+
+.footerlinks {
     color: #2279EA;
     text-decoration: none !important;
 }
 
-    .footerlinks:hover {
+.footerlinks:hover {
         color: #ffd800;
     }
 
-#footer1 {
-    background: #a42525;
-}
-
-#footer2 {
+#mainfooter {
     background: #1b335c;
 }
 
@@ -24,11 +24,19 @@
     height: auto;
 }
 
-svg {
-    width: 70px;
-    height: 70px;
+#check {
+    position: fixed;
+    top: 20%;
 }
 
-    svg:hover {
-        fill: navy  ;
-    }
+label {
+    color: #FFFFFF;
+}
+
+h3 {
+    color: #FFFFFF;
+}
+
+h4 {
+    color: #FEFCFF;
+}

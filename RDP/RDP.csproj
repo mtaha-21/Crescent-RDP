@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -60,6 +62,22 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.AvalonDock, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Aero, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Aero.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.Metro, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.AvalonDock.Themes.VS2010, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.AvalonDock.Themes.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit, Version=4.1.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Extended.Wpf.Toolkit.4.1.0\lib\net40\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
@@ -67,12 +85,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminlogin.aspx" />
+    <Content Include="adminpage.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
+    <Content Include="deanpage.aspx" />
     <Content Include="fontawesome\attribution.js" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1720,66 +1739,38 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
+    <Content Include="guest.aspx" />
     <Content Include="homepage.aspx" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b1.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b2.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b3.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b4.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b5.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\adminuser.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\book-online.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\books.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\books1.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\defaulters-list.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\digital-data.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\digital-inventory.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\generaluser.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\home-bg.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\in-homepage-banner.jpg" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\library.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\publisher.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\search-online.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\sign-up.png" />
-    <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\imgs\writer.png" />
-    <Content Include="imgs\appform.png" />
-    <Content Include="imgs\approve.png" />
     <Content Include="imgs\CR_4.png" />
-    <Content Include="imgs\CR_1.png" />
-    <Content Include="imgs\CR_2.png" />
-    <Content Include="imgs\CR_3.png" />
-    <Content Include="imgs\adminuser.png" />
-    <Content Include="imgs\book-online.png" />
-    <Content Include="imgs\books.png" />
-    <Content Include="imgs\books1.png" />
-    <Content Include="imgs\defaulters-list.png" />
-    <Content Include="imgs\digital-data.png" />
-    <Content Include="imgs\digital-inventory.png" />
     <Content Include="imgs\Frontpage.png" />
     <Content Include="imgs\generaluser.png" />
-    <Content Include="imgs\home-bg.jpg" />
-    <Content Include="imgs\in-homepage-banner.jpg" />
-    <Content Include="imgs\library.png" />
+    <Content Include="imgs\loginpage.jpg" />
     <Content Include="imgs\logo.png" />
-    <Content Include="imgs\Rect.JPG" />
-    <Content Include="imgs\Register.png" />
-    <Content Include="imgs\researchglass.png" />
-    <Content Include="imgs\publisher.png" />
-    <Content Include="imgs\search-online.png" />
-    <Content Include="imgs\sign-up.png" />
-    <Content Include="imgs\writer.png" />
-    <Content Include="userlogin.aspx" />
     <Content Include="userprofile.aspx" />
-    <Content Include="usersignup.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="mailmerge.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminlogin.aspx.cs">
-      <DependentUpon>adminlogin.aspx</DependentUpon>
+    <Compile Include="adminpage.aspx.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminlogin.aspx.designer.cs">
-      <DependentUpon>adminlogin.aspx</DependentUpon>
+    <Compile Include="adminpage.aspx.designer.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="deanpage.aspx.cs">
+      <DependentUpon>deanpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="deanpage.aspx.designer.cs">
+      <DependentUpon>deanpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="guest.aspx.cs">
+      <DependentUpon>guest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="guest.aspx.designer.cs">
+      <DependentUpon>guest.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
@@ -1796,13 +1787,6 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="userlogin.aspx.cs">
-      <DependentUpon>userlogin.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="userlogin.aspx.designer.cs">
-      <DependentUpon>userlogin.aspx</DependentUpon>
-    </Compile>
     <Compile Include="userprofile.aspx.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1810,19 +1794,12 @@
     <Compile Include="userprofile.aspx.designer.cs">
       <DependentUpon>userprofile.aspx</DependentUpon>
     </Compile>
-    <Compile Include="usersignup.aspx.cs">
-      <DependentUpon>usersignup.aspx</DependentUpon>
+    <Compile Include="mailmerge.aspx.cs">
+      <DependentUpon>mailmerge.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="usersignup.aspx.designer.cs">
-      <DependentUpon>usersignup.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="mailmerge.aspx.designer.cs">
+      <DependentUpon>mailmerge.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1889,9 +1866,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="js\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
