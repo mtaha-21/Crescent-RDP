@@ -167,7 +167,7 @@
                         
                   <center>     
                         <div class="form-group">
-                           <asp:Button Border Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" />
+                           <asp:Button Border Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px"/>
                         </div>
                         </center>
                      </div>

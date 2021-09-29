@@ -34,13 +34,13 @@ svg {
     }
 
 label {
-    color: #FFFFFF;
+    color: #000000;
 }
-h3{
-    color : #FFFFFF;
+h3 {
+    color: #000000;
 }
 h4 {
-    color: #FEFCFF;
+    color: #000000;
 }
 body {
     background-image: url('../imgs/c8e0e0.png');
@@ -50,24 +50,33 @@ body {
 #userloginbox {
     background:;
 }
-#userlogin{
-    background:Transparent;
+#userlogin {
+    background:;
 }
 #adminloginbox {
     background:;
 }
 #adminlogin {
-    background: Transparent;
+    background: ;
 }
 #usersignupbox {
     background:;
 }
 #usersignup {
-    background: Transparent;
+    background: ;
 }
-#Appbox {
-    background:;
+input[type="radio"] {
+    margin: 0 5px
+            0 5px;
 }
-#App{
-    background:Transparent;
+input[type=file]::file-selector-button {
+    border: 2px solid #6c5ce7;
+    padding: .2em .4em;
+    border-radius: .2em;
+    background-color: #a29bfe;
+    transition: 1s;
+}
+input[type=file]::file-selector-button:hover{
+        background-color: #81ecec;
+        border: 2px solid #00cec9;
 }

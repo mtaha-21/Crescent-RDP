@@ -2,454 +2,105 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <button type="submit">Submit form</button>
+    <table id="example" class="display" style="width:100%">
+        <thead>
+            <tr>
+               
+                <th>degree</th>
+                <th>discipline</th>
+                <th>part-time/full-time</th>
+                <th>University/College</th>
+                <th>Month and year of passing</th>
+                <th>CGPA</th>
+                <th>Class</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
 
-    <style>
-        .backimg {
-    background-image: url('../imgs/1519801481452.png');
-    background-repeat : no-repeat;
-     background-size : cover;
-}
-    </style>
-    <div class="backimg">
-    <div class="container">
-      <div class="row">
-         <div class="col-md-8 mx-auto">
-            <div id="App" class="card">
-               <div class="card-body">
-                  <div class="row">
-                     <div class="col">
-                        <center>
-                            <img width=100px src="imgs/generaluser.png" />
-                        </center>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
-                        <center>
-                           <h4>Member Sign Up</h4>
-                        </center>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                   <div class="row">
-                     <div class="col-md-6">
-                           <b>
-                        <label>Full Name</label> 
-                       </b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Full Name"></asp:TextBox>
-                        </div>
-                     </div>
-                   <div class="col-md-6">
-                        <b><label>Date Of Birth</label></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Date"></asp:TextBox>
-                       
-                            </div>
-                     </div>
-                  </div>
+    
+            <tr>
+                <td>UG</td>
+                <td><input type="text" id="row-1-degree" name="row-1-degree" value="   "></td>
 
+                <td><input type="text" id="row-1-part-time/full-time" name="row-1-part-time/full-time" value="    "></td>
+                    <td><input type="text" id="row-2-position" name="row-2-position" value="Accountant"></td>
+               
+            </tr>
+            <tr>
+                <td>PG</td>
+                <td><input type="text" id="row-2-age" name="row-2-age" value="63"></td>
+                <td><input type="text" id="row-2-position" name="row-2-position" value="Accountant"></td>
+                <td><select size="1" id="row-2-office" name="row-2-office">
+                    <option value="Edinburgh">
+                        Edinburgh
+                    </option>
+                    <option value="London">
+                        London
+                    </option>
+                    <option value="New York">
+                        New York
+                    </option>
+                    <option value="San Francisco">
+                        San Francisco
+                    </option>
+                    <option value="Tokyo" selected="selected">
+                        Tokyo
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>M. phil</td>
+                <td><input type="text" id="row-3-age" name="row-3-age" value="66"></td>
+                <td><input type="text" id="row-3-position" name="row-3-position" value="Junior Technical Author"></td>
+                <td><select size="1" id="row-3-office" name="row-3-office">
+                    <option value="Edinburgh">
+                        Edinburgh
+                    </option>
+                    <option value="London">
+                        London
+                    </option>
+                    <option value="New York">
+                        New York
+                    </option>
+                    <option value="San Francisco" selected="selected">
+                        San Francisco
+                    </option>
+                    <option value="Tokyo">
+                        Tokyo
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
+                <td>Others</td>
+                <td><input type="text" id="row-4-age" name="row-4-age" value="22"></td>
+                <td><input type="text" id="row-4-position" name="row-4-position" value="Senior Javascript Developer"></td>
+                <td><select size="1" id="row-4-office" name="row-4-office">
+                    <option value="Edinburgh" selected="selected">
+                        Edinburgh
+                    </option>
+                    <option value="London">
+                        London
+                    </option>
+                    <option value="New York">
+                        New York
+                    </option>
+                    <option value="San Francisco">
+                        San Francisco
+                    </option>
+                    <option value="Tokyo">
+                        Tokyo
+                    </option>
+                </select></td>
+            </tr>
+            <tr>
 
-                   <div class="row">
-                     <div class="col-md-4">
-                         <b><label>Gender</label></b>
-                        <div class="form-group">
-                            <form id="test">
-                            <input type="radio" name="gender" value="0">Male</input>
-                            <input type="radio" name="gender" value="1">Female</input>
-                            <input type="radio" name="gender" value="2">Others</input>
-                            </form>
-                        </div>
-                     </div>
-                   <div class="col-md-4">
-                        <b><label>Nationality</label></b>
-                        <div class="form-group">
-                            <form id="test">
-                            <input type="radio" name="National" value="0">Indian</input>
-                            <input type="radio" name="National" value="1">Foreign</input>
-                            </form>
-                          </div>
-                     </div>
-                       <div class="col-md-3">
-                        <b><label>If Foreign National</label></b>
-                        <div class="form-group">
-                            <select id="country" name="country">
-   <option value="Afganistan">Afghanistan</option>
-   <option value="Albania">Albania</option>
-   <option value="Algeria">Algeria</option>
-   <option value="American Samoa">American Samoa</option>
-   <option value="Andorra">Andorra</option>
-   <option value="Angola">Angola</option>
-   <option value="Anguilla">Anguilla</option>
-   <option value="Antigua & Barbuda">Antigua & Barbuda</option>
-   <option value="Argentina">Argentina</option>
-   <option value="Armenia">Armenia</option>
-   <option value="Aruba">Aruba</option>
-   <option value="Australia">Australia</option>
-   <option value="Austria">Austria</option>
-   <option value="Azerbaijan">Azerbaijan</option>
-   <option value="Bahamas">Bahamas</option>
-   <option value="Bahrain">Bahrain</option>
-   <option value="Bangladesh">Bangladesh</option>
-   <option value="Barbados">Barbados</option>
-   <option value="Belarus">Belarus</option>
-   <option value="Belgium">Belgium</option>
-   <option value="Belize">Belize</option>
-   <option value="Benin">Benin</option>
-   <option value="Bermuda">Bermuda</option>
-   <option value="Bhutan">Bhutan</option>
-   <option value="Bolivia">Bolivia</option>
-   <option value="Bonaire">Bonaire</option>
-   <option value="Bosnia & Herzegovina">Bosnia & Herzegovina</option>
-   <option value="Botswana">Botswana</option>
-   <option value="Brazil">Brazil</option>
-   <option value="British Indian Ocean Ter">British Indian Ocean Ter</option>
-   <option value="Brunei">Brunei</option>
-   <option value="Bulgaria">Bulgaria</option>
-   <option value="Burkina Faso">Burkina Faso</option>
-   <option value="Burundi">Burundi</option>
-   <option value="Cambodia">Cambodia</option>
-   <option value="Cameroon">Cameroon</option>
-   <option value="Canada">Canada</option>
-   <option value="Canary Islands">Canary Islands</option>
-   <option value="Cape Verde">Cape Verde</option>
-   <option value="Cayman Islands">Cayman Islands</option>
-   <option value="Central African Republic">Central African Republic</option>
-   <option value="Chad">Chad</option>
-   <option value="Channel Islands">Channel Islands</option>
-   <option value="Chile">Chile</option>
-   <option value="China">China</option>
-   <option value="Christmas Island">Christmas Island</option>
-   <option value="Cocos Island">Cocos Island</option>
-   <option value="Colombia">Colombia</option>
-   <option value="Comoros">Comoros</option>
-   <option value="Congo">Congo</option>
-   <option value="Cook Islands">Cook Islands</option>
-   <option value="Costa Rica">Costa Rica</option>
-   <option value="Cote DIvoire">Cote DIvoire</option>
-   <option value="Croatia">Croatia</option>
-   <option value="Cuba">Cuba</option>
-   <option value="Curaco">Curacao</option>
-   <option value="Cyprus">Cyprus</option>
-   <option value="Czech Republic">Czech Republic</option>
-   <option value="Denmark">Denmark</option>
-   <option value="Djibouti">Djibouti</option>
-   <option value="Dominica">Dominica</option>
-   <option value="Dominican Republic">Dominican Republic</option>
-   <option value="East Timor">East Timor</option>
-   <option value="Ecuador">Ecuador</option>
-   <option value="Egypt">Egypt</option>
-   <option value="El Salvador">El Salvador</option>
-   <option value="Equatorial Guinea">Equatorial Guinea</option>
-   <option value="Eritrea">Eritrea</option>
-   <option value="Estonia">Estonia</option>
-   <option value="Ethiopia">Ethiopia</option>
-   <option value="Falkland Islands">Falkland Islands</option>
-   <option value="Faroe Islands">Faroe Islands</option>
-   <option value="Fiji">Fiji</option>
-   <option value="Finland">Finland</option>
-   <option value="France">France</option>
-   <option value="French Guiana">French Guiana</option>
-   <option value="French Polynesia">French Polynesia</option>
-   <option value="French Southern Ter">French Southern Ter</option>
-   <option value="Gabon">Gabon</option>
-   <option value="Gambia">Gambia</option>
-   <option value="Georgia">Georgia</option>
-   <option value="Germany">Germany</option>
-   <option value="Ghana">Ghana</option>
-   <option value="Gibraltar">Gibraltar</option>
-   <option value="Great Britain">Great Britain</option>
-   <option value="Greece">Greece</option>
-   <option value="Greenland">Greenland</option>
-   <option value="Grenada">Grenada</option>
-   <option value="Guadeloupe">Guadeloupe</option>
-   <option value="Guam">Guam</option>
-   <option value="Guatemala">Guatemala</option>
-   <option value="Guinea">Guinea</option>
-   <option value="Guyana">Guyana</option>
-   <option value="Haiti">Haiti</option>
-   <option value="Hawaii">Hawaii</option>
-   <option value="Honduras">Honduras</option>
-   <option value="Hong Kong">Hong Kong</option>
-   <option value="Hungary">Hungary</option>
-   <option value="Iceland">Iceland</option>
-   <option value="Indonesia">Indonesia</option>
-   <option value="India">India</option>
-   <option value="Iran">Iran</option>
-   <option value="Iraq">Iraq</option>
-   <option value="Ireland">Ireland</option>
-   <option value="Isle of Man">Isle of Man</option>
-   <option value="Israel">Israel</option>
-   <option value="Italy">Italy</option>
-   <option value="Jamaica">Jamaica</option>
-   <option value="Japan">Japan</option>
-   <option value="Jordan">Jordan</option>
-   <option value="Kazakhstan">Kazakhstan</option>
-   <option value="Kenya">Kenya</option>
-   <option value="Kiribati">Kiribati</option>
-   <option value="Korea North">Korea North</option>
-   <option value="Korea Sout">Korea South</option>
-   <option value="Kuwait">Kuwait</option>
-   <option value="Kyrgyzstan">Kyrgyzstan</option>
-   <option value="Laos">Laos</option>
-   <option value="Latvia">Latvia</option>
-   <option value="Lebanon">Lebanon</option>
-   <option value="Lesotho">Lesotho</option>
-   <option value="Liberia">Liberia</option>
-   <option value="Libya">Libya</option>
-   <option value="Liechtenstein">Liechtenstein</option>
-   <option value="Lithuania">Lithuania</option>
-   <option value="Luxembourg">Luxembourg</option>
-   <option value="Macau">Macau</option>
-   <option value="Macedonia">Macedonia</option>
-   <option value="Madagascar">Madagascar</option>
-   <option value="Malaysia">Malaysia</option>
-   <option value="Malawi">Malawi</option>
-   <option value="Maldives">Maldives</option>
-   <option value="Mali">Mali</option>
-   <option value="Malta">Malta</option>
-   <option value="Marshall Islands">Marshall Islands</option>
-   <option value="Martinique">Martinique</option>
-   <option value="Mauritania">Mauritania</option>
-   <option value="Mauritius">Mauritius</option>
-   <option value="Mayotte">Mayotte</option>
-   <option value="Mexico">Mexico</option>
-   <option value="Midway Islands">Midway Islands</option>
-   <option value="Moldova">Moldova</option>
-   <option value="Monaco">Monaco</option>
-   <option value="Mongolia">Mongolia</option>
-   <option value="Montserrat">Montserrat</option>
-   <option value="Morocco">Morocco</option>
-   <option value="Mozambique">Mozambique</option>
-   <option value="Myanmar">Myanmar</option>
-   <option value="Nambia">Nambia</option>
-   <option value="Nauru">Nauru</option>
-   <option value="Nepal">Nepal</option>
-   <option value="Netherland Antilles">Netherland Antilles</option>
-   <option value="Netherlands">Netherlands (Holland, Europe)</option>
-   <option value="Nevis">Nevis</option>
-   <option value="New Caledonia">New Caledonia</option>
-   <option value="New Zealand">New Zealand</option>
-   <option value="Nicaragua">Nicaragua</option>
-   <option value="Niger">Niger</option>
-   <option value="Nigeria">Nigeria</option>
-   <option value="Niue">Niue</option>
-   <option value="Norfolk Island">Norfolk Island</option>
-   <option value="Norway">Norway</option>
-   <option value="Oman">Oman</option>
-   <option value="Pakistan">Pakistan</option>
-   <option value="Palau Island">Palau Island</option>
-   <option value="Palestine">Palestine</option>
-   <option value="Panama">Panama</option>
-   <option value="Papua New Guinea">Papua New Guinea</option>
-   <option value="Paraguay">Paraguay</option>
-   <option value="Peru">Peru</option>
-   <option value="Phillipines">Philippines</option>
-   <option value="Pitcairn Island">Pitcairn Island</option>
-   <option value="Poland">Poland</option>
-   <option value="Portugal">Portugal</option>
-   <option value="Puerto Rico">Puerto Rico</option>
-   <option value="Qatar">Qatar</option>
-   <option value="Republic of Montenegro">Republic of Montenegro</option>
-   <option value="Republic of Serbia">Republic of Serbia</option>
-   <option value="Reunion">Reunion</option>
-   <option value="Romania">Romania</option>
-   <option value="Russia">Russia</option>
-   <option value="Rwanda">Rwanda</option>
-   <option value="St Barthelemy">St Barthelemy</option>
-   <option value="St Eustatius">St Eustatius</option>
-   <option value="St Helena">St Helena</option>
-   <option value="St Kitts-Nevis">St Kitts-Nevis</option>
-   <option value="St Lucia">St Lucia</option>
-   <option value="St Maarten">St Maarten</option>
-   <option value="St Pierre & Miquelon">St Pierre & Miquelon</option>
-   <option value="St Vincent & Grenadines">St Vincent & Grenadines</option>
-   <option value="Saipan">Saipan</option>
-   <option value="Samoa">Samoa</option>
-   <option value="Samoa American">Samoa American</option>
-   <option value="San Marino">San Marino</option>
-   <option value="Sao Tome & Principe">Sao Tome & Principe</option>
-   <option value="Saudi Arabia">Saudi Arabia</option>
-   <option value="Senegal">Senegal</option>
-   <option value="Seychelles">Seychelles</option>
-   <option value="Sierra Leone">Sierra Leone</option>
-   <option value="Singapore">Singapore</option>
-   <option value="Slovakia">Slovakia</option>
-   <option value="Slovenia">Slovenia</option>
-   <option value="Solomon Islands">Solomon Islands</option>
-   <option value="Somalia">Somalia</option>
-   <option value="South Africa">South Africa</option>
-   <option value="Spain">Spain</option>
-   <option value="Sri Lanka">Sri Lanka</option>
-   <option value="Sudan">Sudan</option>
-   <option value="Suriname">Suriname</option>
-   <option value="Swaziland">Swaziland</option>
-   <option value="Sweden">Sweden</option>
-   <option value="Switzerland">Switzerland</option>
-   <option value="Syria">Syria</option>
-   <option value="Tahiti">Tahiti</option>
-   <option value="Taiwan">Taiwan</option>
-   <option value="Tajikistan">Tajikistan</option>
-   <option value="Tanzania">Tanzania</option>
-   <option value="Thailand">Thailand</option>
-   <option value="Togo">Togo</option>
-   <option value="Tokelau">Tokelau</option>
-   <option value="Tonga">Tonga</option>
-   <option value="Trinidad & Tobago">Trinidad & Tobago</option>
-   <option value="Tunisia">Tunisia</option>
-   <option value="Turkey">Turkey</option>
-   <option value="Turkmenistan">Turkmenistan</option>
-   <option value="Turks & Caicos Is">Turks & Caicos Is</option>
-   <option value="Tuvalu">Tuvalu</option>
-   <option value="Uganda">Uganda</option>
-   <option value="United Kingdom">United Kingdom</option>
-   <option value="Ukraine">Ukraine</option>
-   <option value="United Arab Erimates">United Arab Emirates</option>
-   <option value="United States of America">United States of America</option>
-   <option value="Uraguay">Uruguay</option>
-   <option value="Uzbekistan">Uzbekistan</option>
-   <option value="Vanuatu">Vanuatu</option>
-   <option value="Vatican City State">Vatican City State</option>
-   <option value="Venezuela">Venezuela</option>
-   <option value="Vietnam">Vietnam</option>
-   <option value="Virgin Islands (Brit)">Virgin Islands (Brit)</option>
-   <option value="Virgin Islands (USA)">Virgin Islands (USA)</option>
-   <option value="Wake Island">Wake Island</option>
-   <option value="Wallis & Futana Is">Wallis & Futana Is</option>
-   <option value="Yemen">Yemen</option>
-   <option value="Zaire">Zaire</option>
-   <option value="Zambia">Zambia</option>
-   <option value="Zimbabwe">Zimbabwe</option>
-</select>
-                           
-                       
-                            </div>
-                     </div>
-                  </div>
-                    <div class="row">
-                     <div class="col-md-4">
-                         <b><label>Passport</label></b>
-                        <div class="form-group">
-                            <asp:TextBox class="form-control" ID="TextBox3" runat="server" placeholder="passport number"></asp:TextBox>
-                        </div>
-                     </div>
-                   <div class="col-md-4">
-                       <b><label>Social Status</label></b>
-                       <div class="form-group">
-                           <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
-                              <asp:ListItem Text="Select" Value="select" />
-                              <asp:ListItem Text="ST" Value="ST" />
-                              <asp:ListItem Text="SC" Value="SC" />
-                              <asp:ListItem Text="BC" Value="BC" />
-                              <asp:ListItem Text="MBC" Value="MBC" />
-                              <asp:ListItem Text="OC" Value="OC" />
-                               <asp:ListItem Text="Others" Value="Others" />
-                              </asp:DropDownList>
-                            </div>
-                     </div>
-                       <div class="col-md-4">
-                        <b><label>Martial Status</label></b>
-                        <div class="form-group">
-                           <asp:DropDownList class="form-control" ID="DropDownList2" runat="server">
-                              <asp:ListItem Text="Select" Value="select" />
-                              <asp:ListItem Text="Married" Value="Married" />
-                              <asp:ListItem Text="Unmarried" Value="Unmarried" />
-                              <asp:ListItem Text="Divorced" Value="Divorced" />
-                               </asp:DropDownList>
-                            </div>
-                     </div>
-                  </div>
-                    <div class="row">
-                     <div class="col-md-4">
-                         <b><label>Telephone</label></b>
-                        <div class="form-group">
-                            <asp:TextBox class="form-control" ID="TextBox4" runat="server" placeholder="telephone" TextMode="Phone"></asp:TextBox>
-                        </div>
-                     </div>
-                   <div class="col-md-4">
-                       <b><label>Mobile Number</label></b>
-                       <div class="form-group">
-                           <asp:TextBox class="form-control" ID="TextBox5" runat="server" placeholder="Mob.no" TextMode="Phone"></asp:TextBox>
-                            </div>
-                     </div>
-                       <div class="col-md-4">
-                        <b><label>Email-ID</label></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Email ID" TextMode="Email"></asp:TextBox>
-                            </div>
-                     </div>
-                  </div>
-                   <div class="row">
-                     <div class="col">
-                         <b><label>Residential Address</label></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
-                        </div>
-                     </div>
-                  </div>
-                   <div class="row">
-                     <div class="col">
-                         <b><label>Office Address</label></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
-                        </div>
-                     </div>
-                  </div>
-                    <div class="row">
-                     <div class="col-md-4">
-                           <b>
-                        <label>Category</label> 
-                       </b>
-                        <div class="form-group">
-                            <div class="form-group">
-                            <form id="test">
-                            <input type="radio" name="Category" value="0">Full time</input>
-                            <input type="radio" name="category" value="1">Part time</input>
-                            </form>
-                        </div>
-                        </div>
-                     </div>
-                   <div class="col-md-4">
-                        <b><label>Type of Registration</label></b>
-                        <div class="form-group">
-                           <div class="form-group">
-                            <form id="test">
-                            <input type="radio" name="Registration" value="0" asp:Button class="btn btn-secondary" Width="100px">Sponsored</input>
-                            <input type="radio" name="Registration" value="1" asp:Button class="btn btn-secondary" Width="100px">Not Sponsored</input>
-                            </form>
-                        </div>
-                       </div>
-                     </div>
-                  </div>
-                    
-                   
+ </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-
-
-                  <div class="row">
-                     <div class="col">
-                        
-                  <center>     
-                        <div class="form-group">
-                           <asp:Button Border Style ="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Sign Up" Width="200px" />
-                        </div>
-                        </center>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <a href="homepage.aspx"style="color: white" asp:Button class="btn btn-secondary" Width="100px"><< Back to Home</a><br><br>
-         </div>
-      </div>
-   </div>
-  </div>
-
-
-
-
-
-</asp:Content>
+    </asp:Content>
+    

@@ -5,6 +5,7 @@
 <html>
 <head runat="server">
     <title></title>
+ <%--javasceipt--%>
     <%--bootstrap css--%>
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <%--datatables css--%>
