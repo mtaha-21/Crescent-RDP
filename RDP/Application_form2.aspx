@@ -10,7 +10,7 @@
                    <div class="row">
                      <div class="col">
                         <center>
-                            <img width="100px" src="imgs/1389375.png"/>
+                            <img width="80px" src="imgs/1389375.png"/>
                         </center>
                      </div>
                   </div>
