@@ -4,12 +4,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         .backimg {
-    background-image: url(imgs/loginpage.jpg);                                 
+    background-image: url('../imgs/32.png');                               
     width: auto;
     height: 559px;
     background-repeat: no-repeat;
     background-color: white;
     background-size: cover;
+}
 }
     </style>
     <div class="backimg">
@@ -25,24 +26,24 @@
                         </center>
                      </div>
                   </div>
-                  <div class="row">
+                   <div class="row">
                      <div class="col">
                         <hr>
                      </div>
                   </div>
                   <div class="row">
                      <div class="col">
-                        <label>Enter User Name</label>
+                        <b><label>Enter User Name</label></b>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="User Name"></asp:TextBox>
                         </div>
-                        <label>Enter Password</label>
+                        <b><label>Enter Password</label></b>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
                         </div>
                          <center>
                         <div class="form-group">
-                           <asp:Button Style="margin-top:20px" class="btn btn-success btn-block btn-lg" ID="btnlogin" runat="server" Text="Login" Width="200px" OnClick="Button20" />
+                           <asp:Button Style="margin-top:20px" class="btn btn-secondary btn-block btn-lg" ID="btnlogin" runat="server" Text="Login" Width="200px" OnClick="Button20" />
                         </div>
                              </center>
                      </div>

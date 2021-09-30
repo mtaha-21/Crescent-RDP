@@ -1743,6 +1743,7 @@
     <Content Include="guest.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\1389375.png" />
+    <Content Include="imgs\32.png" />
     <Content Include="imgs\c8e0e0.png" />
     <Content Include="imgs\CR_4.png" />
     <Content Include="imgs\Frontpage.png" />
