@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminpage.aspx" />
+    <Content Include="app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
@@ -1741,6 +1742,8 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="guest.aspx" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\1389375.png" />
+    <Content Include="imgs\c8e0e0.png" />
     <Content Include="imgs\CR_4.png" />
     <Content Include="imgs\Frontpage.png" />
     <Content Include="imgs\generaluser.png" />
@@ -1757,6 +1760,13 @@
     </Compile>
     <Compile Include="adminpage.aspx.designer.cs">
       <DependentUpon>adminpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app_form.aspx.cs">
+      <DependentUpon>app_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app_form.aspx.designer.cs">
+      <DependentUpon>app_form.aspx</DependentUpon>
     </Compile>
     <Compile Include="deanpage.aspx.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
