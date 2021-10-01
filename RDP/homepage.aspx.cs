@@ -17,11 +17,11 @@ namespace RDP
 
         public static string mycon = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
 
-        public void Button20 (object sender, EventArgs e)
+        protected void Button20 (object sender, EventArgs e)
         {
             if (txtun.Text == "" || txtpw.Text == "")
             {
-                System.Windows.MessageBox.Show("Enter User Name and Password");
+                Response.Write("<script>alert('Enter User Name and Password');</script>");
                 return;
             }
             try
@@ -33,7 +33,8 @@ namespace RDP
                 if (dt.Rows.Count==1)
                 {
                     string ut = dt.Rows[0][0].ToString();
-                    if (ut=="ADMIN")
+                    Session["role"] = ut;
+                    if (ut == "ADMIN")
                     {
                         Response.Redirect("adminpage.aspx");
                     }
@@ -49,13 +50,13 @@ namespace RDP
                 }
                 else
                 {
-                    System.Windows.MessageBox.Show("Check User name and password");
+                    Response.Write("<script>alert('Check User name and password');</script>");
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-            }
+                }
         }
 
     }
