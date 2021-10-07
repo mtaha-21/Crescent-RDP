@@ -1,5 +1,5 @@
 ﻿#loginbox {
-    background:Transparent ;
+    background: ;
 }
 
 .footerlinks {
@@ -43,6 +43,7 @@ h4 {
 
 input[type="radio"] {
     margin: 0 5px 0 5px;
+    background-image: url('../imgs/WhatsApp Image 2021-10-07 at 11.35.52 PM.png');
 }
 
 input[type=file]::file-selector-button {

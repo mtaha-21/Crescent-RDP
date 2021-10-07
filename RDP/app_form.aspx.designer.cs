@@ -609,6 +609,15 @@ namespace RDP
         protected global::System.Web.UI.WebControls.TextBox TextBox38;
 
         /// <summary>
+        /// DropDownList28 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList28;
+
+        /// <summary>
         /// TextBox39 control.
         /// </summary>
         /// <remarks>

@@ -10,10 +10,10 @@
                <div class="card-body">
                    <div class="row">
                      <div class="col">
-                        <center>
-                            <img width="80px" src="imgs/1389375.png"/>
-                        </center>
-                     </div>
+                         <center>
+                             <img width="80px" src="imgs/1389375.png"/>
+                         </center>
+                            </div>
                   </div>
                   <div class="row">
                      <div class="col">
@@ -31,7 +31,7 @@
                      <div class="col-md-6">
                         <b><label>Full Name<span class="required">*</span></label></b>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Enter your full name"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Enter your full name" required></asp:TextBox>
                         </div>
                      </div>
                    <div class="col-md-6">
@@ -1289,12 +1289,13 @@
                         <div class="col-md-8">
                         <b><label>Mode of Employment</label></b>
                         <div class="form-group">
-                           <form id="test">
-                            <input type="radio" name="worked" value="0" class="btn btn-secondary" Width="100px">Regular</input>
-                            <input type="radio" name="worked" value="1" class="btn btn-secondary" Width="100px">contract</input>
-                            <input type="radio" name="worked" value="2" class="btn btn-secondary" Width="100px">Temporary</input>
-                            <input type="radio" name="worked" value="3" class="btn btn-secondary" Width="100px">Part Time</input>
-                            </form>
+                           <asp:DropDownList class="form-control" ID="DropDownList28" runat="server">
+                              <asp:ListItem Text="Select" Value="select" />
+                              <asp:ListItem Text="Regular" Value="Regular" />
+                              <asp:ListItem Text="Contract" Value="Contract" />
+                              <asp:ListItem Text="Temporay" Value="Temporay" />
+                              <asp:ListItem Text="Part Time" Value="Part Time" />
+                              </asp:DropDownList>
                        </div>
                      </div>
                         <div class="col-md-8">

@@ -1750,6 +1750,8 @@
     <Content Include="imgs\generaluser.png" />
     <Content Include="imgs\loginpage.jpg" />
     <Content Include="imgs\logo.png" />
+    <Content Include="imgs\WhatsApp Image 2021-10-07 at 11.35.52 PM.jpeg" />
+    <Content Include="imgs\WhatsApp Image 2021-10-07 at 11.35.52 PM.png" />
     <Content Include="userprofile.aspx" />
     <Content Include="Web.config" />
     <Content Include="mailmerge.aspx" />
