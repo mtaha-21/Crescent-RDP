@@ -11,12 +11,11 @@
     background-color: white;
     background-size: cover;
 }
-}
     </style>
     <div class="backimg">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-         <div  id="check" class="col-md-4 offset-7">
+         <div class="col-md-5 mx-auto">
             <div id="loginbox"  class="card">
                <div class="card-body">
                   <div class="row">
@@ -24,7 +23,7 @@
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="User Name" required></asp:TextBox>
                         </div>
-                        <br /> 
+                        <br />
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" TextMode="Password" required></asp:TextBox>
                         </div>

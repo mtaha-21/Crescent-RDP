@@ -64,3 +64,17 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: -10000px;
+    overflow: hidden;
+}
+
+.control, fieldset {
+    margin: 6px 0;
+}
+.required {
+    color: red;
+}
