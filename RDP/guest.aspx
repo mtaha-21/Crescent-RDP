@@ -17,7 +17,7 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <h4>Member Sign Up</h4>
+                           <h5>Member Sign Up</h5>
                         </center>
                      </div>
                   </div>

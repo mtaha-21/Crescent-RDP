@@ -13,24 +13,19 @@
                      </div>
                   </div>
                   <div class="row">
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT * FROM [application]"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [full_name], [user_id] FROM [application] WHERE status = 0"></asp:SqlDataSource>
                      <div class="col">
                         <hr>
                      </div>
                   </div>
                   <div class="row">
                      <div class="col">
-                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1">
+                         <asp:GridView class="table table-striped table-bordered" ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                              <Columns>
+                                 <asp:BoundField DataField="user_id" HeaderText="Roll no" SortExpression="user_id"></asp:BoundField>
                                  <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name"></asp:BoundField>
-                                 <asp:BoundField DataField="dob" HeaderText="DOB" SortExpression="dob"></asp:BoundField>
-                                 <asp:BoundField DataField="contact_no" HeaderText="Contact no" SortExpression="contact_no"></asp:BoundField>
-                                 <asp:BoundField DataField="email" HeaderText="Email" SortExpression="email"></asp:BoundField>
-                                 <asp:BoundField DataField="state" HeaderText="State" SortExpression="state"></asp:BoundField>
-                                 <asp:BoundField DataField="city" HeaderText="City" SortExpression="city"></asp:BoundField>
-                                 <asp:BoundField DataField="pincode" HeaderText="Pincode" SortExpression="pincode"></asp:BoundField>
-                                 <asp:BoundField DataField="full_address" HeaderText="Address" SortExpression="full_address"></asp:BoundField>
-                                 <asp:ButtonField ButtonType="button" Text="SUBMIT" CommandName="Details" />
+                                 <asp:ButtonField ButtonType="button" Text="VIEW" CommandName="Details"/>
+                                 <asp:CommandField ShowSelectButton="True" />
                              </Columns>
                          </asp:GridView>
                      </div>

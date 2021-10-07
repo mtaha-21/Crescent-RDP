@@ -41,7 +41,7 @@
                             <asp:LinkButton class="nav-link dropdown-toggle" runat="server" ID="droplist" Visible="False" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu </asp:LinkButton>
                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="newlist.aspx">New Scholar list</a></li>
-                                <li><a class="dropdown-item" href="#">Updated Scholar list</a></li>
+                                <li><a class="dropdown-item" href="updatelist.aspx">Updated Scholar list</a></li>
                            </ul>
                         </li>
                         
