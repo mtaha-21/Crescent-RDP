@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.IO;
 
 namespace RDP
 {
@@ -15,7 +16,8 @@ namespace RDP
         protected void Page_Load(object sender, EventArgs e)
         {
             String mycon = "Data Source=SR99\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
-            String myquery = "Select * from application where user_id=" + Request.QueryString["user_id"];
+            String myquery = "Select * from personal_details where user_id=" + Request.QueryString["user_id"];
+
             SqlConnection con = new SqlConnection(mycon);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = myquery;
@@ -27,13 +29,20 @@ namespace RDP
             if (ds.Tables[0].Rows.Count > 0)
             {
                 TextBox1.Text = ds.Tables[0].Rows[0]["full_name"].ToString();
-                TextBox2.Text = ds.Tables[0].Rows[0]["dob"].ToString();
-                TextBox3.Text = ds.Tables[0].Rows[0]["contact_no"].ToString();
-                TextBox4.Text = ds.Tables[0].Rows[0]["email"].ToString();
-                TextBox5.Text = ds.Tables[0].Rows[0]["state"].ToString();
-                TextBox6.Text = ds.Tables[0].Rows[0]["city"].ToString();
-                TextBox7.Text = ds.Tables[0].Rows[0]["pincode"].ToString();
-                TextBox8.Text = ds.Tables[0].Rows[0]["full_address"].ToString();
+                TextBox2.Text = ds.Tables[0].Rows[0]["date_of_birth"].ToString();
+                TextBox3.Text = ds.Tables[0].Rows[0]["age"].ToString();
+                TextBox4.Text = ds.Tables[0].Rows[0]["gender"].ToString();
+                TextBox5.Text = ds.Tables[0].Rows[0]["nationality"].ToString();
+                TextBox6.Text = ds.Tables[0].Rows[0]["if_foreign_country"].ToString();
+                TextBox7.Text = ds.Tables[0].Rows[0]["passport"].ToString();
+                TextBox8.Text = ds.Tables[0].Rows[0]["social_status"].ToString();
+                TextBox9.Text = ds.Tables[0].Rows[0]["marital_status"].ToString();
+                TextBox10.Text = ds.Tables[0].Rows[0]["telephone"].ToString();
+                TextBox11.Text = ds.Tables[0].Rows[0]["mobile_number"].ToString();
+                TextBox12.Text = ds.Tables[0].Rows[0]["email_id"].ToString();
+                TextBox13.Text = ds.Tables[0].Rows[0]["residential_address"].ToString();
+                TextBox14.Text = ds.Tables[0].Rows[0]["office_address"].ToString();
+                TextBox15.Text = ds.Tables[0].Rows[0]["address_for_communication"].ToString();
 
             }
             con.Close();
@@ -46,7 +55,7 @@ namespace RDP
             {
 
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("update application set status = 1 where user_id=" + Request.QueryString["user_id"], conn);
+                SqlCommand cmd2 = new SqlCommand("update personal_details set status = 1 where user_id=" + Request.QueryString["user_id"], conn);
                 SqlDataReader rd2 = cmd2.ExecuteReader();
                 Response.Write("<script>alert('Validated Successfully');window.location='newlist.aspx';</script>");   
                 conn.Close();

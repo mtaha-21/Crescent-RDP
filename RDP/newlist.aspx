@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="newlist.aspx.cs" Inherits="RDP.newlist" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="newlist.aspx.cs" Inherits="RDP.newlist" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -13,7 +13,7 @@
                      </div>
                   </div>
                   <div class="row">
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [full_name], [user_id] FROM [application] WHERE status = 0"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [full_name], [user_id] FROM [personal_details] WHERE status = 0"></asp:SqlDataSource>
                      <div class="col">
                         <hr>
                      </div>
@@ -24,8 +24,7 @@
                              <Columns>
                                  <asp:BoundField DataField="user_id" HeaderText="Roll no" SortExpression="user_id"></asp:BoundField>
                                  <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name"></asp:BoundField>
-                                 <asp:ButtonField ButtonType="button" Text="VIEW" CommandName="Details"/>
-                                 <asp:CommandField ShowSelectButton="True" />
+                                 <asp:CommandField ShowSelectButton="True" SelectText="VIEW" ButtonType="button"></asp:CommandField>
                              </Columns>
                          </asp:GridView>
                      </div>

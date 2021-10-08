@@ -13,5 +13,11 @@ namespace RDP
         {
 
         }
+
+        protected void GridView2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string user_id = GridView2.SelectedRow.Cells[0].Text;
+            Response.Redirect("rrn_gen.aspx?user_id=" + user_id);
+        }
     }
 }

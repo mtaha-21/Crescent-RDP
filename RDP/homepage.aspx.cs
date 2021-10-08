@@ -44,7 +44,7 @@ namespace RDP
                     }
                     else if (ut == "GUEST")
                     {
-                        Response.Redirect("guest.aspx");
+                        Response.Redirect("app_form.aspx");
                     }
 
                 }

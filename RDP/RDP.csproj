@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminpage.aspx" />
+    <Content Include="app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
@@ -1760,6 +1761,13 @@
     <Compile Include="adminpage.aspx.designer.cs">
       <DependentUpon>adminpage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="app_form.aspx.cs">
+      <DependentUpon>app_form.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app_form.aspx.designer.cs">
+      <DependentUpon>app_form.aspx</DependentUpon>
+    </Compile>
     <Compile Include="deanpage.aspx.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1882,7 +1890,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="feeres\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -41,7 +41,7 @@ namespace RDP
                 cmd.Parameters.AddWithValue("@full_address", TextBox5.Text.Trim());
                 cmd.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Application submitted successfully');</script>");
+                Response.Write("<script>alert('Application submitted successfully'); window.location='homepage.aspx';</script>");
             }
             catch (Exception ex)
             {
