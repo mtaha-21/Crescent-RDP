@@ -1752,6 +1752,10 @@
     <Content Include="imgs\logo.png" />
     <Content Include="newlist.aspx" />
     <Content Include="rrn_gen.aspx" />
+    <Content Include="SQL Queries\Tables\Academic Details.sql" />
+    <Content Include="SQL Queries\Tables\AdminRole SQL.sql" />
+    <Content Include="SQL Queries\Tables\Personal Details.sql" />
+    <Content Include="SQL Queries\RDP DB creation Query.sql" />
     <Content Include="updatelist.aspx" />
     <Content Include="validate.aspx" />
     <Content Include="Web.config" />
