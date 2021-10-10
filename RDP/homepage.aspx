@@ -15,7 +15,7 @@
     <div class="backimg">
     <div class="container">
       <div class="row">
-         <div  id="check" class="col-md-4 offset-7">
+         <div id="check" class="col-md-4 offset-7">
             <div id="loginbox"  class="card">
                <div class="card-body">
                   <div class="row">

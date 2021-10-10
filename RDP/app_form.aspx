@@ -3,9 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-     <div class="container-fluid"/>
-      <div class="row">
-         <div class="col-md-8 mx-auto">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
             <div class="card">
                <div class="card-body">
                   <div class="row">
@@ -20,33 +20,29 @@
                         <hr>
                      </div>
                   </div>
-                   <div class="row">
-                     <div class="col-md-6">
-                        <b><label1>Full Name</label1></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Enter your full name"></asp:TextBox>
-                        </div>
-                     </div>
-                   <div class="col-md-6">
-                        <b><label1>Date Of Birth</label1></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Date"></asp:TextBox>
-                       
-                            </div>
-                     </div>
-                       <div class="col-md-8">
-                        <b><label1>Age</label1></b>
-                        <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox14" runat="server" placeholder="Enter your age" TextMode="Number"></asp:TextBox>
-                       
-                            </div>
-                     </div>
+
 
                    <div class="row">
-                     <div class="col">
-                        <hr>
+                     <div class="col-md-5">
+                        <b><label1>Full Name</label1></b>
+                        <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Enter your full name" Width="353px"></asp:TextBox>
+                        </div>
                      </div>
-                  </div>
+                     <div class="col-md-2">
+                        <b><label1>Age</label1></b>
+                        <div class="form-group">
+                          <asp:TextBox CssClass="form-control" ID="TextBox14" runat="server" placeholder="Enter your age" TextMode="Number" Width="156px"></asp:TextBox>
+                        </div>
+                    </div> 
+                    <div class="col-md-6">
+                       <b><label1>Date Of Birth</label1></b>
+                       <div class="form-group">
+                          <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" placeholder="Password" TextMode="Date" Width="153px"></asp:TextBox>
+                       </div>
+                    </div>
+                   </div>
+
                    <div class="row">
                      <div class="col-md-6">
                          <b><label1>Gender</label1></b>
@@ -58,6 +54,7 @@
                               </asp:DropDownList>
                         </div>
                      </div>
+
                    <div class="col-md-6">
                         <b><label1>Nationality</label1></b>
                        <div class="form-group">
@@ -66,16 +63,12 @@
                               <asp:ListItem Text="India" Value="India" />
                               <asp:ListItem Text="Foreign" Value="Foreign" />
                               </asp:DropDownList>
-                          </div>
-                     </div>
-                       <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
                        </div>
-                       <div class="row">
-                       <div class="col-md-8">
+                   </div>
+                   </div>
+  
+                   <div class="row">
+                     <div class="col-md-8">
                         <b><label1>If Foreign, Enter your Country</label1></b>
                         <div class="form-group">
                             <asp:DropDownList id="Country" runat="server">
@@ -565,14 +558,10 @@
                             <asp:TextBox class="form-control" ID="TextBox3" runat="server" placeholder="Enter your passport number"></asp:TextBox>
                         </div>
                      </div>
-                        <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                  </div>
+                   </div>
+
                    <div class="row">
-                   <div class="col-md-8">
+                     <div class="col-md-8">
                        <b><label1>Social Status</label1></b>
                        <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
@@ -595,15 +584,11 @@
                               <asp:ListItem Text="Unmarried" Value="Unmarried" />
                               <asp:ListItem Text="Divorced" Value="Divorced" />
                                </asp:DropDownList>
-                            </div>
-                     </div>
-                   <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
+                        </div>
                        </div>
-                    <div class="row">
+                   </div>
+
+                   <div class="row">
                      <div class="col-md-8">
                          <b><label1>Telephone</label1></b>
                         <div class="form-group">
@@ -614,37 +599,36 @@
                        <b><label1>Mobile Number</label1></b>
                        <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox5" runat="server" placeholder="Enter your mobile number" TextMode="Phone"></asp:TextBox>
-                            </div>
-                     </div>
-                       <div class="col-md-8">
+                       </div>
+                   </div>
+                   <div class="col-md-8">
                         <b><label1>Email-ID</label1></b>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Enter your mail id" TextMode="Email"></asp:TextBox>
-                            </div>
-                     </div>
-                   <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                    </div>
+                        </div>
+                   </div>
+                   </div>
+
                    <div class="row">
                      <div class="col">
                          <b><label>Residential Address</label></b>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2" Width="331px"></asp:TextBox>
                         </div>
                      </div>
                   </div>
+
                    <div class="row">
                      <div class="col">
                          <b><label1>Office Address</label1></b>
                         <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox10" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2" Width="329px"></asp:TextBox>
                         </div>
                      </div>
-                       <div class="row">
-                       <div class="col">
+                    </div>
+
+                   <div class="row">
+                     <div class="col">
                          <b><label1>Address for Communication</label1></b>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList21" runat="server">
@@ -652,15 +636,11 @@
                               <asp:ListItem Text="RA" Value="Residential Address" />
                               <asp:ListItem Text="PA" Value="Office Address" />
                               </asp:DropDownList>
+                        </div>
                      </div>
-                  </div>
-                           </div>
+                   </div>
+
                    <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                    <div class="row">
                      <div class="col-md-8">
                            <b><label1>Category</label1></b>
                         <div class="form-group">
@@ -672,7 +652,7 @@
                               </asp:DropDownList>
                         </div>
                         </div>
-                     </div>
+                    </div>
                    <div class="col-md-8">
                         <b><label1>Type of Registration</label1></b>
                         <div class="form-group">
@@ -686,16 +666,10 @@
                        </div>
                      </div>
                   </div>
-                   <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
+
                    <div class="row">
                      <div class="col-md-8">
-                           <b>
-                        <label1>If Part time</label1> 
-                       </b>
+                           <b><label1>If Part time</label1></b>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
@@ -709,20 +683,17 @@
                             <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" placeholder="If others, specify"></asp:TextBox>
                         </div>
                      </div>
-                       <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                       <div class="row">
-                       <div class="col-md-8">
+                   </div>
+
+                   <div class="row">
+                     <div class="col-md-8">
                         <b><label1>UG:- </label1></b>
                         <b><label1>University/College</label1></b>
-                       <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
-                            </div>
-                       <b><label1>Year of Passing</label1></b>
                         <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
+                        </div>
+                       <b><label1>Year of Passing</label1></b>
+                       <div class="form-group">
                             <asp:DropDownList class="form-control" ID="DropDownList4" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
                               <asp:ListItem Text="2000" Value="2000" />
@@ -783,22 +754,18 @@
                               <asp:ListItem Text="1st Class" Value="First Class" />
                               <asp:ListItem Text="2nd Class" Value="Second Class" />
                            </asp:DropDownList>
-                            </div>
-                           </div>
-                       <div class="row">
-                     <div class="col">
-                        <hr>
+                       </div>
                      </div>
-                  </div>
-                     </div>
-                       <div class="row">
-                       <div class="col-md-8">
+                   </div>
+
+                   <div class="row">
+                     <div class="col-md-8">
                         <b><label1>PG:- </label1></b>
                         <b><label1>University/College</label1></b>
                        <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
-                            </div>
-                       <b><label1>Year of Passing</label1></b>
+                       </div>
+                        <b><label1>Year of Passing</label1></b>
                         <div class="form-group">
                             <asp:DropDownList class="form-control" ID="DropDownList7" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
@@ -860,7 +827,7 @@
                               <asp:ListItem Text="1st Class" Value="First Class" />
                               <asp:ListItem Text="2nd Class" Value="Second Class" />
                            </asp:DropDownList>
-                            </div>
+                       </div>
                            <b><label1>Part time / Full time</label1></b>
                            <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList14" runat="server">
@@ -868,23 +835,19 @@
                               <asp:ListItem Text="Part Time" Value="Part Time" />
                               <asp:ListItem Text="Full Time" Value="Full Time" />
                            </asp:DropDownList>
-                            </div>
                            </div>
-                       <div class="row">
-                     <div class="col">
-                        <hr>
                      </div>
-                  </div>
-                     </div>
-                       <div class="row">
-                       <div class="col-md-8">
+                   </div>
+
+                   <div class="row">
+                     <div class="col-md-8">
                         <b><label1>Master of Philosophy:- </label1></b>
                         <b><label1>University/College</label1></b>
                        <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox12" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
-                            </div>
+                       </div>
                        <b><label1>Year of Passing</label1></b>
-                        <div class="form-group">
+                       <div class="form-group">
                             <asp:DropDownList class="form-control" ID="DropDownList5" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
                               <asp:ListItem Text="2000" Value="2000" />
@@ -945,7 +908,7 @@
                               <asp:ListItem Text="1st Class" Value="First Class" />
                               <asp:ListItem Text="2nd Class" Value="Second Class" />
                            </asp:DropDownList>
-                            </div>
+                       </div>
                            <b><label1>Part time / Full time</label1></b>
                            <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList13" runat="server">
@@ -954,22 +917,18 @@
                               <asp:ListItem Text="Full Time" Value="Full Time" />
                            </asp:DropDownList>
                             </div>
-                           </div>
-                       <div class="row">
-                     <div class="col">
-                        <hr>
                      </div>
                   </div>
-                     </div>
-                       <div class="row">
-                       <div class="col-md-8">
+
+                   <div class="row">
+                     <div class="col-md-8">
                         <b><label1>Other Qualifications:-</label1></b>
                         <b><label1>University/College</label1></b>
                        <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox13" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
-                            </div>
+                       </div>
                        <b><label1>Year of Passing</label1></b>
-                        <div class="form-group">
+                       <div class="form-group">
                             <asp:DropDownList class="form-control" ID="DropDownList15" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
                               <asp:ListItem Text="2000" Value="2000" />
@@ -1030,7 +989,7 @@
                               <asp:ListItem Text="1st Class" Value="First Class" />
                               <asp:ListItem Text="2nd Class" Value="Second Class" />
                            </asp:DropDownList>
-                            </div>
+                       </div>
                            <b><label1>Part time / Full time</label1></b>
                            <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList18" runat="server">
@@ -1038,129 +997,131 @@
                               <asp:ListItem Text="Part Time" Value="Part Time" />
                               <asp:ListItem Text="Full Time" Value="Full Time" />
                            </asp:DropDownList>
-                            </div>
                            </div>
-                        <div class="row">
-                     <div class="col">
-                        <hr>
                      </div>
-                  </div>
-                           <div class="row">
-                               <b><label1>Bachelor Degree:-</label1></b>
-                               <div class="col-md-8">
+                   </div>
+
+                   <div class="row">
+                        <b><label1>Bachelor Degree:-</label1></b>
+                        <div class="col-md-8">
                         <div class="form-group">
                             <b><label1>Discipline</label1></b>
                            <asp:TextBox class="form-control" ID="TextBox29" runat="server" placeholder="Enter the course"></asp:TextBox>
                         </div>
-                     </div>
-                               <div class="col-md-6">
+                        </div>
+
+                   <div class="col-md-6">
                         <div class="form-group">
                             <label1>SEM 1</label1>
                            <asp:TextBox class="form-control" ID="TextBox15" runat="server" placeholder="Enter Sem 1 CGPA" TextMode="Number"></asp:TextBox>
                         </div>
-                     </div>
+                   </div>
                    <div class="col-md-6">
                         <label>SEM 2</label>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox16" runat="server" placeholder="Enter Sem 2 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-6">
+                        </div>
+                   </div>
+
+                   <div class="col-md-6">
                         <label>SEM 3</label>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox17" runat="server" placeholder="Enter Sem 3 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-6">
+                        </div>
+                   </div>
+
+                   <div class="col-md-6">
                         <label>SEM 4</label>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox18" runat="server" placeholder="Enter Sem 4 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                            <div class="col-md-6">
+                        </div>
+                   </div>
+
+                   <div class="col-md-6">
                         <label1>SEM 5</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox19" runat="server" placeholder="Enter Sem 5 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-6">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
                         <label1>SEM 6</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox20" runat="server" placeholder="Enter Sem 6 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-6">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
                         <label1>SEM 7</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox21" runat="server" placeholder="Enter Sem 7 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-6">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
                         <label1>SEM 8</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox22" runat="server" placeholder="Enter Sem 8 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
+                        </div>
+                    </div>
                   </div>
-                      <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                     <div class="row">
-                         <b><label1>Master Degree:-</label1></b>
-                         <div class="col-md-8">
+
+                   <div class="row">
+                     <b><label1>Master Degree:-</label1></b>
+                     <div class="col-md-8">
                         <div class="form-group">
                             <b><label1>Discipline</label1></b>
                            <asp:TextBox class="form-control" ID="TextBox30" runat="server" placeholder="Enter the course"></asp:TextBox>
                         </div>
                      </div>
-                     </div>
-                    <div class="row">
+                   </div>
+
+                   <div class="row">
                      <div class="col-md-4">
                         <div class="form-group">
                             <label1>SEM 1</label1>
                            <asp:TextBox class="form-control" ID="TextBox23" runat="server" placeholder="Enter Sem 1 CGPA" TextMode="Number"></asp:TextBox>
                         </div>
                      </div>
+
                    <div class="col-md-4">
                         <label1>SEM 2</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox24" runat="server" placeholder="Enter Sem 2 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-4">
+                        </div>
+                   </div>
+
+                   <div class="col-md-4">
                         <label1>SEM 3</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox25" runat="server" placeholder="Enter Sem 3 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-4">
+                        </div>
+                   </div>
+
+                   <div class="col-md-4">
                         <label1>SEM 4</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox26" runat="server" placeholder="Enter Sem 4 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                            <div class="col-md-4">
+                        </div>
+                   </div>
+
+                   <div class="col-md-4">
                         <label1>SEM 5</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox27" runat="server" placeholder="Enter Sem 5 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                               <div class="col-md-4">
+                        </div>
+                   </div>
+
+                   <div class="col-md-4">
                         <label1>SEM 6</label1>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox28" runat="server" placeholder="Enter Sem 6 CGPA" TextMode="Number"></asp:TextBox>
-                            </div>
-                     </div>
-                  </div>
-                      <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                      <div class="row">
-                          <b><label1>Professional Experience:-</label1></b>
+                        </div>
+                   </div>
+                   </div>
+
+                   <div class="row">
+                     <b><label1>Professional Experience:-</label1></b>
                      <div class="col-md-8">
                          <b><label1>Specify</label1></b>
                         <div class="form-group">
@@ -1172,24 +1133,29 @@
                               </asp:DropDownList>
                         </div>
                      </div>
-                   <div class="col-md-8">
+
+                    <div class="col-md-8">
                         <b><label1>Name of the Organization you have worked for</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox32" runat="server" placeholder="Enter the name of the Organization" ></asp:TextBox>
                        </div>
                      </div>
-                        <div class="col-md-8">
+
+                     <div class="col-md-8">
                         <b><label1>Designation</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox31" runat="server" placeholder="Enter your Designation" ></asp:TextBox>
-                       </div>
+                        </div>
                      </div>
-                          <div class="col-md-8">
+
+                     <div class="col-md-8">
                         <b><label1>Number of years Worked</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox33" runat="server" placeholder="Enter the number of years" TextMode="Number" ></asp:TextBox>
-                       </div>
-                            <div class="col-md-8">
+                        </div>
+                     </div>
+
+                     <div class="col-md-8">
                         <b><label1>Work Mode</label1></b>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList25" runat="server">
@@ -1200,15 +1166,10 @@
                               </asp:DropDownList>
                        </div>
                      </div>
-                  </div>
-                     </div>
-                        <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                    <div class="row">
-                          <b><label1>Enter the fields below,if you have worked in more than one Organization:-</label1></b>
+                   </div>
+
+                   <div class="row">
+                       <b><label1>Enter the fields below,if you have worked in more than one Organization:-</label1></b>
                      <div class="col-md-8">
                          <b><label1>Specify</label1></b>
                         <div class="form-group">
@@ -1220,24 +1181,29 @@
                               </asp:DropDownList>
                         </div>
                      </div>
-                   <div class="col-md-8">
+
+                     <div class="col-md-8">
                         <b><label1>Enter the fields below,if you have worked in more than one Organization</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox34" runat="server" placeholder="Enter the name of the Organization" ></asp:TextBox>
-                       </div>
+                        </div>
                      </div>
-                        <div class="col-md-8">
+
+                     <div class="col-md-8">
                         <b><label1>Designation</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox35" runat="server" placeholder="Enter your Designation" ></asp:TextBox>
-                       </div>
+                        </div>
                      </div>
-                          <div class="col-md-8">
+
+                     <div class="col-md-8">
                         <b><label1>Number of years Worked</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox36" runat="server" placeholder="Enter the number of years" TextMode="Number" ></asp:TextBox>
                        </div>
-                            <div class="col-md-8">
+                     </div>
+
+                     <div class="col-md-8">
                         <b><label1>Work Mode</label1></b>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList27" runat="server">
@@ -1248,30 +1214,27 @@
                               </asp:DropDownList>
                        </div>
                      </div>
-                  </div>
-                     </div>
-                        <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                        <div class="row">
-                            <b><label>Details of the Current Employment:-</label></b>
-                     <div class="col-md-8">
-                         <b><label1>Name and Address of the Employer</label1></b>
+                   </div>
+
+                   <div class="row">
+                      <b><label>Details of the Current Employment:-</label></b>
+                      <div class="col-md-8">
+                        <b><label1>Name and Address of the Employer</label1></b>
                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox37" runat="server" placeholder="Enter your Name with Address"></asp:TextBox>
                         </div>
-                     </div>
-                   <div class="col-md-8">
+                      </div>
+
+                      <div class="col-md-8">
                         <b><label1>Desigantion</label1></b>
-                        <div class="form-group">
+                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox38" runat="server" placeholder="Enter your Designation"></asp:TextBox>
-                       </div>
-                     </div>
-                        <div class="col-md-8">
+                        </div>
+                      </div>
+
+                      <div class="col-md-8">
                         <b><label1>Mode of Employment</label1></b>
-                        <div class="form-group">
+                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList28" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
                               <asp:ListItem Text="Regular" Value="Regular" />
@@ -1279,42 +1242,41 @@
                               <asp:ListItem Text="Temporay" Value="Temporay" />
                               <asp:ListItem Text="Part Time" Value="Part Time" />
                               </asp:DropDownList>
-                       </div>
-                     </div>
-                        <div class="col-md-8">
+                         </div>
+                      </div>
+
+                      <div class="col-md-8">
                         <b><label1>Scale of Pay</label1></b>
-                        <div class="form-group">
+                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox39" runat="server" placeholder="Enter your Scale of Pay"></asp:TextBox>
-                       </div>
-                     </div>
-                        <div class="col-md-8">
+                        </div>
+                      </div>
+
+                      <div class="col-md-8">
                         <b><label1>Working Since Date</label1></b>
-                        <div class="form-group">
+                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox40" runat="server" placeholder="Enter the date" TextMode="Date"></asp:TextBox>
-                       </div>
-                     </div>
-                        <div class="col-md-8">
+                         </div>
+                      </div>
+
+                      <div class="col-md-8">
                         <b><label1>Total Years of Experience</label1></b>
-                        <div class="form-group">
+                         <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox41" runat="server" placeholder="Enter total years of experience" TextMode="Number"></asp:TextBox>
-                       </div>
-                     </div>
-                        <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                    <div class="row">
+                         </div>
+                      </div>
+                   </div>
+
+                   <div class="row">
                      <div class="col-md-8">
                         <div class="form-group">
                            <asp:Label ID="label1" runat="server" Text="upload receipt" ></asp:Label>
                            <asp:FileUpload ID="fileUpload" runat="server"> </asp:FileUpload>
-                            <asp:Button ID="upload" runat="server" Text="UPLOAD" OnClick="upload_Click" />
-                            <asp:Label ID="label3" runat="server" readonly="tue" ></asp:Label>
                         </div>
                      </div>
-                  </div>
-                    <div class="row">
+                   </div>
+
+                   <div class="row">
                      <div class="col-md-8 offset-3">
                         <center>     
                         <div class="form-group">
@@ -1322,22 +1284,11 @@
                         </div>
                         </center>
                      </div>
-                  </div>
-                  <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                  </div>
-                  </div>
+                   </div>
+
                </div>
             </div>
-           </div>
-           </div>
-          </div>
-       </div>
-  </div>
-
-
-
+        </div>
+    </div>
+</div>
 </asp:Content>
