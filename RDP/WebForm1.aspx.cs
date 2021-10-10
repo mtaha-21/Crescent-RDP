@@ -15,6 +15,20 @@ namespace RDP
             {
                 lblMessage.Visible = false;
                 hyperlink.Visible = false;
+                LoadImages();
+            }
+        }
+
+        private void LoadImages()
+        {
+            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            using (SqlConnection con = new SqlConnection(cs))
+            {
+                SqlCommand cmd = new SqlCommand("Select * from tblImages", con);
+                con.Open();
+                SqlDataReader rdr = cmd.ExecuteReader();
+                GridView1.DataSource = rdr;
+                GridView1.DataBind();
             }
         }
 
@@ -31,7 +45,6 @@ namespace RDP
                 Stream stream = postedFile.InputStream;
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
-
 
                 string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(cs))
@@ -78,6 +91,8 @@ namespace RDP
                     hyperlink.Visible = true;
                     hyperlink.NavigateUrl = "~/WebForm2.aspx?Id=" +
                         cmd.Parameters["@NewId"].Value.ToString();
+
+                    LoadImages();
                 }
             }
             else
