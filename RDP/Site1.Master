@@ -17,10 +17,12 @@
     <script src="datatables/js/jquery.dataTables.min.js"></script>
     <%--fontawesome js--%>
     <script src="fontawesome/js/all.js"></script>
+    <%--custom Tabs in window CSS--%>
+    <link href="css/Tabs.css" rel="stylesheet" />
     <%--custom CSS--%>
-    <link href="css/colorful_button.css" rel="stylesheet" />
-    <%--custom CSS button--%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
+    <%--js code for custom tab--%>
+    <script src="css/JavaScript.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

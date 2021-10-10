@@ -13,5 +13,10 @@ namespace RDP
         {
 
         }
+
+        protected void MultiView1_ActiveViewChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

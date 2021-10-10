@@ -90,6 +90,8 @@
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\customstylesheet.css" />
+    <Content Include="css\JavaScript.js" />
+    <Content Include="css\Tabs.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
     <Content Include="deanpage.aspx" />
@@ -1742,6 +1744,7 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="guest.aspx" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\32.png" />
     <Content Include="imgs\CR_4.png" />
     <Content Include="imgs\Frontpage.png" />
     <Content Include="imgs\generaluser.png" />
