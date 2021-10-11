@@ -1740,7 +1740,6 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
-    <Content Include="guest.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\CR_4.png" />
     <Content Include="imgs\Frontpage.png" />
@@ -1776,13 +1775,6 @@
     </Compile>
     <Compile Include="deanpage.aspx.designer.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="guest.aspx.cs">
-      <DependentUpon>guest.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="guest.aspx.designer.cs">
-      <DependentUpon>guest.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>

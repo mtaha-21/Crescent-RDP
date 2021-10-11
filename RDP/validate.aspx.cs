@@ -15,8 +15,8 @@ namespace RDP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String mycon = "Data Source=SR99\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
-            String myquery = "Select * from personal_details where user_id=" + Request.QueryString["user_id"];
+            String mycon = "Data Source=LAPTOP-U8B28I61\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
+            String myquery = "Select * from personal_details where role_no=" + Request.QueryString["role_no"];
 
             SqlConnection con = new SqlConnection(mycon);
             SqlCommand cmd = new SqlCommand();
@@ -55,7 +55,7 @@ namespace RDP
             {
 
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("update personal_details set status = 1 where user_id=" + Request.QueryString["user_id"], conn);
+                SqlCommand cmd2 = new SqlCommand("update personal_details set status = 1 where role_no=" + Request.QueryString["role_no"], conn);
                 SqlDataReader rd2 = cmd2.ExecuteReader();
                 Response.Write("<script>alert('Validated Successfully');window.location='newlist.aspx';</script>");   
                 conn.Close();

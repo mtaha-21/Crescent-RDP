@@ -21,7 +21,7 @@ namespace RDP
 
         private void LoadImages()
         {
-            string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+            string cs = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
                 SqlCommand cmd = new SqlCommand("Select * from tblImages", con);
@@ -46,7 +46,7 @@ namespace RDP
                 BinaryReader binaryReader = new BinaryReader(stream);
                 Byte[] bytes = binaryReader.ReadBytes((int)stream.Length);
 
-                string cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+                string cs = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
                 using (SqlConnection con = new SqlConnection(cs))
                 {
                     SqlCommand cmd = new SqlCommand("spUploadImage", con);

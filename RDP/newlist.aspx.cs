@@ -18,8 +18,8 @@ namespace RDP
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string user_id = GridView1.SelectedRow.Cells[0].Text;
-            Response.Redirect("validate.aspx?user_id=" + user_id);
+            string role_no = GridView1.SelectedRow.Cells[0].Text;
+            Response.Redirect("validate.aspx?role_no=" + role_no);
         }
 
     }
