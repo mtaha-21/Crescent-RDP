@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -10,6 +11,13 @@ namespace RDP
     public partial class RRN : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        public void Button20(object sender, EventArgs e)
         {
 
         }
