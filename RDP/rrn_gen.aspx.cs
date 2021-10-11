@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Net.Mail;
+using System.Text;
 
 namespace RDP
 {
@@ -36,6 +38,35 @@ namespace RDP
             Random rnn = new Random();
             int randomnum = rnn.Next(100000, 1000000);
             TextBox1.Text = randomnum.ToString();
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            string to = "tahamb53@gmail.com"; //To address    
+            string from = "rdpcrescent@gmail.com"; //From address    
+            MailMessage message = new MailMessage(from, to);
+
+            string mailbody = "YOUR JOB IS TO APPROVE THE SCHOLAR BELOW ";
+            message.Subject = "HELLO DEAN";
+            message.Body = mailbody;
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
+            System.Net.NetworkCredential basicCredential1 = new
+            System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing_123");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Credentials = basicCredential1;
+            try
+            {
+                client.Send(message);
+                Response.Write("<script>alert('Mail sent Successfully');window.location='updatelist.aspx';</script>");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

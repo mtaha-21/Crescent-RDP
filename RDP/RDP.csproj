@@ -1741,6 +1741,7 @@
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="homepage.aspx" />
+    <Content Include="imgs\32.png" />
     <Content Include="imgs\CR_4.png" />
     <Content Include="imgs\Frontpage.png" />
     <Content Include="imgs\generaluser.png" />

@@ -43,7 +43,6 @@ namespace RDP
                 TextBox13.Text = ds.Tables[0].Rows[0]["residential_address"].ToString();
                 TextBox14.Text = ds.Tables[0].Rows[0]["office_address"].ToString();
                 TextBox15.Text = ds.Tables[0].Rows[0]["address_for_communication"].ToString();
-
             }
             con.Close();
         }
@@ -53,7 +52,6 @@ namespace RDP
         {
             using (var conn = new SqlConnection(connection))
             {
-
                 conn.Open();
                 SqlCommand cmd2 = new SqlCommand("update personal_details set status = 1 where role_no=" + Request.QueryString["role_no"], conn);
                 SqlDataReader rd2 = cmd2.ExecuteReader();
