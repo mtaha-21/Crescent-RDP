@@ -59,7 +59,7 @@
                          <center>
                         <div class="form-group">
                             <asp:Button Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button5" runat="server" Text="Generate RRN" Width="200px" OnClick="Button5_Click" />
-                           <asp:Button Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button4" runat="server" Text="Send" Width="200px" />
+                           <asp:Button Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button4" runat="server" Text="Send" Width="200px" OnClick="Button4_Click" />
                         </div>
                          </center>
                    </div>
