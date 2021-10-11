@@ -30,42 +30,30 @@
 
         <%--hacker code starts here (Navigation Bar)--%>
        <div>
-              <nav class="navbar navbar-expand-lg navbar-light">
+            <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">
-                    <img src="imgs/CR_4.png" width="30" height="30" />
-                    Research Department Portal
-                </a>
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav m-auto">
-                          <li class="nav-item active">
-                              <a class="nav-link" href="homepage.aspx">Home</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="https://crescent.education/research/about-us/about-us/">About Us</a>
-                        </li>
-
-                    </ul>
-
+                    <img src="imgs/CR_4.png" width="30" height="30" /> Research Department Portal </a>
+                 
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                                                <!-- Navigation buttons code -->
+                                                <!-- Navigation buttons code --> 
+                        <li class="nav-item dropdown">
+                            <asp:LinkButton class="nav-link dropdown-toggle" runat="server" ID="droplist" Visible="False" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu </asp:LinkButton>
+                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="newlist.aspx">New Scholar list</a></li>
+                                <li><a class="dropdown-item" href="updatelist.aspx">Updated Scholar list</a></li>
+                           </ul>
+                        </li>
+                        
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton4" runat="server">Main Menu</asp:LinkButton>
+                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
                         </li>
                         <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server">Logout</asp:LinkButton>
-                        </li>
-
-                        <li class="nav-item active">
-                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server">Hello User</asp:LinkButton>
-
+                            <asp:LinkButton class="nav-link" ID="LinkButton7" runat="server" Visible="False"></asp:LinkButton>
                         </li>
                     </ul>
                 </div>
-
-
             </nav>
-                   <%--hacker code ends here--%>
-
        </div>
 
         <!-- Main Content Placeholder -->
