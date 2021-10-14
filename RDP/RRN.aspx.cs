@@ -10,6 +10,10 @@ namespace RDP
 {
     public partial class RRN : System.Web.UI.Page
     {
+        protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            TextBox1.Text = DropDownList1.SelectedItem.Value;
+        }
         protected void Page_Load(object sender, EventArgs e)
         {
 
