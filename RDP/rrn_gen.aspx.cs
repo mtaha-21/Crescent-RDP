@@ -16,7 +16,7 @@ namespace RDP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String mycon = "Data Source=LAPTOP-U8B28I61\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
+            String mycon = "Data Source=AYESHA;Initial Catalog=RDP_DB; Integrated Security=True";
             String myquery = "Select * from personal_details where role_no=" + Request.QueryString["role_no"];
             SqlConnection con = new SqlConnection(mycon);
             SqlCommand cmd = new SqlCommand();
