@@ -7,58 +7,80 @@
          <div class="col-md-5 mx-auto">
             <div id="userlogin" class="card">
                <div class="card-body">
-                <!DOCTYPE html>
-<head>
-    <title>
-        How to get selected value in 
-        dropdown list using JavaScript?
-    </title>
-</head>
-  
-<body>
-    <h1 style="color: green">
-        GeeksForGeeks
-    </h1>
-      
-    <b>
-        How to get selected value in 
-        dropdown list using JavaScript?
-    </b>
-      
-    <p>
-        Select one from the given options:
-        <select id="select1">
-            <option value="free">Free</option>
-            <option value="basic">Basic</option>
-            <option value="premium">Premium</option>
-        </select>
-    </p>
-      
-    <p>
-        The value of the option selected is: 
-        <span class="output"></span>
-    </p>
-      
-    <button onclick="getOption()">
-        Check option
-    </button>
-      
-    <script type="text/javascript">s
-        function getOption() {
-            selectElement = document.querySelector('#select1');
-
-            output =
-                selectElement.options[selectElement.selectedIndex].value;
-
-            document.querySelector('.output').textContent = output;
-        }
-    </script>
-</body>
-  
-</html>
+                   <div class="row">
+                     <div class="col-md-4">
+                        <div class="form-group">
+                            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack = "true" OnSelectedIndexChanged = "DropDownList1_SelectedIndexChanged">
+                          <asp:ListItem Text="Department" Value="department" />
+                              <asp:ListItem Text="EEE" Value="Electrical and Electronic Engineering" />
+                              <asp:ListItem Text="ECE" Value="Electrical and Communication Engineering" />
+                            </asp:DropDownList>
+                        </div>
+                         </div>
+                        <div class="col-md-4">
+                        <div class="form-group">
+                            <asp:DropDownList class="form-control" ID="DropDownList2" runat="server">
+                              <asp:ListItem Text="Year" Value="YEAR" />
+                              <asp:ListItem Text="2021" Value="2021" />
+                              <asp:ListItem Text="2022" Value="2022" />
+                               </asp:DropDownList>
+                        </div>
+                        </div>
+                         <div class="col-md-4">
+                         <div class="form-group">
+                           <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
+                              <asp:ListItem Text="Month" Value="MON" />
+                              <asp:ListItem Text="January" Value="JAN" />
+                              <asp:ListItem Text="Febraury" Value="FEB" />
+                              <asp:ListItem Text="March" Value="MAR" />
+                              <asp:ListItem Text="April" Value="APR" />
+                              <asp:ListItem Text="May" Value="MAY" />
+                              <asp:ListItem Text="June" Value="JUN" />
+                              <asp:ListItem Text="July" Value="JUL" />
+                              <asp:ListItem Text="August" Value="AUG" />
+                              <asp:ListItem Text="September" Value="SEP" />
+                              <asp:ListItem Text="October" Value="OCT" />
+                              <asp:ListItem Text="November" Value="NOV" />
+                              <asp:ListItem Text="December" Value="DEC" />
+                               </asp:DropDownList>
+                        </div>
+                        </div>
+                      </div>
+                   <div class="row">
+                     <div class="col">
+                        <hr>
+                     </div>
+                  </div>
+                   <div class="row">
+                            <center>
+                                <div class="form-group">
+                                <asp:Button Border Style ="margin-top:10px" class="btn btn-success" ID="Button1" runat="server" Text="Generate RRN" Width="210px" OnClick="Button1_Click"/>
+                                </div>
+                            </center>
+                       <div class="row">
+                     <div class="col">
+                        <hr>
+                     </div>
+                  </div>
+                       <div class="col-md-6 offset-3">
+                         <div class="form-group">
+                             <center>
+                                 <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" readonly></asp:TextBox>
+                             </center>
+                         </div>
+                        </div>
+                        <div class="row">
+                       <div class="col-md-12">
+                        <b><label>Department Name</label></b>
+                         <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                        </div>
+                           </div>
+                            </div>
                    </div>
                 </div>
              </div>
           </div>
+        </div>
         </div>
 </asp:Content>

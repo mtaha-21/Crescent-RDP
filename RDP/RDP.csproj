@@ -1812,6 +1812,7 @@
     <Compile Include="Application_form2.aspx.designer.cs">
       <DependentUpon>Application_form2.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GroupBox.cs" />
     <Compile Include="homepage.aspx.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
