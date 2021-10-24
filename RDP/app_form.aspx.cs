@@ -45,8 +45,8 @@ namespace RDP
                 cmd.Parameters.AddWithValue("@pg_month_of_passing", DropDownList8.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@pg_class", DropDownList9.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@pg_part_time_or_full_time", DropDownList14.SelectedItem.Value);
-                cmd.Parameters.AddWithValue("@other_qualification", TextBox2.Text.Trim());
-                cmd.Parameters.AddWithValue("@year_of_passing", DropDownList5.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@other_qualification", input_other_qualifications.Text.Trim());
+                cmd.Parameters.AddWithValue("@year_of_passing", DropDownList15.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@month_of_passing", DropDownList11.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@class", DropDownList12.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@part_time_or_full_time", DropDownList13.SelectedItem.Value);

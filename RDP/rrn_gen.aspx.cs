@@ -42,7 +42,7 @@ namespace RDP
 
         protected void Button4_Click(object sender, EventArgs e)
         {
-            string to = "tahamb53@gmail.com"; //To address    
+            string to = "aishasaiyed123@gmail.com"; //To address    
             string from = "rdpcrescent@gmail.com"; //From address    
             MailMessage message = new MailMessage(from, to);
 
@@ -52,8 +52,7 @@ namespace RDP
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
-            System.Net.NetworkCredential basicCredential1 = new
-            System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing_123");
+            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing_123");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Credentials = basicCredential1;

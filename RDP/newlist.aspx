@@ -5,7 +5,7 @@
 
             <div class="card">
                <div class="card-body">
-                  <div class="row">
+                  <div class="row"> 
                      <div class="col">
                         <center>
                            <h5>NEW SCHOLAR LIST</h5>

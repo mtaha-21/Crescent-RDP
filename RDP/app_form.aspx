@@ -1007,7 +1007,7 @@
                                         <b>
                                             <label1>University/College</label1></b>
                                         <div class="form-group">
-                                            <asp:TextBox CssClass="form-control" ID="TextBox13" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
+                                            <asp:TextBox CssClass="form-control" ID="input_other_qualifications" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
                                         </div>
                                         <b>
                                             <label1>Year of Passing</label1></b>

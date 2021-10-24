@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="adminpage.aspx" />
+    <Content Include="approve.aspx" />
     <Content Include="app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
@@ -1762,6 +1763,13 @@
     </Compile>
     <Compile Include="adminpage.aspx.designer.cs">
       <DependentUpon>adminpage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="approve.aspx.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="approve.aspx.designer.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
     </Compile>
     <Compile Include="app_form.aspx.cs">
       <DependentUpon>app_form.aspx</DependentUpon>
