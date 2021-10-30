@@ -6,6 +6,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Security.Cryptography;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace RDP
 {
@@ -19,7671 +21,7445 @@ namespace RDP
         {
 
         }
+        string strcon = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
+
+
         private RNGCryptoServiceProvider rnd = new RNGCryptoServiceProvider();
-         
-       // protected void DropDownList_Month(object sender, EventArgs e)
-        //{
-          // if (DropDownList3.value = 1)
-            //{
-
-            //}
-        //}
-        private int eee
-        {
-            get
-            {
-                if (Session["eee"] == null)
-                    return 1000;
-
-                return (int)Session["eee"];
-
-
-            }
-            set
-            {
-                Session["eee"] = value;
-            }
-        }
-        private int ece
-        {
-            get
-            {
-                if (Session["ece"] == null)
-                    return 1000;
-
-                return (int)Session["ece"];
-
-
-            }
-            set
-            {
-                Session["ece"] = value;
-            }
-        }
-        private int aero
-        {
-            get
-            {
-                if (Session["aero"] == null)
-                    return 1000;
-
-                return (int)Session["aero"];
-
-
-            }
-            set
-            {
-                Session["aero"] = value;
-            }
-        }
-        private int poly
-        {
-            get
-            {
-                if (Session["poly"] == null)
-                    return 1000;
-
-                return (int)Session["poly"];
-
-
-            }
-            set
-            {
-                Session["poly"] = value;
-            }
-        }
-        private int mech
-        {
-            get
-            {
-                if (Session["mech"] == null)
-                    return 1000;
-
-                return (int)Session["mech"];
-
-
-            }
-            set
-            {
-                Session["mech"] = value;
-            }
-        }
-        private int cse
-        {
-            get
-            {
-                if (Session["cse"] == null)
-                    return 1000;
-
-                return (int)Session["cse"];
-
-
-            }
-            set
-            {
-                Session["cse"] = value;
-            }
-        }
-        private int mca
-        {
-            get
-            {
-                if (Session["mca"] == null)
-                    return 1000;
-
-                return (int)Session["mca"];
-
-
-            }
-            set
-            {
-                Session["mca"] = value;
-            }
-        }
-        private int msc
-        {
-            get
-            {
-                if (Session["msc"] == null)
-                    return 1000;
-
-                return (int)Session["msc"];
-
-
-            }
-            set
-            {
-                Session["msc"] = value;
-            }
-        }
-        private int ma
-        {
-            get
-            {
-                if (Session["ma"] == null)
-                    return 1000;
-
-                return (int)Session["ma"];
-
-
-            }
-            set
-            {
-                Session["ma"] = value;
-            }
-        }
-        private int mcom
-        {
-            get
-            {
-                if (Session["mcom"] == null)
-                    return 1000;
-
-                return (int)Session["mcom"];
-
-
-            }
-            set
-            {
-                Session["mcom"] = value;
-            }
-        }
-        //public object DropDownList3 { get; private set; }
-
         protected void Button1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                SqlConnection connstrng = new SqlConnection(strcon);
+                if (connstrng.State == System.Data.ConnectionState.Closed)
+                {
+                    connstrng.Open();
+                }
+
+            }
+            catch { }
+
             string dept = " ";
             string month = " ";
             string year = " ";
-            if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering" && DropDownList2.SelectedValue == "2021")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                dept = "EEE";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-
-                eee++;
-
-                TextBox2.Text = dept + month + year + eee.ToString();
-            }
-
-
-            if (DropDownList1.SelectedValue == "Electrical and Communication Engineering" && DropDownList2.SelectedValue=="2021")
-            {
-                dept = "ECE";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                ece++;
-
-                TextBox2.Text = dept + month + year + ece.ToString();
-
-            }
-            if (DropDownList1.SelectedValue == "Aeronautical Engineering" && DropDownList2.SelectedValue=="2021")
-            {
-                dept = "AERO";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                aero++;
-
-                TextBox2.Text = dept + month + year + aero.ToString();
-            }
-
-
-            if (DropDownList1.SelectedValue == "Polymer Engineering" && DropDownList2.SelectedValue=="2021")
-            {
-                dept = "POLY";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                poly++;
-
-                TextBox2.Text = dept + month + year + poly.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Mechanical Engineering" && DropDownList2.SelectedValue == "2021" )
-            {
-                dept = "MECH";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                mech++;
-
-                TextBox2.Text = dept + month + year + mech.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Computer Science Engineering" && DropDownList2.SelectedValue == "2021" ) 
-            {
-                dept = "CSE";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                cse++;
-
-                TextBox2.Text = dept + month + year + cse.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Computer Applications" && DropDownList2.SelectedValue=="2021")
-            {
-                dept = "MCA";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                mca++;
-
-                TextBox2.Text = dept + month + year + mca.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Science" && DropDownList2.SelectedValue == "2021" )
-            {
-                dept = "MSC";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                msc++;
-
-                TextBox2.Text = dept + month + year + msc.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Arts" && DropDownList2.SelectedValue == "2021" ) 
-            {
-                dept = "MA";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                ma++;
-
-                TextBox2.Text = dept + month + year + ma.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Commerce" && DropDownList2.SelectedValue == "2021" )
-            {
-                dept = "MCOM";
-                year = "2021";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                mcom++;
-                TextBox2.Text = dept + month + year + mcom.ToString();
-            }
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering" && DropDownList2.SelectedValue == "2022" )
-            {
-                dept = "EEE";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-
-                eee++;
-
-                TextBox2.Text = dept + month + year + eee.ToString();
-            }
-
-
-            if (DropDownList1.SelectedValue == "Electrical and Communication Engineering" && DropDownList2.SelectedValue=="2022")
-            {
-                dept = "ECE";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                ece++;
-
-                TextBox2.Text = dept + month + year + ece.ToString();
-
-            }
-            if (DropDownList1.SelectedValue == "Aeronautical Engineering" && DropDownList2.SelectedValue=="2022")
-            {
-                dept = "AERO";
-                year = "2022";
-
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                aero++;
-
-                TextBox2.Text = dept + month + year + aero.ToString();
-            }
-
-
-            if (DropDownList1.SelectedValue == "Polymer Engineering" && DropDownList2.SelectedValue=="2022")
-            {
-                dept = "POLY";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                poly++;
-
-                TextBox2.Text = dept + month + year + poly.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Mechanical Engineering" && DropDownList2.SelectedValue=="2022")
-            {
-                dept = "MECH";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                mech++;
-
-                TextBox2.Text = dept + month + year + mech.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Computer Science Engineering" && DropDownList2.SelectedValue == "2022" )
-            {
-                dept = "CSE";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                cse++;
-
-                TextBox2.Text = dept + month + year + cse.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Computer Applications" && DropDownList2.SelectedValue == "2022" )
-            {
-                dept = "MCA";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                mca++;
-
-                TextBox2.Text = dept + month + year + mca.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Science" && DropDownList2.SelectedValue == "2022" )
-            {
-                dept = "MSC";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                msc++;
-
-                TextBox2.Text = dept + month + year + msc.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Arts" && DropDownList2.SelectedValue=="2022")
-            {
-                dept = "MA";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                ma++;
-
-                TextBox2.Text = dept + month + year + ma.ToString();
-            }
-            if (DropDownList1.SelectedValue == "Master of Commerce" && DropDownList2.SelectedValue == "2022")
-            {
-                dept = "MCOM";
-                year = "2022";
-                if (DropDownList3.SelectedValue == "JAN")
-                {
-                    month = "JAN";
-                }
-                else if (DropDownList3.SelectedValue == "FEB")
-                {
-                    month = "FEB";
-                }
-                else if (DropDownList3.SelectedValue == "MAR")
-                {
-                    month = "MAR";
-                }
-                else if (DropDownList3.SelectedValue == "APR")
-                {
-                    month = "APR";
-                }
-                else if (DropDownList3.SelectedValue == "MAY")
-                {
-                    month = "MAY";
-                }
-                else if (DropDownList3.SelectedValue == "JUN")
-                {
-                    month = "JUN";
-                }
-                else if (DropDownList3.SelectedValue == "JUL")
-                {
-                    month = "JUL";
-                }
-                else if (DropDownList3.SelectedValue == "AUG")
-                {
-                    month = "AUG";
-                }
-                else if (DropDownList3.SelectedValue == "SEP")
-                {
-                    month = "SEP";
-                }
-                else if (DropDownList3.SelectedValue == "OCT")
-                {
-                    month = "OCT";
-                }
-                else if (DropDownList3.SelectedValue == "NOV")
-                {
-                    month = "NOV";
-                }
-                else
-                {
-                    month = "DEC";
-                }
-
-                mcom++;
-
-                TextBox2.Text = dept + month + year + mcom.ToString();
-            }
-            if (DropDownList2.SelectedValue == "2023")
-            {
-                year = "2023";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
-                {
-                    dept = "EEE";
-                
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
+                        year = "21";
+                        month = "370";
+                        dept = "029";
 
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2024")
+            else
             {
-                year = "2024";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2025")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                year = "2025";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2026")
+            else
             {
-                year = "2026";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2027")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                year = "2027";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2023")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2028")
+            else
             {
-                year = "2028";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2023")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2029")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                year = "2029";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2024")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2030")
+            else
             {
-                year = "2030";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2024")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2031")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                year = "2031";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2025")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2032")
+            else
             {
-                year = "2032";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2025")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-
-                    eee++;
-
-                    TextBox2.Text = dept + month + year + eee.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
-                {
-                    dept = "ECE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
-                }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
-                {
-                    dept = "AERO";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
-                }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
-                {
-                    dept = "POLY";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
-                {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mech++;
-
-                    TextBox2.Text = dept + month + year + mech.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
-                {
-                    dept = "CSE";
-
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
-                {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mca++;
-
-                    TextBox2.Text = dept + month + year + mca.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Science")
-                {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    msc++;
-
-                    TextBox2.Text = dept + month + year + msc.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Arts")
-                {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    ma++;
-
-                    TextBox2.Text = dept + month + year + ma.ToString();
-                }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
-                {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-
-                    mcom++;
-
-                    TextBox2.Text = dept + month + year + mcom.ToString();
                 }
             }
-            if(DropDownList2.SelectedValue == "2033")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                year = "2033";
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2026")
                 {
-                    dept = "EEE";
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "029";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "FEB")
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "FEB";
+                        year = "26";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "MAR")
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "MAR";
+                        year = "27";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "APR")
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "APR";
+                        year = "27";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "MAY")
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "MAY";
+                        year = "28";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "JUN")
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JUN";
+                        year = "28";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "JUL")
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JUL";
+                        year = "29";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "AUG")
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "AUG";
+                        year = "29";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "SEP")
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "SEP";
+                        year = "30";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "OCT")
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "OCT";
+                        year = "30";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else if (DropDownList3.SelectedValue == "NOV")
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "NOV";
+                        year = "31";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
-                    else
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "DEC";
+                        year = "31";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
                     }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "029";
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "028";
 
 
-                    eee++;
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "028";
 
-                    TextBox2.Text = dept + month + year + eee.ToString();
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "028";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Aerospace Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "021";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Automobile Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "022";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Chartered Accountant")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "023";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Chemistry")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "024";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Civil Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "025";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Commerce")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "026";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Computer Science Egineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "027";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "English")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "031";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Islamic Studies")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "032";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Information Technology")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "033";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
 
-
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    dept = "ECE";
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "034";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
 
-                    ece++;
-
-                    TextBox2.Text = dept + month + year + ece.ToString();
-
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Aeronautical Engineering")
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    dept = "AERO";
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "034";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
 
-                    aero++;
-
-                    TextBox2.Text = dept + month + year + aero.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-
-
-                if (DropDownList1.SelectedValue == "Polymer Engineering")
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    dept = "POLY";
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "034";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
 
-                    poly++;
-
-                    TextBox2.Text = dept + month + year + poly.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Mechanical Engineering")
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    dept = "MECH";
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Maths & AS")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
+                        year = "22";
+                        month = "370";
+                        dept = "034";
 
-                    mech++;
 
-                    TextBox2.Text = dept + month + year + mech.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Computer Science Engineering")
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
                 {
-                    dept = "CSE";
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "034";
 
-                    if (DropDownList3.SelectedValue == "JAN")
-                    {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
 
-                    cse++;
-
-                    TextBox2.Text = dept + month + year + cse.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Master of Computer Applications")
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
                 {
-                    dept = "MCA";
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Maths & AS")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
+                        year = "23";
+                        month = "370";
+                        dept = "034";
 
-                    mca++;
 
-                    TextBox2.Text = dept + month + year + mca.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Master of Science")
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
                 {
-                    dept = "MSC";
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Maths & AS")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
+                        year = "24";
+                        month = "370";
+                        dept = "034";
 
-                    msc++;
 
-                    TextBox2.Text = dept + month + year + msc.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Master of Arts")
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
                 {
-                    dept = "MA";
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Maths & AS")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
+                        year = "24";
+                        month = "370";
+                        dept = "034";
 
-                    ma++;
 
-                    TextBox2.Text = dept + month + year + ma.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
-                if (DropDownList1.SelectedValue == "Master of Commerce")
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
                 {
-                    dept = "MCOM";
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Maths & AS")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
+                        year = "25";
+                        month = "370";
+                        dept = "034";
 
-                    mcom++;
 
-                    TextBox2.Text = dept + month + year + mcom.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Maths & AS")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "034";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Mechanical Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "035";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Mgt Studies")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "036";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Physics")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "037";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "Polymer Engineering")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "038";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2021")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "21";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2022")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "22";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2023")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "23";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2024")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "24";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2025")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "25";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2026")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "26";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2027")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "27";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2028")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "28";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2029")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "29";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2030")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "30";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2031")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "31";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2032")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "32";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            if (DropDownList3.SelectedValue == "MAY")
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "030";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+            }
+            else
+            {
+                if (DropDownList2.SelectedValue == "2033")
+                {
+                    if (DropDownList1.SelectedValue == "SLS")
+                    {
+                        year = "33";
+                        month = "370";
+                        dept = "039";
+
+
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
+                }
+
             }
         }
-        // And your method with textBox
-
-
-        //protected void Button1_Click(object sender, EventArgs e)
-        //{
-        //  TextBox2.Text = Wins.ToString();
-        //}
-        public void Button20(object sender, EventArgs e)
-        {
-
-        }
-
     }
-}
+    
+    
+
+
+
+    //try
+    //{ 
+
+    //    SqlConnection connstrng = new SqlConnection(strcon);
+    //if (connstrng.State == System.Data.ConnectionState.Closed)
+    //{
+    //    connstrng.Open();
+    //}
+    //SqlCommand command = new SqlCommand("INSERT INTO rrn_gen (rrn) VALUES (@i + 1)", connstrng);
+    //command.Parameters.AddWithValue("@rrn", TextBox5.Text.Trim());
+    //    command.ExecuteNonQuery();
+    //    connstrng.Close();
+    //    Response.Write("<script>alert('RRN submitted successfully'); window.location='homepage.aspx';</script>")
+    //}
+    //catch (Exception ex)
+    //{
+    //    Response.Write("<script>alert('" + ex.Message + "');</script>");
+    //}
+
+
+        
+
+       
+    

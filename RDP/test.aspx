@@ -29,18 +29,8 @@
                          <div class="col-md-4">
                          <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
-                              <asp:ListItem Text="Month" Value="MON" />
-                              <asp:ListItem Text="January" Value="JAN" />
-                              <asp:ListItem Text="Febraury" Value="FEB" />
-                              <asp:ListItem Text="March" Value="MAR" />
-                              <asp:ListItem Text="April" Value="APR" />
+                              <asp:ListItem Text="Month" Value="Month" />
                               <asp:ListItem Text="May" Value="MAY" />
-                              <asp:ListItem Text="June" Value="JUN" />
-                              <asp:ListItem Text="July" Value="JUL" />
-                              <asp:ListItem Text="August" Value="AUG" />
-                              <asp:ListItem Text="September" Value="SEP" />
-                              <asp:ListItem Text="October" Value="OCT" />
-                              <asp:ListItem Text="November" Value="NOV" />
                               <asp:ListItem Text="December" Value="DEC" />
                                </asp:DropDownList>
                         </div>

@@ -12,16 +12,25 @@
                         <div class="form-group">
                             <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack = "true" OnSelectedIndexChanged = "DropDownList1_SelectedIndexChanged">
                           <asp:ListItem Text="Department" Value="department" />
-                              <asp:ListItem Text="EEE" Value="Electrical and Electronic Engineering" />
+                              <asp:ListItem Text="AERO" Value="Aerospace Engineering" />
+                              <asp:ListItem Text="Automobile" Value="Automobile Engineering" />
+                              <asp:ListItem Text="CA" Value="Chartered Accountant" />
+                              <asp:ListItem Text="Chemistry" Value="Chemistry" />
+                              <asp:ListItem Text="Civil" Value="Civil Engineering" />
+                              <asp:ListItem Text="Commerce" Value="Commerce" />
+                              <asp:ListItem Text="CSE" Value="Computer Science Egineering" />
                               <asp:ListItem Text="ECE" Value="Electrical and Communication Engineering" />
-                              <asp:ListItem Text="AERO" Value="Aeronautical Engineering" />
-                              <asp:ListItem Text="POLY" Value="Polymer Engineering" />
-                              <asp:ListItem Text="MECH" Value="Mechanical Engineering" />
-                              <asp:ListItem Text="CSE" Value="Computer Science Engineering" />
-                              <asp:ListItem Text="MCA" Value="Master of Computer Applications" />
-                              <asp:ListItem Text="MSC" Value="Master of Science" />
-                              <asp:ListItem Text="MA" Value="Master of Arts" />
-                              <asp:ListItem Text="MCOM" Value="Master of Commerce" />
+                              <asp:ListItem Text="EEE" Value="Electrical and Electronic Engineering" />
+                              <asp:ListItem Text="EIE" Value="Electronic and Instrumentation Engineering" />
+                              <asp:ListItem Text="English" Value="English" />
+                              <asp:ListItem Text="Islamic Studies" Value="Islamic Studies" />
+                              <asp:ListItem Text="IT" Value="Information Technology" />
+                              <asp:ListItem Text="Maths & AS" Value="Maths & AS" />
+                              <asp:ListItem Text="Mechanical" Value="Mechanical Engineering" />
+                              <asp:ListItem Text="Mgt Studies" Value="Mgt Studies" />
+                              <asp:ListItem Text="Physics" Value="Physics" />
+                              <asp:ListItem Text="Polymer" Value="Polymer Engineering" />
+                              <asp:ListItem Text="SLS" Value="SLS" />
                             </asp:DropDownList>
                         </div>
                          </div>
@@ -49,17 +58,7 @@
                          <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
                               <asp:ListItem Text="Month" Value="MON" />
-                              <asp:ListItem Text="January" Value="JAN" />
-                              <asp:ListItem Text="Febraury" Value="FEB" />
-                              <asp:ListItem Text="March" Value="MAR" />
-                              <asp:ListItem Text="April" Value="APR" />
                               <asp:ListItem Text="May" Value="MAY" />
-                              <asp:ListItem Text="June" Value="JUN" />
-                              <asp:ListItem Text="July" Value="JUL" />
-                              <asp:ListItem Text="August" Value="AUG" />
-                              <asp:ListItem Text="September" Value="SEP" />
-                              <asp:ListItem Text="October" Value="OCT" />
-                              <asp:ListItem Text="November" Value="NOV" />
                               <asp:ListItem Text="December" Value="DEC" />
                                </asp:DropDownList>
                         </div>
@@ -84,7 +83,8 @@
                        <div class="col-md-6 offset-3">
                          <div class="form-group">
                              <center>
-                                 <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" readonly></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server"></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" ReadOnly></asp:TextBox>
                              </center>
                          </div>
                         </div>

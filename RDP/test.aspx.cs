@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -8,45 +9,31 @@ using System.Web.UI.WebControls;
 namespace RDP
 {
     public partial class test : System.Web.UI.Page
-    {
+    { 
+
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
             TextBox1.Text = DropDownList1.SelectedItem.Value;
         }
+        private RNGCryptoServiceProvider rnd = new RNGCryptoServiceProvider();
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
-        private int eee
+        private int i
         {
             get
             {
-                if (Session["eee"] == null)
-                    return 1000;
+                if (Session["i"] == null)
+                    return 7000;
 
-                return (int)Session["eee"];
+                return (int)Session["i"];
 
 
             }
             set
             {
-                Session["eee"] = value;
-            }
-        }
-        private int ece
-        {
-            get
-            {
-                if (Session["ece"] == null)
-                    return 1000;
-
-                return (int)Session["ece"];
-
-
-            }
-            set
-            {
-                Session["ece"] = value;
+                Session["i"] = value;
             }
         }
         protected void Button1_Click(object sender, EventArgs e)
@@ -54,462 +41,128 @@ namespace RDP
             string dept = " ";
             string month = " ";
             string year = " ";
-            if (DropDownList2.SelectedValue == "2021")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    eee++;
+                        year = "21";
+                        month = "370";
+                        dept = "029";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + eee.ToString();
+                        TextBox2.Text =  year + dept + month + i.ToString();
+                    }
                 }
             }
             else
             {
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    eee++;
+                        year = "21";
+                        month = "370";
+                        dept = "029";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + eee.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
-            if (DropDownList2.SelectedValue == "2021")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    ece++;
+                        year = "22";
+                        month = "370";
+                        dept = "029";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + ece.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
             else
             {
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    ece++;
+                        year = "22";
+                        month = "370";
+                        dept = "029";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + ece.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
-            if (DropDownList2.SelectedValue == "2022")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    eee++;
+                        year = "21";
+                        month = "370";
+                        dept = "028";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + eee.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
             else
             {
-                if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
+                if (DropDownList2.SelectedValue == "2021")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    eee++;
+                        year = "21";
+                        month = "370";
+                        dept = "028";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + eee.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
-            if (DropDownList2.SelectedValue == "2022")
+            if (DropDownList3.SelectedValue == "MAY")
             {
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    ece++;
+                        year = "22";
+                        month = "370";
+                        dept = "028";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + ece.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
             else
             {
-                if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
+                if (DropDownList2.SelectedValue == "2022")
                 {
-                    if (DropDownList3.SelectedValue == "JAN")
+                    if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
                     {
-                        month = "JAN";
-                    }
-                    else if (DropDownList3.SelectedValue == "FEB")
-                    {
-                        month = "FEB";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAR")
-                    {
-                        month = "MAR";
-                    }
-                    else if (DropDownList3.SelectedValue == "APR")
-                    {
-                        month = "APR";
-                    }
-                    else if (DropDownList3.SelectedValue == "MAY")
-                    {
-                        month = "MAY";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUN")
-                    {
-                        month = "JUN";
-                    }
-                    else if (DropDownList3.SelectedValue == "JUL")
-                    {
-                        month = "JUL";
-                    }
-                    else if (DropDownList3.SelectedValue == "AUG")
-                    {
-                        month = "AUG";
-                    }
-                    else if (DropDownList3.SelectedValue == "SEP")
-                    {
-                        month = "SEP";
-                    }
-                    else if (DropDownList3.SelectedValue == "OCT")
-                    {
-                        month = "OCT";
-                    }
-                    else if (DropDownList3.SelectedValue == "NOV")
-                    {
-                        month = "NOV";
-                    }
-                    else
-                    {
-                        month = "DEC";
-                    }
-                    ece++;
+                        year = "22";
+                        month = "370";
+                        dept = "028";
+                        i++;
 
-                    TextBox2.Text = dept + month + year + ece.ToString();
+                        TextBox2.Text = year + dept + month.ToString();
+                    }
                 }
             }
+
+
         }
 
     }

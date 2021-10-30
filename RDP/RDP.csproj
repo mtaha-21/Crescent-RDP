@@ -1821,6 +1821,7 @@
       <DependentUpon>homepage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="rNGCryptoServiceProvider.cs" />
     <Compile Include="RRN.aspx.cs">
       <DependentUpon>RRN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
