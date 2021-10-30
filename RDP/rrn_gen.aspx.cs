@@ -43,7 +43,7 @@ namespace RDP
         protected void Button4_Click(object sender, EventArgs e)
         {
             string to = "aishasaiyed123@gmail.com"; //To address    
-            string from = "rdpcrescent@gmail.com"; //From address    
+            string from = "as255109@gmail.com"; //From address    
             MailMessage message = new MailMessage(from, to);
 
             string mailbody = "YOUR JOB IS TO APPROVE THE SCHOLAR BELOW ";
@@ -51,15 +51,16 @@ namespace RDP
             message.Body = mailbody;
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
-            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing_123");
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);    
+            System.Net.NetworkCredential basicCredential1 = new
+            System.Net.NetworkCredential("as2551096@gmail.com", "Aisha##7");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Credentials = basicCredential1;
             try
             {
                 client.Send(message);
-                Response.Write("<script>alert('Mail sent Successfully');window.location='updatelist.aspx';</script>");
+                Response.Write("<script>alert('Mail sent Successfully to the Dean.');window.location='updatelist.aspx';</script>");
             }
 
             catch (Exception ex)

@@ -42,8 +42,8 @@ namespace RDP
             con.Close();
 
 
-            string to = "aishasaiyed123@gmail.com"; //To address    
-            string from = "rdpcrescent@gmail.com"; //From address    
+            string to = mail_id  ; //To address    
+            string from = "as2551096@gmail.com"; //From address    
             MailMessage message = new MailMessage(from, to);
 
             string mailbody = $"Hello {name}, you have been approved by the dean.";
@@ -51,22 +51,23 @@ namespace RDP
             message.Body = mailbody;
             message.BodyEncoding = Encoding.UTF8;
             message.IsBodyHtml = true;
-            SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
-            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing@1234");
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //gmail smtp    
+            System.Net.NetworkCredential basicCredential1 = new System.Net.NetworkCredential("as2551096@gmail.com", "Aisha##7");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Credentials = basicCredential1;
             try
-            {
+           {
                 client.Send(message);
-                Response.Write("<script>alert('Mail sent Successfully');window.location='updatelist.aspx';</script>");
+                Response.Write($"<script>alert('Approved Successfully !" +
+                    $" Mail sent to scholar {role_no} {mail_id}');</script>");
             }
 
             catch (Exception ex)
             {
                 throw ex;
             }
-            Response.Write($"<script>alert('Approved Successfully ! Mail sent to scholar {role_no} {mail_id}');window.location='newlist.aspx';</script>");
+       
         }
 
 
