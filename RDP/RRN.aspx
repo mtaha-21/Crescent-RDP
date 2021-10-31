@@ -36,7 +36,7 @@
                          </div>
                         <div class="col-md-4">
                         <div class="form-group">
-                            <asp:DropDownList class="form-control" ID="DropDownList2" runat="server">
+                            <asp:DropDownList class="form-control" ID="DropDownList2" runat="server" Width="108px">
                               <asp:ListItem Text="Year" Value="YEAR" />
                               <asp:ListItem Text="2021" Value="2021" />
                               <asp:ListItem Text="2022" Value="2022" />
@@ -56,7 +56,7 @@
                         </div>
                          <div class="col-md-4">
                          <div class="form-group">
-                           <asp:DropDownList class="form-control" ID="DropDownList3" runat="server">
+                           <asp:DropDownList class="form-control" ID="DropDownList3" runat="server" Width="103px">
                               <asp:ListItem Text="Month" Value="MON" />
                               <asp:ListItem Text="May" Value="MAY" />
                               <asp:ListItem Text="December" Value="DEC" />
@@ -80,17 +80,46 @@
                         <hr>
                      </div>
                   </div>
-                       <div class="col-md-6 offset-3">
+                       <div class="row">
+                       <div class="col-md-4 offset-1">
                          <div class="form-group">
-                             <center>
-                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server"></asp:TextBox>
+                                
+                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" readonly></asp:TextBox>
+                         </div>            
+                       </div>
+                           <div class="col-md-4 offset-1 ">
+                         <div class="form-group">
                                 <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" ReadOnly></asp:TextBox>
-                             </center>
                          </div>
                         </div>
-                       <div class="col offset-8">
+                        </div>
+                       <div class="row">
+                     <div class="col">
+                        <hr>
+                     </div>
+                  </div>
+                       <div class="row">
+                           <div class="col-md-8 offset-3">
+                         <div class="form-group">
+                             <centre>
+                                 <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" Width="210px" readonly></asp:TextBox>
+                             </centre>
+                         </div>            
+                        </div>
+                           <div class="row">
+                       <div class="col-md-4 offset-2">
                            <div class="form-group">
-                           <asp:Button Border Style ="margin-top:10px" class="btn btn-danger" ID="Button3" runat="server" Text="Edit" Width="100px" />
+                               <center>
+                                   <asp:Button Border Style ="margin-top:10px" class="btn btn-danger btn-block btn-lg" ID="Button3" runat="server" Text="Edit" Width="150px" OnClick="Button3_Click" />
+                              </center>
+                            </div>
+                        </div>
+                        <div class="col-md-4 offset-1">
+                           <div class="form-group">
+                               <center>
+                                   <asp:Button Border Style ="margin-top:10px" class="btn btn-primary btn-block btn-lg" ID="Button4" runat="server" Text="Update" Width="150px" OnClick="Button4_Click" />
+                              </center>
+                            </div>
                         </div>
                         </div>
                         <div class="row">
@@ -115,7 +144,7 @@
                        <div class="col-md-12">
                         <b><label>Research Topic</label></b>
                          <div class="form-group">
-                            <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Enter research topic"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Enter research topic" widht="400"></asp:TextBox>
                         </div>
                         </div>
                        </div>
@@ -126,13 +155,12 @@
                   </div>
                          <center>
                         <div class="form-group">
-                           <asp:Button Border Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button2" runat="server" Text="Save and Send" Width="200px" />
+                           <asp:Button Border Style ="margin-top:10px" class="btn btn-success btn-block btn-lg" ID="Button2" runat="server" Text="Save and Send" Width="200px" OnClick="Button2_Click" />
                         </div>
                              </center>
                   
                </div>
             </div>
-            <a href="homepage.aspx"style="color: white" asp:Button class="btn btn-secondary" Width="100px"><< Back to Home</a><br><br>
          </div>
       </div>
    </div>

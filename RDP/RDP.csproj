@@ -1784,6 +1784,7 @@
     <Content Include="imgs\writer.png" />
     <Content Include="RRN.aspx" />
     <Content Include="test.aspx" />
+    <Content Include="trial.aspx" />
     <Content Include="userlogin.aspx" />
     <Content Include="userprofile.aspx" />
     <Content Include="usersignup.aspx" />
@@ -1843,6 +1844,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="trial.aspx.cs">
+      <DependentUpon>trial.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="trial.aspx.designer.cs">
+      <DependentUpon>trial.aspx</DependentUpon>
     </Compile>
     <Compile Include="userlogin.aspx.cs">
       <DependentUpon>userlogin.aspx</DependentUpon>

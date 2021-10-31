@@ -27,16 +27,7 @@ namespace RDP
         private RNGCryptoServiceProvider rnd = new RNGCryptoServiceProvider();
         protected void Button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection connstrng = new SqlConnection(strcon);
-                if (connstrng.State == System.Data.ConnectionState.Closed)
-                {
-                    connstrng.Open();
-                }
 
-            }
-            catch { }
 
             string dept = " ";
             string month = " ";
@@ -7432,8 +7423,104 @@ namespace RDP
                 }
 
             }
+            Autogenrate();
+            string code = TextBox2.Text;
+            string no = TextBox5.Text;
+            TextBox6.Text = code + no;
+        }
+        public void Autogenrate()
+        {
+            int r;
+            try
+            {
+                SqlConnection connstrng = new SqlConnection(strcon);
+                connstrng.Open();
+                SqlCommand cmd = new SqlCommand("Select max(roll) from rrn_gen", connstrng);
+                SqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+
+
+
+                    var d = dr[0].ToString();
+                    if (d == "")
+                    {
+
+                        TextBox5.Text = "7000";//set the value in textbox which name is id
+
+                    }
+                    else
+                    {
+
+                        r = Convert.ToInt32(dr[0].ToString());
+                        r = r + 1;
+                        TextBox5.Text = r.ToString();
+                    }
+                }
+                connstrng.Close();
+                connstrng.Open();
+
+                SqlCommand com = new SqlCommand("INSERT INTO rrn_gen(roll)values(@roll)", connstrng);
+                com.Parameters.AddWithValue("@roll", TextBox5.Text.Trim());
+                
+
+
+                com.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+                connstrng.Close();
+
+            }
+
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert(" + ex.Message + ")</script>");
+            }
+        }
+
+            protected void Button2_Click(object sender, EventArgs e)
+            {
+            string code = TextBox2.Text;
+            string no = TextBox5.Text;
+            TextBox6.Text = code + no;
+            try
+                {
+                    SqlConnection connstrng = new SqlConnection(strcon);
+                    if (connstrng.State == System.Data.ConnectionState.Closed)
+                    {
+                        connstrng.Open();
+                    }
+                    SqlCommand cmd = new SqlCommand("INSERT INTO RRN_info(RRN,Dept_name,Guide_name,Research_topic)values(@RRN,@Dept_name,@Guide_name,@Research_topic)", connstrng);
+                    cmd.Parameters.AddWithValue("@RRN", TextBox6.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Dept_name", TextBox1.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Guide_name", TextBox3.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Research_topic", TextBox4.Text.Trim());
+                    cmd.ExecuteNonQuery();
+                    connstrng.Close();
+                    Response.Write("<script>alert('Details has been submitted successfully');</script>");
+                }
+                catch
+                {
+                    Response.Write("<script>alert('" + "Something you've missed" + "');</script>");
+                }
+            }
+
+        protected void Button3_Click(object sender, EventArgs e)
+        {
+            TextBox2.ReadOnly = false;
+        }
+
+        protected void Button4_Click(object sender, EventArgs e)
+        {
+            TextBox6.Text = TextBox2.Text + TextBox5.Text;
+        }
+
+            
+            
         }
     }
+
+
     
     
 
