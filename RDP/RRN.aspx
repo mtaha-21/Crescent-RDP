@@ -132,19 +132,19 @@
                        <div class="col-md-12">
                         <b><label>Department Name</label></b>
                          <div class="form-group">
-                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server"></asp:TextBox>
+                           <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" Width="409px"></asp:TextBox>
                         </div>
                            </div>
                        <div class="col-md-12">
                         <b><label>Guide Name</label></b>
                          <div class="form-group">
-                              <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Enter guide name"></asp:TextBox>                                                    
+                              <asp:TextBox CssClass="form-control" ID="TextBox3" runat="server" placeholder="Enter guide name" Width="408px"></asp:TextBox>                                                    
                         </div>
                         </div>
                        <div class="col-md-12">
                         <b><label>Research Topic</label></b>
                          <div class="form-group">
-                            <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Enter research topic" widht="400"></asp:TextBox>
+                            <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server" placeholder="Enter research topic" widht="400" Width="409px"></asp:TextBox>
                         </div>
                         </div>
                        </div>
