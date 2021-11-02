@@ -24,11 +24,10 @@ namespace RDP
             string cs = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
             using (SqlConnection con = new SqlConnection(cs))
             {
-                SqlCommand cmd = new SqlCommand("Select * from tblImages", con);
+                SqlCommand cmd = new SqlCommand("Select * from personal_details", con);
                 con.Open();
                 SqlDataReader rdr = cmd.ExecuteReader();
-                GridView1.DataSource = rdr;
-                GridView1.DataBind();
+                
             }
         }
 

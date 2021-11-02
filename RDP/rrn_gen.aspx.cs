@@ -16,7 +16,7 @@ namespace RDP
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            String mycon = "Data Source=LAPTOP-U8B28I61\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
+            String mycon = "Data Source=TAHA\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
             String myquery = "Select * from personal_details where role_no=" + Request.QueryString["role_no"];
             SqlConnection con = new SqlConnection(mycon);
             SqlCommand cmd = new SqlCommand();
@@ -53,7 +53,7 @@ namespace RDP
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
             System.Net.NetworkCredential basicCredential1 = new
-            System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing_123");
+            System.Net.NetworkCredential("rdpcrescent@gmail.com", "Testing@123");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Credentials = basicCredential1;

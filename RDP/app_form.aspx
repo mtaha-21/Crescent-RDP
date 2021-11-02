@@ -1375,10 +1375,15 @@
                                         <div class="row">
                                             <div class="col-md-8">
                                                 <div class="form-group">
-                                                    <asp:Label ID="label1" runat="server" Text="upload receipt"></asp:Label>
-                                                    <asp:FileUpload ID="fileUpload" runat="server"></asp:FileUpload>
-                                                    <asp:Button ID="upload" runat="server" Text="UPLOAD" OnClick="upload_Click" />
-                                                    <asp:Label ID="label3" runat="server" readonly="tue"></asp:Label>
+           <asp:FileUpload ID="FileUpload1" runat="server" />
+<br /><br />
+<asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
+                                                    <br />
+                                                    <br />
+<asp:Label ID="lblMessage" runat="server"></asp:Label>
+<br /><br />
+<asp:HyperLink ID="hyperlink" runat="server">View Uploaded Image</asp:HyperLink>
+<br /><br />
                                                 </div>
                                             </div>
                                         </div>

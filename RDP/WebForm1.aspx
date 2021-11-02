@@ -17,20 +17,6 @@
 <br /><br />
 <asp:HyperLink ID="hyperlink" runat="server">View Uploaded Image</asp:HyperLink>
 <br /><br />
-<asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False">
-    <Columns>
-        <asp:BoundField DataField="Id" HeaderText="Id" />
-        <asp:BoundField DataField="Name" HeaderText="Name" />
-        <asp:BoundField DataField="Size" HeaderText="Size (bytes)" />
-        <asp:TemplateField HeaderText="Image">
-            <ItemTemplate>
-                <asp:Image ID="Image1" runat="server" Height="100px" Width="100px"
-                    ImageUrl='<%# "data:Image/png;base64,"
-                    + Convert.ToBase64String((byte[])Eval("ImageData")) %>' />
-            </ItemTemplate>
-        </asp:TemplateField>
-    </Columns>
-</asp:GridView>
         </div>
 
    
