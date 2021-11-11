@@ -43,6 +43,9 @@ namespace RDP
                 TextBox13.Text = ds.Tables[0].Rows[0]["residential_address"].ToString();
                 TextBox14.Text = ds.Tables[0].Rows[0]["office_address"].ToString();
                 TextBox15.Text = ds.Tables[0].Rows[0]["address_for_communication"].ToString();
+                checking.ImageUrl = ds.Tables[0].Rows[0]["ImagePath"].ToString();
+
+               
 
             }
             con.Close();

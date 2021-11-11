@@ -4,6 +4,19 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script type="text/javascript">  
+        function ShowPreview(input) {
+            if (input.files && input.files[0]) {
+                var ImageDir = new FileReader();
+                ImageDir.onload = function (e) {
+                    $('#impPrev').attr('src', e.target.result);
+                }
+                ImageDir.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
+
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -1333,14 +1346,16 @@
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <asp:Label ID="label1" runat="server" Text="upload receipt"></asp:Label>
-                                    <asp:FileUpload ID="fileUpload" runat="server"></asp:FileUpload>
+                        
+                        <div class="panel panel-body" style="min-height: 256px">
+                            <div class="col-md-9">
+                                <div class="col-md-4">
+                                    <div class="btn btn-primary"> 
+                                        <asp:FileUpload type="file" ID="imageBrowes" runat="server" onchange="ShowPreview(this)"/>
+                                    </div>                                                                              
                                 </div>
                             </div>
+                            <img src="" class="img-thumbnail" ID="impPrev"/>
                         </div>
 
                         <div class="row">
@@ -1360,3 +1375,5 @@
     </div>
 
 </asp:Content>
+
+

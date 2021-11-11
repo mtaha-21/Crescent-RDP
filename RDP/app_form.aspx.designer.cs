@@ -645,22 +645,13 @@ namespace RDP
         protected global::System.Web.UI.WebControls.TextBox TextBox41;
 
         /// <summary>
-        /// label1 control.
+        /// imageBrowes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
-
-        /// <summary>
-        /// fileUpload control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileUpload;
+        protected global::System.Web.UI.WebControls.FileUpload imageBrowes;
 
         /// <summary>
         /// Button1 control.

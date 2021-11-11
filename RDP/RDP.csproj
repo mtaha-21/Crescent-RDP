@@ -1748,10 +1748,12 @@
     <Content Include="imgs\loginpage.jpg" />
     <Content Include="imgs\logo.png" />
     <Content Include="newlist.aspx" />
+    <Content Include="PDF.aspx" />
     <Content Include="rrn_gen.aspx" />
     <Content Include="updatelist.aspx" />
     <Content Include="validate.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adminpage.aspx.cs">
@@ -1796,6 +1798,13 @@
     <Compile Include="newlist.aspx.designer.cs">
       <DependentUpon>newlist.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PDF.aspx.cs">
+      <DependentUpon>PDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PDF.aspx.designer.cs">
+      <DependentUpon>PDF.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="rrn_gen.aspx.cs">
       <DependentUpon>rrn_gen.aspx</DependentUpon>
@@ -1824,6 +1833,13 @@
     </Compile>
     <Compile Include="validate.aspx.designer.cs">
       <DependentUpon>validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1891,7 +1907,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="feeres\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

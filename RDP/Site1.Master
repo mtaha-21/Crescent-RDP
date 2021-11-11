@@ -21,6 +21,8 @@
     <link href="css/colorful_button.css" rel="stylesheet" />
     <%--custom CSS button--%>
     <link href="css/customstylesheet.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-jcrop/0.9.9/js/jquery.Jcrop.min.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -29,22 +31,23 @@
     <form id="form1" runat="server">
 
         <%--hacker code starts here (Navigation Bar)--%>
-       <div>
+        <div>
             <nav class="navbar navbar-expand-lg navbar-light">
                 <a class="navbar-brand" href="#">
-                    <img src="imgs/CR_4.png" width="30" height="30" /> Research Department Portal </a>
-                 
+                    <img src="imgs/CR_4.png" width="30" height="30" />
+                    Research Department Portal </a>
+
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                                                <!-- Navigation buttons code --> 
+                        <!-- Navigation buttons code -->
                         <li class="nav-item dropdown">
                             <asp:LinkButton class="nav-link dropdown-toggle" runat="server" ID="droplist" Visible="False" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu </asp:LinkButton>
-                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                 <li><a class="dropdown-item" href="newlist.aspx">New Scholar list</a></li>
                                 <li><a class="dropdown-item" href="updatelist.aspx">Updated Scholar list</a></li>
-                           </ul>
+                            </ul>
                         </li>
-                        
+
                         <li class="nav-item active">
                             <asp:LinkButton class="nav-link" ID="LinkButton3" runat="server" Visible="False" OnClick="LinkButton3_Click">Logout</asp:LinkButton>
                         </li>
@@ -54,7 +57,7 @@
                     </ul>
                 </div>
             </nav>
-       </div>
+        </div>
 
         <!-- Main Content Placeholder -->
         <div>
@@ -63,12 +66,12 @@
         </div>
         <!-- Main Content Placeholder -->
 
-         <!-- Footer -->
+        <!-- Footer -->
         <footer>
             <div id="mainfooter" class="container-fluid">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                        <p style="color:whitesmoke"> 2021 | <a class="footerlinks" href="https://crescent.education/" target="_blank"> Crescent University</a></p>
+                        <p style="color: whitesmoke">2021 | <a class="footerlinks" href="https://crescent.education/" target="_blank">Crescent University</a></p>
                     </div>
                 </div>
             </div>
