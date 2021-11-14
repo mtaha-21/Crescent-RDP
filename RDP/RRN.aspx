@@ -51,6 +51,8 @@
                               <asp:ListItem Text="2031" Value="2031" />
                               <asp:ListItem Text="2032" Value="2032" />
                               <asp:ListItem Text="2033" Value="2033" />
+                              <asp:ListItem Text="2032" Value="2034" />
+                              <asp:ListItem Text="2033" Value="2035" />
                                </asp:DropDownList>
                         </div>
                         </div>
@@ -81,54 +83,35 @@
                      </div>
                   </div>
                        <div class="row">
-                       <div class="col-md-4 offset-1">
+                       <div class="col-md-2">
                          <div class="form-group">
                                 
-                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" readonly></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="TextBox2" runat="server" width="100px" readonly Visible="false"></asp:TextBox>
                          </div>            
                        </div>
-                           <div class="col-md-4 offset-1 ">
+                           <div class="col-md-2 offset-1 ">
                          <div class="form-group">
-                                <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" ReadOnly></asp:TextBox>
+                                <asp:TextBox CssClass="form-control" ID="TextBox5" runat="server" Width="100px" ReadOnly Visible="false"></asp:TextBox>
+                         </div>
+                        </div>
+                           <div class="col-md-2 offset-1 ">
+                         <div class="form-group">
+                                <asp:TextBox CssClass="form-control" ID="TextBox8" runat="server" Width="100px" ReadOnly Visible="false"></asp:TextBox>
+                         </div>
+                        </div>
+                           <div class="col-md-2 offset-1 ">
+                         <div class="form-group">
+                                <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" Width="100px" ReadOnly Visible="false"></asp:TextBox>
                          </div>
                         </div>
                         </div>
-                       <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                       <div class="row">
-                           <div class="col-md-8 offset-3">
-                         <div class="form-group">
-                             <centre>
-                                 <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" Width="210px" readonly></asp:TextBox>
-                             </centre>
-                         </div>            
-                        </div>
-                           <div class="row">
-                       <div class="col-md-4 offset-2">
-                           <div class="form-group">
-                               <center>
-                                   <asp:Button Border Style ="margin-top:10px" class="btn btn-danger btn-block btn-lg" ID="Button3" runat="server" Text="Edit" Width="150px" OnClick="Button3_Click" />
-                              </center>
-                            </div>
-                        </div>
-                        <div class="col-md-4 offset-1">
-                           <div class="form-group">
-                               <center>
-                                   <asp:Button Border Style ="margin-top:10px" class="btn btn-primary btn-block btn-lg" ID="Button4" runat="server" Text="Update" Width="150px" OnClick="Button4_Click" />
-                              </center>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="row">
-                     <div class="col">
-                        <hr>
-                     </div>
-                  </div>
-                </div>
                    <div class="row">
+                       <div class="col-md-12">
+                        <b><label>RRN</label></b>
+                         <div class="form-group">
+                           <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" Width="409px" readonly></asp:TextBox>
+                        </div>
+                           </div>
                        <div class="col-md-12">
                         <b><label>Department Name</label></b>
                          <div class="form-group">
@@ -164,4 +147,5 @@
          </div>
       </div>
    </div>
+</div>
 </asp:Content>
