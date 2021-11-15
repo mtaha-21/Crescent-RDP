@@ -148,7 +148,7 @@ namespace RDP
             }
             else if (DropDownList1.SelectedValue == "Maths & AS")
             {
-                SqlCommand cmd = new SqlCommand("Select Math_AS from dept_code", connstrng);
+                SqlCommand cmd = new SqlCommand("Select Maths_AS from dept_code", connstrng);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -258,7 +258,7 @@ namespace RDP
             }
             else if (DropDownList2.SelectedValue == "2027")
             {
-                SqlCommand cmd = new SqlCommand("Select twent_seven from year", constrng);
+                SqlCommand cmd = new SqlCommand("Select twenty_seven from year", constrng);
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
@@ -365,32 +365,12 @@ namespace RDP
         }
         protected void Button2_Click(object sender, EventArgs e)
         {
-            try
-            {
-                SqlConnection connstrng = new SqlConnection(strcon);
-                if (connstrng.State == System.Data.ConnectionState.Closed)
-                {
-                    connstrng.Open();
-                }
-                SqlCommand cmd = new SqlCommand("INSERT INTO RRN_info(RRN,Dept_name,Guide_name,Research_topic)values(@RRN,@Dept_name,@Guide_name,@Research_topic)", connstrng);
-                cmd.Parameters.AddWithValue("@RRN", TextBox6.Text.Trim());
-                cmd.Parameters.AddWithValue("@Dept_name", TextBox1.Text.Trim());
-                cmd.Parameters.AddWithValue("@Guide_name", TextBox3.Text.Trim());
-                cmd.Parameters.AddWithValue("@Research_topic", TextBox4.Text.Trim());
-                cmd.ExecuteNonQuery();
-                connstrng.Close();
-                Response.Write("<script>alert('Details has been submitted successfully');</script>");
-            }
-            catch
-            {
-                Response.Write("<script>alert('" + "Something you've missed" + "');</script>");
-            }
             Autogenrate();
             string yr = TextBox2.Text;
             string co = TextBox5.Text;
             string defl = TextBox8.Text;
             string inr = TextBox9.Text;
-            //string display = yr + co + defl + inr;
+            string tot = yr + co + defl + inr;
             TextBox6.Text = yr + co + defl + inr;
             void Autogenrate()
             {
@@ -439,6 +419,28 @@ namespace RDP
                     Response.Write("<script>alert(" + ex.Message + ")</script>");
                 }
             }
+            try
+            {
+                SqlConnection connstrng = new SqlConnection(strcon);
+                if (connstrng.State == System.Data.ConnectionState.Closed)
+                {
+                    connstrng.Open();
+                }
+                SqlCommand cmd = new SqlCommand("INSERT INTO RRN_details(RRN,Dept_name,Guide_name,Research_topic)values(@RRN,@Dept_name,@Guide_name,@Research_topic)", connstrng);
+                cmd.Parameters.AddWithValue("@RRN", TextBox6.Text.Trim());
+                cmd.Parameters.AddWithValue("@Dept_name", TextBox1.Text.Trim());
+                cmd.Parameters.AddWithValue("@Guide_name", TextBox3.Text.Trim());
+                cmd.Parameters.AddWithValue("@Research_topic", TextBox4.Text.Trim());
+                cmd.ExecuteNonQuery();
+                connstrng.Close();
+                Response.Write("<script>alert(tot);</script>");
+                Response.Write("<script>alert('Details has been submitted successfully');</script>");
+            }
+            catch
+            {
+                Response.Write("<script>alert('" + "Something you've missed" + "');</script>");
+            }
+            
         }
     }
 }
