@@ -590,7 +590,7 @@
                   </div>
                    <div class="row">
                    <div class="col-md-8">
-                       <b><label>Social Status</label></b>
+                       <b><label>Social Status<span class="required">*</span></label></b>
                        <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList1" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
@@ -604,7 +604,7 @@
                             </div>
                      </div>
                        <div class="col-md-8">
-                        <b><label>Marital Status</label></b>
+                        <b><label>Marital Status<span class="required">*</span></label></b>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList2" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
@@ -622,19 +622,19 @@
                        </div>
                     <div class="row">
                      <div class="col-md-8">
-                         <b><label>Telephone</label></b>
+                         <b><label>Telephone<span class="required">*</span></label></b>
                         <div class="form-group">
                             <asp:TextBox class="form-control" ID="TextBox4" runat="server" placeholder="Enter your telephone" TextMode="Phone"></asp:TextBox>
                         </div>
                      </div>
                    <div class="col-md-8">
-                       <b><label>Mobile Number</label></b>
+                       <b><label>Mobile Number<span class="required">*</span></label></b>
                        <div class="form-group">
                            <asp:TextBox class="form-control" ID="TextBox5" runat="server" placeholder="Enter your mobile number" TextMode="Phone"></asp:TextBox>
                             </div>
                      </div>
                        <div class="col-md-8">
-                        <b><label>Email-ID</label></b>
+                        <b><label>Email-ID<span class="required">*</span></label></b>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox6" runat="server" placeholder="Enter your mail id" TextMode="Email"></asp:TextBox>
                             </div>
@@ -647,7 +647,7 @@
                     </div>
                    <div class="row">
                      <div class="col">
-                         <b><label>Residential Address</label></b>
+                         <b><label>Residential Address<span class="required">*</span></label></b>
                         <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox7" runat="server" placeholder="Full Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
                         </div>
@@ -662,7 +662,7 @@
                      </div>
                        <div class="row">
                        <div class="col">
-                         <b><label>Address for Communication</label></b>
+                         <b><label>Address for Communication<span class="required">*</span></label></b>
                         <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList21" runat="server">
                               <asp:ListItem Text="Select" Value="select" />
@@ -679,7 +679,7 @@
                   </div>
                     <div class="row">
                      <div class="col-md-8">
-                           <b><label>Category</label></b>
+                           <b><label>Category<span class="required">*</span></label></b>
                         <div class="form-group">
                             <div class="form-group">
                             <asp:DropDownList class="form-control" ID="DropDownList22" runat="server">
@@ -691,7 +691,7 @@
                         </div>
                      </div>
                    <div class="col-md-8">
-                        <b><label>Type of Registration</label></b>
+                        <b><label>Type of Registration<span class="required">*</span></label></b>
                         <div class="form-group">
                            <div class="form-group">
                            <asp:DropDownList class="form-control" ID="DropDownList23" runat="server">
@@ -733,7 +733,7 @@
                   </div>
                        <div class="row">
                        <div class="col-md-8">
-                        <b><label>UG:- </label></b>
+                        <b><label>UG:- <span class="required">*</span></label></b>
                         <b><label>University/College</label></b>
                        <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox9" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
@@ -810,7 +810,7 @@
                      </div>
                        <div class="row">
                        <div class="col-md-8">
-                        <b><label>PG:- </label></b>
+                        <b><label>PG:- <span class="required">*</span></label></b>
                         <b><label>University/College</label></b>
                        <div class="form-group">
                            <asp:TextBox CssClass="form-control" ID="TextBox11" runat="server" placeholder="Enter the name of the College/University"></asp:TextBox>
@@ -1325,7 +1325,7 @@
                      <div class="col-md-8">
                         <div class="form-group">
                            <form>
-                           <label for="fileUpload">Upload your Fee Receipt</label>
+                           <label for="fileUpload">Upload your Fee Receipt<span class="required">*</span></label>
                            <input type="file" id="fileUpload">
                            </form>
                         </div>
