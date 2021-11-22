@@ -43,6 +43,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\samro\Downloads\mail\Download Admit Card as PDF in Asp.Net\Library Files\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -85,14 +88,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="adminpage.aspx" />
-    <Content Include="app_form.aspx" />
+    <Content Include="3.DEAN\approve.aspx" />
+    <Content Include="1.GUEST\app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="3.DEAN\check1.aspx" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
-    <Content Include="deanpage.aspx" />
+    <Content Include="3.DEAN\deanpage.aspx" />
     <Content Include="fontawesome\attribution.js" />
     <Content Include="fontawesome\css\all.css" />
     <Content Include="fontawesome\css\all.min.css" />
@@ -1740,48 +1744,53 @@
     <Content Include="fontawesome\webfonts\fa-brands-400.svg" />
     <Content Include="fontawesome\webfonts\fa-regular-400.svg" />
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
-    <Content Include="guest.aspx" />
+    <Content Include="1.GUEST\guest.aspx" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\CR_4.png" />
     <Content Include="imgs\Frontpage.png" />
     <Content Include="imgs\generaluser.png" />
     <Content Include="imgs\loginpage.jpg" />
     <Content Include="imgs\logo.png" />
-    <Content Include="newlist.aspx" />
-    <Content Include="PDF.aspx" />
-    <Content Include="rrn_gen.aspx" />
-    <Content Include="updatelist.aspx" />
-    <Content Include="validate.aspx" />
+    <Content Include="2.ADMIN\newlist.aspx" />
+    <Content Include="2.ADMIN\rrn_gen.aspx" />
+    <Content Include="2.ADMIN\updatelist.aspx" />
+    <Content Include="2.ADMIN\validate.aspx" />
     <Content Include="Web.config" />
-    <Content Include="WebForm2.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="adminpage.aspx.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
+    <Compile Include="3.DEAN\approve.aspx.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="adminpage.aspx.designer.cs">
-      <DependentUpon>adminpage.aspx</DependentUpon>
+    <Compile Include="3.DEAN\approve.aspx.designer.cs">
+      <DependentUpon>approve.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app_form.aspx.cs">
+    <Compile Include="1.GUEST\app_form.aspx.cs">
       <DependentUpon>app_form.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="app_form.aspx.designer.cs">
+    <Compile Include="1.GUEST\app_form.aspx.designer.cs">
       <DependentUpon>app_form.aspx</DependentUpon>
     </Compile>
-    <Compile Include="deanpage.aspx.cs">
+    <Compile Include="3.DEAN\check1.aspx.cs">
+      <DependentUpon>check1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="3.DEAN\check1.aspx.designer.cs">
+      <DependentUpon>check1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="3.DEAN\deanpage.aspx.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="deanpage.aspx.designer.cs">
+    <Compile Include="3.DEAN\deanpage.aspx.designer.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="guest.aspx.cs">
+    <Compile Include="1.GUEST\guest.aspx.cs">
       <DependentUpon>guest.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="guest.aspx.designer.cs">
+    <Compile Include="1.GUEST\guest.aspx.designer.cs">
       <DependentUpon>guest.aspx</DependentUpon>
     </Compile>
     <Compile Include="homepage.aspx.cs">
@@ -1791,26 +1800,19 @@
     <Compile Include="homepage.aspx.designer.cs">
       <DependentUpon>homepage.aspx</DependentUpon>
     </Compile>
-    <Compile Include="newlist.aspx.cs">
+    <Compile Include="2.ADMIN\newlist.aspx.cs">
       <DependentUpon>newlist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="newlist.aspx.designer.cs">
+    <Compile Include="2.ADMIN\newlist.aspx.designer.cs">
       <DependentUpon>newlist.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="PDF.aspx.cs">
-      <DependentUpon>PDF.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="PDF.aspx.designer.cs">
-      <DependentUpon>PDF.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="rrn_gen.aspx.cs">
+    <Compile Include="2.ADMIN\rrn_gen.aspx.cs">
       <DependentUpon>rrn_gen.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="rrn_gen.aspx.designer.cs">
+    <Compile Include="2.ADMIN\rrn_gen.aspx.designer.cs">
       <DependentUpon>rrn_gen.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
@@ -1820,26 +1822,19 @@
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
     </Compile>
-    <Compile Include="updatelist.aspx.cs">
+    <Compile Include="2.ADMIN\updatelist.aspx.cs">
       <DependentUpon>updatelist.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="updatelist.aspx.designer.cs">
+    <Compile Include="2.ADMIN\updatelist.aspx.designer.cs">
       <DependentUpon>updatelist.aspx</DependentUpon>
     </Compile>
-    <Compile Include="validate.aspx.cs">
+    <Compile Include="2.ADMIN\validate.aspx.cs">
       <DependentUpon>validate.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="validate.aspx.designer.cs">
+    <Compile Include="2.ADMIN\validate.aspx.designer.cs">
       <DependentUpon>validate.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="WebForm2.aspx.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="WebForm2.aspx.designer.cs">
-      <DependentUpon>WebForm2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -1907,6 +1902,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Files\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>

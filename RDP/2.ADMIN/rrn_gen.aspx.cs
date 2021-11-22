@@ -7489,6 +7489,8 @@ namespace RDP
             }
         }
 
+
+        string connection = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         protected void Button2_Click(object sender, EventArgs e)
         {
             string code = TextBox2.Text;
@@ -7526,7 +7528,7 @@ namespace RDP
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587); //Gmail smtp    
             System.Net.NetworkCredential basicCredential1 = new
-            System.Net.NetworkCredential("uisbibin@gmail.com", "");
+            System.Net.NetworkCredential("uisbibin@gmail.com", "Godissogood1");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Credentials = basicCredential1;
@@ -7536,9 +7538,19 @@ namespace RDP
                 Response.Write("<script>alert('Mail sent Successfully');window.location='updatelist.aspx';</script>");
             }
 
+
             catch (Exception ex)
             {
                 throw ex;
+            }
+
+            using (var conn = new SqlConnection(connection))
+            {
+
+                conn.Open();
+                SqlCommand cmd2 = new SqlCommand("update personal_details set status1 = 1 where user_id=" + Request.QueryString["user_id"], conn);
+                SqlDataReader rd2 = cmd2.ExecuteReader();
+                conn.Close();
             }
 
         }
