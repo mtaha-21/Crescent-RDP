@@ -1730,8 +1730,10 @@
     <Content Include="imgs\1519801481452.png" />
     <Content Include="imgs\1624206692phpBHKAwS.png" />
     <Content Include="imgs\2063715.png" />
+    <Content Include="imgs\226-2268087_blue-check-mark-png.png" />
     <Content Include="imgs\32.png" />
     <Content Include="imgs\3693a5c94.png" />
+    <Content Include="imgs\531198-PJ62U5-579.jpg" />
     <Content Include="imgs\535521.png" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b1.jpg" />
     <Content Include="imgs\All necessary Images- asp online e library project\All necessary Images\books\b2.jpg" />
@@ -1774,16 +1776,19 @@
     <Content Include="imgs\library.png" />
     <Content Include="imgs\logo.png" />
     <Content Include="imgs\photo-1585314062604-1a357de8b000.png" />
+    <Content Include="imgs\photo_2021-11-22_11-57-18.jpg" />
     <Content Include="imgs\Rect.JPG" />
     <Content Include="imgs\Register.png" />
     <Content Include="imgs\researchglass.png" />
     <Content Include="imgs\publisher.png" />
     <Content Include="imgs\search-online.png" />
     <Content Include="imgs\sign-up.png" />
+    <Content Include="imgs\tick-icon-png-14.jpg" />
     <Content Include="imgs\user_png.png" />
     <Content Include="imgs\writer.png" />
     <Content Include="RRN.aspx" />
     <Content Include="test.aspx" />
+    <Content Include="Thankyou.aspx" />
     <Content Include="trial.aspx" />
     <Content Include="userlogin.aspx" />
     <Content Include="userprofile.aspx" />
@@ -1844,6 +1849,13 @@
     </Compile>
     <Compile Include="test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Thankyou.aspx.cs">
+      <DependentUpon>Thankyou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Thankyou.aspx.designer.cs">
+      <DependentUpon>Thankyou.aspx</DependentUpon>
     </Compile>
     <Compile Include="trial.aspx.cs">
       <DependentUpon>trial.aspx</DependentUpon>
