@@ -4,11 +4,9 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
-using iTextSharp.text;
-using iTextSharp.text.html.simpleparser;
-using iTextSharp.text.pdf;
 using System.IO;
 using System.Text;
+using System.Net.Mail;
 
 
 
@@ -16,6 +14,9 @@ namespace RDP
 {
     public partial class Approve : System.Web.UI.Page
     {
+        string mail_id = "";
+        string name = "";
+        string role_no = "";
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -49,8 +50,9 @@ namespace RDP
                 TextBox13.Text = ds.Tables[0].Rows[0]["residential_address"].ToString();
                 TextBox14.Text = ds.Tables[0].Rows[0]["office_address"].ToString();
                 TextBox15.Text = ds.Tables[0].Rows[0]["address_for_communication"].ToString();
-
-
+                mail_id = ds.Tables[0].Rows[0]["email_id"].ToString();
+                name = ds.Tables[0].Rows[0]["full_name"].ToString();
+                role_no = ds.Tables[0].Rows[0]["user_id"].ToString();
 
             }
             con.Close();
@@ -61,11 +63,43 @@ namespace RDP
         string connection = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         protected void Button30_Click(object sender, EventArgs e)
         {
+
+            string to = mail_id;    
+            string from = "as2551096@gmail.com";    
+            MailMessage message = new MailMessage(from, to);
+
+            string mailbody = $"Hello {name}, you have been approved by the dean.";
+            message.Subject = "";
+            message.Body = mailbody;
+            System.Net.Mail.Attachment attachment;
+            attachment = new System.Net.Mail.Attachment(Server.MapPath("~/Files/") + role_no + ".PDF");
+            message.Attachments.Add(attachment);
+            message.BodyEncoding = Encoding.UTF8;
+            message.IsBodyHtml = true;
+            SmtpClient client = new SmtpClient("smtp.gmail.com", 587);  
+            System.Net.NetworkCredential basicCredential1 = new 
+            System.Net.NetworkCredential("uisbibin@gmail.com", "Godissogood1");
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Credentials = basicCredential1;
+            try
+            {
+                client.Send(message);
+                Response.Write($"<script>alert('Approved Successfully !" +
+                    $" Mail sent to scholar {name} {mail_id}');</script>");
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+
             using (var conn = new SqlConnection(connection))
             {
 
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("update personal_details set status1 = 0 where user_id=" + Request.QueryString["user_id"], conn);
+                SqlCommand cmd2 = new SqlCommand("update personal_details set status2 = 0 where user_id=" + Request.QueryString["user_id"], conn);
                 SqlDataReader rd2 = cmd2.ExecuteReader();
                 Response.Write("<script>alert('Validated Successfully');window.location='deanpage.aspx';</script>");
                 conn.Close();

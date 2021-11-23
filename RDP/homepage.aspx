@@ -35,11 +35,11 @@
                                 <div class="col">
                                     <center>
                                    <div class="form-group">                                 
-                                        <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="Username" style="text-align: center" Width="350px" Height="40px" ></asp:TextBox>                                      
+                                        <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="Username" style="text-align: center" ></asp:TextBox>                                      
                                       </div>  
-                                    
+                                    <br />
                                     <div class="form-group">                           
-                                        <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" style="text-align: center" TextMode="Password" Width="350px" Height="40px"></asp:TextBox>
+                                        <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" style="text-align: center" TextMode="Password"></asp:TextBox>
                                     </div>
                                     
                                         <div class="form-group">

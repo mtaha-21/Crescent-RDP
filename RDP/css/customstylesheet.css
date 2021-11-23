@@ -36,3 +36,9 @@ h3 {
 h4 {
     color: #FEFCFF;
 }
+
+body {
+    background-image: url('../imgs/c8e0e0.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

@@ -16,7 +16,7 @@ namespace RDP
         protected void Page_Load(object sender, EventArgs e)
         {
             String mycon = "Data Source=SR99\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
-            String myquery = "Select * from personal_details where user_id=10";
+            String myquery = "Select * from personal_details where user_id=" + Request.QueryString["user_id"];
             SqlConnection con = new SqlConnection(mycon);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = myquery;
@@ -38,7 +38,7 @@ namespace RDP
 
         protected void btnExport_Click(object sender, EventArgs e)
         {
-            FileStream file = new FileStream(Server.MapPath("~/Files/") + "okaynow" + ".PDF", FileMode.Create, System.IO.FileAccess.Write);
+            FileStream file = new FileStream(Server.MapPath("~/Files/") + Request.QueryString["user_id"] + ".PDF", FileMode.Create, System.IO.FileAccess.Write);
             StringWriter sw = new StringWriter();
             HtmlTextWriter hw = new HtmlTextWriter(sw);
             pnlDetails.RenderControl(hw);
@@ -51,7 +51,7 @@ namespace RDP
             htmlparser.Parse(sr);
             pdfDoc.Close();
             file.Close();
-            Response.Redirect("deanpage.aspx");
+            Response.Redirect("updatelist.aspx");
         }
 
     }

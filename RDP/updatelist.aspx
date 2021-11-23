@@ -13,7 +13,7 @@
                      </div>
                   </div>
                   <div class="row">
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [user_id], [full_name] FROM [personal_details] WHERE status = 1"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [user_id], [full_name] FROM [personal_details] WHERE status1 = 1"></asp:SqlDataSource>
                      <div class="col">
                         <hr>
                      </div>

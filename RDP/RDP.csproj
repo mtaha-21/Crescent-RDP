@@ -88,11 +88,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="adminpage.aspx" />
     <Content Include="approve.aspx" />
     <Content Include="app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
-    <Content Include="check1.aspx" />
+    <Content Include="pdf.aspx" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
     <Content Include="datatables\js\jquery.dataTables.min.js" />
@@ -1757,6 +1758,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="adminpage.aspx.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="adminpage.aspx.designer.cs">
+      <DependentUpon>adminpage.aspx</DependentUpon>
+    </Compile>
     <Compile Include="approve.aspx.cs">
       <DependentUpon>approve.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1771,12 +1779,12 @@
     <Compile Include="app_form.aspx.designer.cs">
       <DependentUpon>app_form.aspx</DependentUpon>
     </Compile>
-    <Compile Include="check1.aspx.cs">
-      <DependentUpon>check1.aspx</DependentUpon>
+    <Compile Include="pdf.aspx.cs">
+      <DependentUpon>pdf.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="check1.aspx.designer.cs">
-      <DependentUpon>check1.aspx</DependentUpon>
+    <Compile Include="pdf.aspx.designer.cs">
+      <DependentUpon>pdf.aspx</DependentUpon>
     </Compile>
     <Compile Include="deanpage.aspx.cs">
       <DependentUpon>deanpage.aspx</DependentUpon>

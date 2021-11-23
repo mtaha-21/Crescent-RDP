@@ -386,60 +386,6 @@ namespace RDP
         string connection = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         protected void Button2_Click(object sender, EventArgs e)
         {
-            Autogenrate();
-            string yr = TextBox2.Text;
-            string co = TextBox5.Text;
-            string defl = TextBox8.Text;
-            string inr = TextBox9.Text;
-            string tot = yr + co + defl + inr;
-            TextBox6.Text = yr + co + defl + inr;
-            void Autogenrate()
-            {
-                int r;
-                try
-                {
-                    SqlConnection costrng = new SqlConnection(strcon);
-                    costrng.Open();
-                    SqlCommand cmd = new SqlCommand("Select max(Roll_num) from roll_num", costrng);
-                    SqlDataReader sdr = cmd.ExecuteReader();
-
-                    if (sdr.Read())
-                    {
-
-
-
-                        var d = sdr[0].ToString();
-                        if (d == "")
-                        {
-
-                            TextBox9.Text = "7000";//set the value in textbox which name is id
-
-                        }
-                        else
-                        {
-
-                            r = Convert.ToInt32(sdr[0].ToString());
-                            r = r + 1;
-                            TextBox9.Text = r.ToString();
-                        }
-                    }
-                    costrng.Close();
-                    costrng.Open();
-
-                    SqlCommand com = new SqlCommand("INSERT INTO roll_num(Roll_num)values(@Roll_num)", costrng);
-                    com.Parameters.AddWithValue("@Roll_num", TextBox9.Text.Trim());
-
-
-
-                    com.ExecuteNonQuery();
-                    cmd.ExecuteNonQuery();
-                    costrng.Close();
-                }
-                catch (Exception ex)
-                {
-                    Response.Write("<script>alert(" + ex.Message + ")</script>");
-                }
-            }
             try
             {
                 SqlConnection connstrng = new SqlConnection(strcon);
@@ -493,10 +439,13 @@ namespace RDP
             {
 
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("update personal_details set status1 = 1 where user_id=" + Request.QueryString["user_id"], conn);
+                SqlCommand cmd2 = new SqlCommand("update personal_details set status1 = 0, status2 = 1 where user_id=" + Request.QueryString["user_id"], conn);
                 SqlDataReader rd2 = cmd2.ExecuteReader();
                 conn.Close();
             }
+
+            string user_id = Request.QueryString["user_id"];
+            Response.Redirect("pdf.aspx?user_id=" + user_id);
 
         }
 

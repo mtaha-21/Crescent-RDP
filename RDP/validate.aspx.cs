@@ -55,7 +55,7 @@ namespace RDP
             {
 
                 conn.Open();
-                SqlCommand cmd2 = new SqlCommand("update personal_details set status = 1 where user_id=" + Request.QueryString["user_id"], conn);
+                SqlCommand cmd2 = new SqlCommand("update personal_details set status = 1, status1 = 1 where user_id=" + Request.QueryString["user_id"], conn);
                 SqlDataReader rd2 = cmd2.ExecuteReader();
                 Response.Write("<script>alert('Validated Successfully');window.location='newlist.aspx';</script>");   
                 conn.Close();

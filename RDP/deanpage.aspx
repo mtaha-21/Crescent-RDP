@@ -8,12 +8,12 @@
                   <div class="row">
                      <div class="col">
                         <center>
-                           <h5>SELECTED SCHOLARS/</h5>
+                           <h5>SELECTED SCHOLARS</h5>
                         </center>
                      </div>
                   </div>
                   <div class="row">
-                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [full_name], [user_id] FROM [personal_details] WHERE status1 = 1"></asp:SqlDataSource>
+                      <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString='<%$ ConnectionStrings:connstrng %>' SelectCommand="SELECT [full_name], [user_id] FROM [personal_details] WHERE status2 = 1"></asp:SqlDataSource>
                      <div class="col">
                         <hr>
                      </div>
