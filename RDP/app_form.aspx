@@ -19,7 +19,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-8 mx-auto">
+            <div class="col-md-9 mx-auto">
                 <div class="card">
                     <div class="card-body">
                         <div class="row">
@@ -37,20 +37,26 @@
 
                         <div class="row">
                             <div class="col-md-5">
-                                <b>
-                                    <label1>Full Name</label1></b>
-                                <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Enter your full name" Width="353px"></asp:TextBox>
+                                
+                                    <div class="form-group">
+                                   <b> <label1>Full Name</label1></b> 
+                                    <asp:TextBox CssClass="form-control" ID="TextBox1" runat="server" placeholder="Enter your full name" Width="330px"></asp:TextBox>
                                 </div>
                             </div>
+                           
                             <div class="col-md-2">
-                                <b>
-                                    <label1>Age</label1></b>
+                               <b>
+                                    <label1>Gender</label1></b>
                                 <div class="form-group">
-                                    <asp:TextBox CssClass="form-control" ID="TextBox14" runat="server" placeholder="Enter your age" TextMode="Number" Width="156px"></asp:TextBox>
+                                    <asp:DropDownList class="form-control" ID="DropDownList20" runat="server">
+                                        <asp:ListItem Text="Select" Value="select" />
+                                        <asp:ListItem Text="Male" Value="Male" />
+                                        <asp:ListItem Text="Female" Value="Female" />
+                                    </asp:DropDownList>
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                          
+                            <div class="col-md-4">
                                 <b>
                                     <label1>Date Of Birth</label1></b>
                                 <div class="form-group">
@@ -61,15 +67,13 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <b>
-                                    <label1>Gender</label1></b>
+
+                                                                <b>
+                                    <label1>Age</label1></b>
                                 <div class="form-group">
-                                    <asp:DropDownList class="form-control" ID="DropDownList20" runat="server">
-                                        <asp:ListItem Text="Select" Value="select" />
-                                        <asp:ListItem Text="Male" Value="Male" />
-                                        <asp:ListItem Text="Female" Value="Female" />
-                                    </asp:DropDownList>
+                                    <asp:TextBox CssClass="form-control" ID="TextBox14" runat="server" placeholder="Enter your age" TextMode="Number" Width="156px"></asp:TextBox>
                                 </div>
+
                             </div>
 
                             <div class="col-md-6">

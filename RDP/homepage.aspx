@@ -27,21 +27,21 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col">
+                                <div class="col">                                   
                                     <hr>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col">
-                                    <label>Enter User Name</label>
-                                    <div class="form-group">
-                                        <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="User Name"></asp:TextBox>
-                                    </div>
-                                    <label>Enter Password</label>
-                                    <div class="form-group">
-                                        <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
-                                    </div>
                                     <center>
+                                   <div class="form-group">                                 
+                                        <asp:TextBox CssClass="form-control" ID="txtun" runat="server" placeholder="Username" style="text-align: center" Width="350px" Height="40px" ></asp:TextBox>                                      
+                                      </div>  
+                                    
+                                    <div class="form-group">                           
+                                        <asp:TextBox CssClass="form-control" ID="txtpw" runat="server" placeholder="Password" style="text-align: center" TextMode="Password" Width="350px" Height="40px"></asp:TextBox>
+                                    </div>
+                                    
                                         <div class="form-group">
                                             <asp:Button Style="margin-top: 20px" class="btn btn-success btn-block btn-lg" ID="btnlogin" runat="server" Text="Login" Width="200px" OnClick="Button20" />
                                         </div>

@@ -29,23 +29,10 @@
     top: 20%;
 }
 
-label {
-    color: #FFFFFF;
-}
-
 h3 {
     color: #FFFFFF;
 }
 
 h4 {
     color: #FEFCFF;
-}
-
-.page-content {
-    position: absolute;
-    width: 8.125in;
-    height: 10.625in;
-    left: 0.1875in;
-    top: 0.1875in;
-    background-color: rgba(0,0,0,0.2);
 }

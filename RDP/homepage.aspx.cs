@@ -27,7 +27,7 @@ namespace RDP
             try
             {
                 SqlConnection con = new SqlConnection(mycon);
-                SqlDataAdapter sda = new SqlDataAdapter("Select Usertype from user_table where Username like'"+txtun.Text+"'COLLATE SQL_Latin1_General_CP1_CS_AS and Password like'"+txtpw.Text+"'COLLATE SQL_Latin1_General_CP1_CS_AS", con);
+                SqlDataAdapter sda = new SqlDataAdapter("Select Usertype from user_table where Username like'"+txtun.Text+"'COLLATE SQL_Latin1_General_CP1_CS_AS and Password like'"+ txtpw.Text + "'COLLATE SQL_Latin1_General_CP1_CS_AS", con);
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
                 if (dt.Rows.Count==1)
