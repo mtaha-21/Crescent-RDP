@@ -56,8 +56,12 @@ namespace RDP
                 cmd1.Parameters.AddWithValue("@ImagePath", "Images/" + filename);
                 cmd1.ExecuteNonQuery();
 
-                //Acadamic details
-                SqlCommand cmd = new SqlCommand("INSERT INTO academic_details(category,type_of_registration,if_part_time,ug_university_or_college,ug_year_of_passing,ug_month_of_passing,ug_class,pg_university_or_college,pg_year_of_passing,pg_month_of_passing,pg_class,pg_part_time_or_full_time,other_qualification,year_of_passing,month_of_passing,class,part_time_or_full_time,bachelor_degree_discipline,bsem_1,bsem_2,bsem_3,bsem_4,bsem_5,bsem_6 ,bsem_7,bsem_8,master_degree_discipline,msem_1,msem_2 ,msem_3 ,msem_4,msem_5,msem_6,specify,org_worked,designation,no_of_yrs_worked,work_mode,specify_name,name_of_org,designation1,yrs_worked,work_mode1,name_add_emp,designation2,mode_of_emp,scale_of_pay,working_since,total_yrs) values(@category,@type_of_registration,@if_part_time,@ug_university_or_college,@ug_year_of_passing,@ug_month_of_passing,@ug_class,@pg_university_or_college,@pg_year_of_passing,@pg_month_of_passing,@pg_class,@pg_part_time_or_full_time,@other_qualification,@year_of_passing,@month_of_passing,@class,@part_time_or_full_time,@bachelor_degree_discipline,@bsem_1,@bsem_2,@bsem_3,@bsem_4,@bsem_5,@bsem_6 ,@bsem_7,@bsem_8,@master_degree_discipline,@msem_1,@msem_2 ,@msem_3 ,@msem_4,@msem_5,@msem_6,@specify,@org_worked,@designation,@no_of_yrs_worked,@work_mode,@specify_name,@name_of_org,@designation1,@yrs_worked,@work_mode1,@name_add_emp,@designation2,@mode_of_emp,@scale_of_pay,@working_since,@total_yrs)", connstrng);                
+                SqlCommand cmd2 = new SqlCommand("Select max (user_id) from personal_details", connstrng);
+                SqlDataReader dr2 = cmd2.ExecuteReader();
+                string uid = dr2.GetValue(0).ToString();
+
+                    //Acadamic details
+                    SqlCommand cmd = new SqlCommand("INSERT INTO academic_details(category,type_of_registration,if_part_time,ug_university_or_college,ug_year_of_passing,ug_month_of_passing,ug_class,pg_university_or_college,pg_year_of_passing,pg_month_of_passing,pg_class,pg_part_time_or_full_time,other_qualification,year_of_passing,month_of_passing,class,part_time_or_full_time,bachelor_degree_discipline,bsem_1,bsem_2,bsem_3,bsem_4,bsem_5,bsem_6 ,bsem_7,bsem_8,master_degree_discipline,msem_1,msem_2 ,msem_3 ,msem_4,msem_5,msem_6,specify,org_worked,designation,no_of_yrs_worked,work_mode,specify_name,name_of_org,designation1,yrs_worked,work_mode1,name_add_emp,designation2,mode_of_emp,scale_of_pay,working_since,total_yrs,user_id) values(@category,@type_of_registration,@if_part_time,@ug_university_or_college,@ug_year_of_passing,@ug_month_of_passing,@ug_class,@pg_university_or_college,@pg_year_of_passing,@pg_month_of_passing,@pg_class,@pg_part_time_or_full_time,@other_qualification,@year_of_passing,@month_of_passing,@class,@part_time_or_full_time,@bachelor_degree_discipline,@bsem_1,@bsem_2,@bsem_3,@bsem_4,@bsem_5,@bsem_6 ,@bsem_7,@bsem_8,@master_degree_discipline,@msem_1,@msem_2 ,@msem_3 ,@msem_4,@msem_5,@msem_6,@specify,@org_worked,@designation,@no_of_yrs_worked,@work_mode,@specify_name,@name_of_org,@designation1,@yrs_worked,@work_mode1,@name_add_emp,@designation2,@mode_of_emp,@scale_of_pay,@working_since,@total_yrs,@user_id)", connstrng);                
                 cmd.Parameters.AddWithValue("@category", DropDownList22.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@type_of_registration", DropDownList23.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@if_part_time", TextBox8.Text.Trim());
@@ -107,6 +111,7 @@ namespace RDP
                 cmd.Parameters.AddWithValue("@scale_of_pay", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@working_since", DropDownList1.SelectedItem.Value);
                 cmd.Parameters.AddWithValue("@total_yrs", DropDownList2.SelectedItem.Value);
+                cmd.Parameters.AddWithValue("@user_id", uid);
                 cmd.ExecuteNonQuery();
 
                 connstrng.Close();

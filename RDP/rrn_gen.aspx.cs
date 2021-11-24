@@ -35,13 +35,12 @@ namespace RDP
         }
 
         string strcon = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
-        
 
         private RNGCryptoServiceProvider rnd = new RNGCryptoServiceProvider();
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection connstrng = new SqlConnection(strcon);
-            
+
             connstrng.Open();
             if (DropDownList1.SelectedValue == "Aerospace Engineering")
             {
@@ -49,7 +48,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Automobile Engineering")
@@ -58,7 +57,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Chartered Accountant")
@@ -67,7 +66,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Chemistry")
@@ -76,7 +75,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Civil Engineering")
@@ -85,7 +84,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Commerce")
@@ -94,7 +93,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Computer Science Egineering")
@@ -103,7 +102,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Electrical and Communication Engineering")
@@ -112,7 +111,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Electrical and Electronic Engineering")
@@ -121,7 +120,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Electronic and Instrumentation Engineering")
@@ -130,7 +129,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "English")
@@ -139,7 +138,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Islamic Studies")
@@ -148,7 +147,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Information Technology")
@@ -157,7 +156,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Maths & AS")
@@ -166,7 +165,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Mechanical Engineering")
@@ -175,7 +174,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Mgt Studies")
@@ -184,7 +183,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Physics")
@@ -193,7 +192,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else if (DropDownList1.SelectedValue == "Polymer Engineering")
@@ -202,7 +201,7 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
             else
@@ -211,10 +210,10 @@ namespace RDP
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    TextBox5.Text = dr.GetValue(0).ToString() + "-";
+                    TextBox5.Text = dr.GetValue(0).ToString();
                 }
             }
-            
+
 
             if (DropDownList2.SelectedValue == "2021")
             {
@@ -222,7 +221,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2022")
@@ -231,7 +230,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2023")
@@ -240,7 +239,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2024")
@@ -249,7 +248,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2025")
@@ -258,7 +257,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2026")
@@ -267,7 +266,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2027")
@@ -276,7 +275,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2028")
@@ -285,7 +284,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2029")
@@ -294,7 +293,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2030")
@@ -303,7 +302,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2031")
@@ -312,7 +311,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2032")
@@ -321,7 +320,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2033")
@@ -330,7 +329,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else if (DropDownList2.SelectedValue == "2034")
@@ -339,7 +338,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
             }
             else
@@ -348,7 +347,7 @@ namespace RDP
                 SqlDataReader dr1 = cmd2.ExecuteReader();
                 if (dr1.Read())
                 {
-                    TextBox2.Text = dr1.GetValue(0).ToString() + "-";
+                    TextBox2.Text = dr1.GetValue(0).ToString();
                 }
                 dr1.Close();
             }
@@ -359,7 +358,7 @@ namespace RDP
                 SqlDataReader dr2 = cmd3.ExecuteReader();
                 if (dr2.Read())
                 {
-                    TextBox8.Text = dr2.GetValue(0).ToString() + "-";
+                    TextBox8.Text = dr2.GetValue(0).ToString();
                 }
             }
             else
@@ -368,21 +367,47 @@ namespace RDP
                 SqlDataReader dr2 = cmd3.ExecuteReader();
                 if (dr2.Read())
                 {
-                    TextBox8.Text = dr2.GetValue(0).ToString() + "-";
+                    TextBox8.Text = dr2.GetValue(0).ToString();
                 }
                 dr2.Close();
             }
-            connstrng.Close();
-
-            string yr = TextBox2.Text;
-            string co = TextBox5.Text;
-            string defl = TextBox8.Text;
-            string inr = TextBox9.Text;
-            TextBox6.Text = yr + co + defl + inr;
             
-        }
-   
+            
+            {
+                int r;
+                SqlCommand cmd = new SqlCommand("Select max(temp_roll) from RRN_details", connstrng);
+                SqlDataReader sdr = cmd.ExecuteReader();
 
+                if (sdr.Read())
+                {
+                    var d = sdr[0].ToString();
+                    if (d == "")
+                    {
+                        TextBox9.Text = "7000";//set the value in textbox which name is id
+                    }
+                    else if (d == TextBox9.Text)
+                    {
+
+                    }
+
+                    else
+                    {
+
+                        r = Convert.ToInt32(sdr[0].ToString());
+                        r = r + 1;
+                        TextBox9.Text = r.ToString();
+                    }
+                }
+                connstrng.Close();
+
+                string yr = TextBox2.Text;
+                string co = TextBox5.Text;
+                string defl = TextBox8.Text;
+                string inr = TextBox9.Text;
+                TextBox6.Text = yr + "-" + co + "-" + defl + "-" + inr;                
+            }
+        }
+        
         string connection = ConfigurationManager.ConnectionStrings["connstrng"].ConnectionString;
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -393,11 +418,13 @@ namespace RDP
                 {
                     connstrng.Open();
                 }
-                SqlCommand cmd = new SqlCommand("INSERT INTO RRN_details(RRN,Dept_name,Guide_name,Research_topic)values(@RRN,@Dept_name,@Guide_name,@Research_topic)", connstrng);
-                cmd.Parameters.AddWithValue("@RRN", TextBox6.Text.Trim());
+                SqlCommand cmd = new SqlCommand("INSERT INTO RRN_details(RRN,Dept_name,Guide_name,Research_topic,temp_roll,user_id)values(@RRN,@Dept_name,@Guide_name,@Research_topic,@temp_roll,@user_id)", connstrng);
+                cmd.Parameters.AddWithValue("@RRN", TextBox2.Text + TextBox5.Text + TextBox8.Text + TextBox9.Text.Trim());
                 cmd.Parameters.AddWithValue("@Dept_name", TextBox1.Text.Trim());
                 cmd.Parameters.AddWithValue("@Guide_name", TextBox3.Text.Trim());
                 cmd.Parameters.AddWithValue("@Research_topic", TextBox4.Text.Trim());
+                cmd.Parameters.AddWithValue("@temp_roll", TextBox9.Text.Trim());
+                cmd.Parameters.AddWithValue("@user_id", Request.QueryString["user_id"].Trim());
                 cmd.ExecuteNonQuery();
                 connstrng.Close();
                 Response.Write("<script>alert(tot);</script>");

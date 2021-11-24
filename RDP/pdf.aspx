@@ -21,7 +21,7 @@ line-height:150%;font-family:"Arial",sans-serif'>Lr. No.000 / Dean (R) / 0000 �
 <p class=MsoNormal><b><span style='font-size:9.0pt;font-family:"Arial",sans-serif'>To</span></b></p>
 
 <p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:9.0pt;
-font-family:"Arial",sans-serif'>Name of the Supervisor,  </span></b></p>
+font-family:"Arial",sans-serif'><asp:Label ID="nameofsupp" runat="server"></asp:Label>,  </span></b></p>
 
 <p class=MsoNormal style='margin-left:.5in'><span style='font-size:9.0pt;
 font-family:"Arial",sans-serif'>Designation &amp; Dept.</span></p>
@@ -66,9 +66,9 @@ style='font-size:9.0pt;font-family:"Arial",sans-serif'>            �
 <p class=MsoNormal style='text-align:justify;line-height:150%'><b><span
 style='font-size:9.0pt;line-height:150%;font-family:"Arial",sans-serif'> <asp:Label ID="name" runat="server"></asp:Label> </span></b><span style='font-size:9.0pt;line-height:150%;
 font-family:"Arial",sans-serif'>is provisionally registered for <b>Ph.D.</b>
-programme under <b>Full Time</b> mode in the <b>Department of -------- </b>of
+programme under <b>Full Time</b> mode in the <b>Department of <asp:Label ID="dept" runat="server"></asp:Label> </b>of
 our Institute during <b>July 2021</b> session under your supervision. The broad
-area / topic of research is <b>“-----------------------------------------”.</b></span></p>
+area / topic of research is <b>“<asp:Label ID="topic" runat="server"></asp:Label>”.</b></span></p>
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
 style='font-size:9.0pt;line-height:150%;font-family:"Arial",sans-serif'>You are
@@ -103,7 +103,7 @@ style='font-size:9.0pt;line-height:150%;font-family:"Arial",sans-serif'>&nbsp;</
 
 <p class=MsoNormal style='text-align:justify;text-indent:.5in;line-height:150%'><span
 style='font-size:9.0pt;line-height:150%;font-family:"Arial",sans-serif'>The
-Roll cum Registration Number allocated to the Research Scholar is <b>“--------------------------”.</b></span></p>
+Roll cum Registration Number allocated to the Research Scholar is <b>“<asp:Label ID="rrn" runat="server"></asp:Label>”.</b></span></p>
 
 <p class=MsoNormal align=right style='text-align:right;line-height:150%'><b><span
 style='font-size:9.0pt;line-height:150%;font-family:"Arial",sans-serif'>&nbsp;</span></b></p>

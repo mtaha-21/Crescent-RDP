@@ -24,6 +24,15 @@ namespace RDP
         protected global::System.Web.UI.WebControls.Panel pnlDetails;
 
         /// <summary>
+        /// nameofsupp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nameofsupp;
+
+        /// <summary>
         /// name control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,33 @@ namespace RDP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label name;
+
+        /// <summary>
+        /// dept control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label dept;
+
+        /// <summary>
+        /// topic control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label topic;
+
+        /// <summary>
+        /// rrn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label rrn;
 
         /// <summary>
         /// name1 control.

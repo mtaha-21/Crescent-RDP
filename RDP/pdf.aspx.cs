@@ -16,7 +16,7 @@ namespace RDP
         protected void Page_Load(object sender, EventArgs e)
         {
             String mycon = "Data Source=SR99\\SQLEXPRESS;Initial Catalog=RDP_DB; Integrated Security=True";
-            String myquery = "Select * from personal_details where user_id=" + Request.QueryString["user_id"];
+            String myquery = "Select * from personal_details, RRN_details where personal_details.user_id AND RRN_details.user_id" + Request.QueryString["user_id"]; 
             SqlConnection con = new SqlConnection(mycon);
             SqlCommand cmd = new SqlCommand();
             cmd.CommandText = myquery;
@@ -29,6 +29,12 @@ namespace RDP
             {
                 name.Text = ds.Tables[0].Rows[0]["full_name"].ToString();
                 name1.Text = ds.Tables[0].Rows[0]["full_name"].ToString();
+
+                nameofsupp.Text = ds.Tables[0].Rows[0]["Guide_name"].ToString();
+                dept.Text = ds.Tables[0].Rows[0]["Dept_name"].ToString();
+                topic.Text = ds.Tables[0].Rows[0]["Research_topic"].ToString();
+                rrn.Text = ds.Tables[0].Rows[0]["RRN"].ToString();
+
             }
             con.Close();
 
