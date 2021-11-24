@@ -58,6 +58,7 @@ namespace RDP
 
                 SqlCommand cmd2 = new SqlCommand("Select max (user_id) from personal_details", connstrng);
                 SqlDataReader dr2 = cmd2.ExecuteReader();
+                dr2.Read();
                 string uid = dr2.GetValue(0).ToString();
 
                     //Acadamic details

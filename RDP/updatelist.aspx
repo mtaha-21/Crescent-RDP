@@ -22,8 +22,8 @@
                      <div class="col">
                          <asp:GridView class="table table-striped table-bordered" ID="GridView2" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1"  DataKeyNames="user_id" OnSelectedIndexChanged="GridView2_SelectedIndexChanged">
                              <Columns>
-                                 <asp:BoundField DataField="user_id" HeaderText="user_id" SortExpression="user_id" InsertVisible="False" ReadOnly="True"></asp:BoundField>
-                                 <asp:BoundField DataField="full_name" HeaderText="full_name" SortExpression="full_name"></asp:BoundField>
+                                 <asp:BoundField DataField="user_id" HeaderText="Roll No" SortExpression="user_id" InsertVisible="False" ReadOnly="True"></asp:BoundField>
+                                 <asp:BoundField DataField="full_name" HeaderText="Name" SortExpression="full_name"></asp:BoundField>
                                  <asp:CommandField SelectText="Preview" ShowSelectButton="True" ButtonType="button"/>
                              </Columns>
                          </asp:GridView>
