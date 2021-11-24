@@ -78,7 +78,7 @@ namespace RDP
             message.IsBodyHtml = true;
             SmtpClient client = new SmtpClient("smtp.gmail.com", 587);  
             System.Net.NetworkCredential basicCredential1 = new 
-            System.Net.NetworkCredential("uisbibin@gmail.com", "Godissogood1");
+            System.Net.NetworkCredential("uisbibin@gmail.com", "");
             client.EnableSsl = true;
             client.UseDefaultCredentials = false;
             client.Credentials = basicCredential1;

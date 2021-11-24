@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         .backimg {
-            background-image: url(imgs/loginpage.jpg);
+            background-image: url(imgs/loginpage.png);
             width: auto;
             height: 559px;
             background-repeat: no-repeat;

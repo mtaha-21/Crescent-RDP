@@ -93,6 +93,7 @@
     <Content Include="app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="imgs\loginpage.png" />
     <Content Include="pdf.aspx" />
     <Content Include="css\customstylesheet.css" />
     <Content Include="datatables\css\jquery.dataTables.min.css" />
@@ -1747,9 +1748,6 @@
     <Content Include="fontawesome\webfonts\fa-solid-900.svg" />
     <Content Include="homepage.aspx" />
     <Content Include="imgs\CR_4.png" />
-    <Content Include="imgs\Frontpage.png" />
-    <Content Include="imgs\generaluser.png" />
-    <Content Include="imgs\loginpage.jpg" />
     <Content Include="imgs\logo.png" />
     <Content Include="newlist.aspx" />
     <Content Include="rrn_gen.aspx" />
