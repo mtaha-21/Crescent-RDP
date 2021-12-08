@@ -1,0 +1,174 @@
+﻿
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #3498db;
+}
+
+    body.fa-check {
+        color: #27ae60;
+        font-size: 24px;
+    }
+
+.container {
+    width: 100%;
+    margin: 8rem 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.form-container {
+        width: 100%;
+        max-width: 600px;
+        background-color: #eeeeee;
+        border-radius: 5px;
+        box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.4);
+        padding: 2rem;
+        box-sizing: border-box;
+        margin: 0 auto;
+        transform: translate(0, 0);
+        transition: transform 800ms cubic-bezier(.45,-0.46,.31,1);
+}
+
+.form-container.applied {
+            transform: translate(0, -200%);
+        }
+
+.header {
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: white;
+            width: 100%;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+h1 {
+                color: #3498db;
+                font-size: 22px;
+                font-weight: bolder;
+            }
+
+p {
+                color: #555555;
+            }
+
+
+form {
+            width: 100%;
+            position: relative;
+            padding: 2rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+.form-group {
+                width: 100%;
+                position: relative;
+                box-sizing: border-box;
+                padding: 1rem 0;
+                display: flex;
+                flex-flow: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+.form-group:first-child {
+                    padding-top: 0;
+                }
+
+.input-group {
+                flex-basis: 50%;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+.input-group:first-child {
+                    padding-right: 1rem;
+                }
+
+.input-group:last-child {
+                    padding-left: 1rem;
+                }
+
+label {
+                width: 100%;
+                margin-bottom: 0.5rem;
+                display: inline-block;
+                position: relative;
+                color: #555555;
+                font-weight: bold;
+                font-size: 14px;
+            }
+
+span {
+                color: #e74c3c;
+            }
+
+input {
+                border: none;
+                background: none;
+                background-color: white;
+                width: 100%;
+                border-radius: 3px;
+                box-sizing: border-box;
+                padding: 0.7rem 1rem;
+                color: #1771ad;
+                font-weight: bolder;
+                font-size: 16px;
+                border: 2px white solid;
+                transition: border 200ms linear;
+            }
+
+.error {
+                    border: 2px #e74c3c solid;
+                }
+
+.success {
+                    border: 2px #27ae60 solid;
+                }
+
+:focus {
+            outline: none;
+        }
+
+
+button {
+                padding: 1rem 1.5rem;
+                background: none;
+                border: none;
+                border-radius: 30px;
+                background-color: #3498db;
+                color: white;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 4rem auto 0 auto;
+                display: inline-block;
+                cursor: pointer;
+                transition: all 400ms linear;
+            }
+
+button:hover {
+                    background-color: #065991;
+                }
+
+.disabled {
+                    cursor: not-allowed;
+                    background-color: #47a6e6;
+                }
+
+.disabled:hover {
+                        background-color: #47a6e6;
+                    }
+
+
+
+

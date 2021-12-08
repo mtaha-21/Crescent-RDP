@@ -65,7 +65,7 @@ namespace RDP
         {
 
             string to = mail_id;    
-            string from = "as2551096@gmail.com";    
+            string from = "uisbibin@gmail.com";    
             MailMessage message = new MailMessage(from, to);
 
             string mailbody = $"Hello {name}, you have been approved by the dean.";

@@ -439,7 +439,7 @@ namespace RDP
             string from = "uisbibin@gmail.com"; //From address    
             MailMessage message = new MailMessage(from, to);
 
-            string mailbody = "YOUR JOB IS TO APPROVE THE SCHOLAR BELOW";
+            string mailbody = "APPROVE THE SCHOLAR BELOW";
             message.Subject = "HELLO DEAN";
             message.Body = mailbody;
             message.BodyEncoding = Encoding.UTF8;

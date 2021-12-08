@@ -92,7 +92,9 @@
     <Content Include="approve.aspx" />
     <Content Include="app_form.aspx" />
     <Content Include="bootstrap\css\bootstrap.min.css" />
+    <Content Include="bootstrap\js\app_form.js" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="css\app_form.css" />
     <Content Include="imgs\loginpage.png" />
     <Content Include="pdf.aspx" />
     <Content Include="css\customstylesheet.css" />
@@ -1754,6 +1756,7 @@
     <Content Include="updatelist.aspx" />
     <Content Include="validate.aspx" />
     <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="adminpage.aspx.cs">
@@ -1833,6 +1836,13 @@
     </Compile>
     <Compile Include="validate.aspx.designer.cs">
       <DependentUpon>validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
