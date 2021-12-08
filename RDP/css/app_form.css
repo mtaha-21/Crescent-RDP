@@ -127,9 +127,9 @@ input {
                 transition: border 200ms linear;
             }
 
-.error {
-                    border: 2px #e74c3c solid;
-                }
+    input.error {
+        border: 2px #e74c3c solid;
+    }
 
 .success {
                     border: 2px #27ae60 solid;
@@ -141,29 +141,29 @@ input {
 
 
 button {
-                padding: 1rem 1.5rem;
-                background: none;
-                border: none;
-                border-radius: 30px;
-                background-color: #3498db;
-                color: white;
-                text-transform: uppercase;
-                font-size: 14px;
-                font-weight: bold;
-                margin: 4rem auto 0 auto;
-                display: inline-block;
-                cursor: pointer;
-                transition: all 400ms linear;
-            }
+    padding: 1rem 1.5rem;
+    background: none;
+    border: none;
+    border-radius: 30px;
+    background-color: #3498db;
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 4rem auto 0 auto;
+    display: inline-block;
+    cursor: pointer;
+    transition: all 400ms linear;
+}
 
 button:hover {
                     background-color: #065991;
                 }
 
-.disabled {
-                    cursor: not-allowed;
-                    background-color: #47a6e6;
-                }
+    button.disabled {
+        cursor: not-allowed;
+        background-color: #47a6e6;
+    }
 
 .disabled:hover {
                         background-color: #47a6e6;

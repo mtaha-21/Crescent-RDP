@@ -95,6 +95,7 @@
     <Content Include="bootstrap\js\app_form.js" />
     <Content Include="bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="css\app_form.css" />
+    <Content Include="css\StyleSheet1.css" />
     <Content Include="imgs\loginpage.png" />
     <Content Include="pdf.aspx" />
     <Content Include="css\customstylesheet.css" />

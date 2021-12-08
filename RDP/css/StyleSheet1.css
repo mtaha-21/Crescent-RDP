@@ -1,0 +1,168 @@
+﻿@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+html, body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    background-color: #3498db;
+}
+
+.fa-check {
+    color: #27ae60;
+    font-size: 24px;
+}
+
+.container {
+    width: 100%;
+    margin: 8rem 0;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+    .container .form-container {
+        width: 100%;
+        max-width: 600px;
+        background-color: #eee;
+        border-radius: 5px;
+        box-shadow: 0px 10px 100px rgba(0, 0, 0, 0.4);
+        box-sizing: border-box;
+        margin: 0 auto;
+        transform: translate(0, 0);
+        transition: transform 800ms cubic-bezier(0.45, -0.46, 0.31, 1);
+    }
+
+        .container .form-container.applied {
+            transform: translate(0, -200%);
+        }
+
+        .container .form-container .header {
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: white;
+            width: 100%;
+            border-top-left-radius: 3px;
+            border-top-right-radius: 3px;
+        }
+
+            .container .form-container .header h1 {
+                color: #3498db;
+                font-size: 22px;
+                font-weight: bolder;
+            }
+
+            .container .form-container .header p {
+                color: #555;
+            }
+
+        .container .form-container form {
+            width: 100%;
+            position: relative;
+            padding: 2rem;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+            .container .form-container form .form-group {
+                width: 100%;
+                position: relative;
+                box-sizing: border-box;
+                padding: 1rem 0;
+                display: flex;
+                flex-flow: row;
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+                .container .form-container form .form-group:first-child {
+                    padding-top: 0;
+                }
+
+                .container .form-container form .form-group .input-group {
+                    flex-basis: 50%;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+
+                    .container .form-container form .form-group .input-group:first-child {
+                        padding-right: 1rem;
+                    }
+
+                    .container .form-container form .form-group .input-group:last-child {
+                        padding-left: 1rem;
+                    }
+
+                    .container .form-container form .form-group .input-group label {
+                        width: 100%;
+                        margin-bottom: 0.5rem;
+                        display: inline-block;
+                        position: relative;
+                        color: #555;
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+
+                        .container .form-container form .form-group .input-group label span {
+                            color: #e74c3c;
+                        }
+
+                    .container .form-container form .form-group .input-group input {
+                        border: none;
+                        background: none;
+                        background-color: white;
+                        width: 100%;
+                        border-radius: 3px;
+                        box-sizing: border-box;
+                        padding: 0.7rem 1rem;
+                        color: #5faee3;
+                        font-weight: bolder;
+                        font-size: 16px;
+                        border: 2px white solid;
+                        transition: border 200ms linear;
+                    }
+
+                        .container .form-container form .form-group .input-group input.error {
+                            border: 2px #e74c3c solid;
+                        }
+
+                        .container .form-container form .form-group .input-group input.success {
+                            border: 2px #27ae60 solid;
+                        }
+
+                        .container .form-container form .form-group .input-group input:focus {
+                            outline: none;
+                        }
+
+            .container .form-container form button {
+                padding: 1rem 1.5rem;
+                background: none;
+                border: none;
+                border-radius: 30px;
+                background-color: #3498db;
+                color: white;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 4rem auto 0 auto;
+                display: inline-block;
+                cursor: pointer;
+                transition: all 400ms linear;
+            }
+
+                .container .form-container form button:hover {
+                    background-color: #217dbb;
+                }
+
+                .container .form-container form button.disabled {
+                    cursor: not-allowed;
+                    background-color: #b6daf2;
+                }
+
+                    .container .form-container form button.disabled:hover {
+                        background-color: #b6daf2;
+                    }

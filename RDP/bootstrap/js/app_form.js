@@ -24,8 +24,6 @@
 	}
 
 	function getCursorPos(e) {
-		//based on another of my pens bellow:
-		//https://codepen.io/MarioDesigns/pen/ZBByVN
 		var relativeX = (e.pageX - submit.offset().left);
 		var relativeY = (e.pageY - submit.offset().top);
 		return [relativeX, relativeY];
